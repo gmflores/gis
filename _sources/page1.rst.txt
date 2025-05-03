@@ -42,13 +42,12 @@ También puedes incluir enlaces a otras páginas de la documentación o a recurs
 
     Este es un ejemplo de cómo usar la función `mi_funcion` en tu código:
 
-    .. code-block:: python
+.. code-block:: python
+    def mi_funcion():
+        # Código de ejemplo
+        pass
 
-        def mi_funcion():
-            # Código de ejemplo
-            pass
-
-    Asegúrate de seguir
+Asegúrate de seguir
 
 .. figure:: https://en.wikipedia.org/wiki/Globe#/media/File:The_Great_Globe,_Guyot_Hall,_Princeton_University.jpg
     :alt: Texto alternativo para la imagen
@@ -63,7 +62,6 @@ También puedes incluir enlaces a otras páginas de la documentación o a recurs
 Ejemplo: Texto alternativo para la imagen.
 
 .. code-block:: python
-
     # Este es un ejemplo de código Python
     # que muestra cómo crear una función simple
     # y usarla en tu proyecto.
