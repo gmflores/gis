@@ -1,0 +1,87 @@
+
+Matrices tridimensionales
+=========================
+
+Esta es la primera página de la documentación. Aquí puedes incluir información introductoria sobre tu proyecto, su propósito y cómo usarlo.
+Puedes agregar ejemplos de código, imágenes y cualquier otro contenido relevante para ayudar a los usuarios a comprender mejor tu proyecto.
+Puedes usar la sintaxis de reStructuredText para formatear el texto, crear listas, tablas y más. Aquí hay un ejemplo de una lista numerada:
+
+* Deacargar
+* Instalar
+* Ejecutar "comando"
+    * Configurar
+    
+Puedes usar la sintaxis de reStructuredText para formatear el texto, crear listas, tablas y más. Aquí hay un ejemplo de una lista numerada:
+
+    1. Primer elemento
+    2. Segundo elemento
+    3. Tercer elemento
+
+También puedes incluir enlaces a otras páginas de la documentación o a recursos externos.
+
+.. note:: 
+    Esta es una **nota importante** que los "usuarios" deben *tener* en cuenta.
+
+.. warning::
+    Esta es una advertencia que los usuarios deben considerar antes de continuar.
+
+.. tip::
+    Este es un consejo útil para los usuarios.
+    Puedes usarlo para resaltar información importante o sugerencias.
+
+.. error::
+    Este es un mensaje de error que indica un problema con el código o la configuración.
+    Asegúrate de solucionarlo antes de continuar.
+
+.. seealso::
+    Para más información, consulta la sección de ejemplos en la documentación.
+    `Ejemplos <ejemplos.html>`_
+
+.. admonition:: Ejemplo
+    :class: ejemplo
+
+    Este es un ejemplo de cómo usar la función `mi_funcion` en tu código:
+
+    .. code-block:: python
+
+        def mi_funcion():
+            # Código de ejemplo
+            pass
+
+    Asegúrate de seguir
+
+.. figure:: https://en.wikipedia.org/wiki/Globe#/media/File:The_Great_Globe,_Guyot_Hall,_Princeton_University.jpg
+    :alt: Texto alternativo para la imagen
+    :width: 400px
+    :height: 300px
+
+.. figure:: /images/test.jpg
+    :alt: Texto alternativo para la imagen
+    :scale: 60%
+    :align: left
+
+Ejemplo: Texto alternativo para la imagen.
+
+.. code-block:: python
+
+    # Este es un ejemplo de código Python
+    # que muestra cómo crear una función simple
+    # y usarla en tu proyecto.
+    def mi_funcion():
+        print("¡Hola, mundo!")
+    
+    # Llamar a la función
+    mi_funcion()
+
+.. code-block:: matlab
+    % Este es un ejemplo de código MATLAB
+    % que muestra cómo crear una matriz tridimensional
+    % y realizar operaciones en ella.
+    % Crear una matriz tridimensional de 3x3x3
+    A = rand(3, 3, 3);
+    % Acceder a un elemento específico
+    elemento = A(2, 2, 2);
+    % Realizar operaciones en la matriz
+    B = A + 5;
+    
+    Puedes usar este código como referencia para tu propio proyecto.
