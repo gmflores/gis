@@ -1,0 +1,180 @@
+Matlab
+======
+
+En esta sección se presentan los pasos para instalar y ejecutar Matlab, así como ejemplos de uso relaconados con el tratamiento de datos geoespaciales
+y la creación de mapas. Se incluyen ejemplos de cómo cargar datos, crear mapas y mostrar puntos en un mapa utilizando funciones específicas de Matlab.
+
+.. _installation:
+
+Instalación
+------------
+Para instalar Matlab (IPN), sigue estos pasos:
+
+1. Crea una cuenta con tu dirección de correo institucional en el sitio web oficial de  `MathWorks <https://login.mathworks.com/embedded-login/signin.html?cid=mktg&wid=gnav&uri=https%3A%2F%2Fla.mathworks.com%2F target=_blank>`_.
+2. Descarga el instalador de Matlab.
+3. Seleccionar las Toolboxes que deseas instalar. Asegúrate de incluir las siguientes:
+
+   - `Mapping Toolbox <https://www.mathworks.com/products/mapping.html>`_
+   - `Statistics and Machine Learning Toolbox <https://la.mathworks.com/products/image-processing.html>`_
+   - `Image Processing Toolbox <https://la.mathworks.com/products/image-processing.html>`_
+
+Toolboxes
+---------
+
+you can use the ``lumache.get_random_ingredients()`` function:
+
+Introducción al Matlab
+----------------------
+
+Organización de carpetas
+
+..  this is a comment
+..  with another line
+
+.. code-block:: bash
+   
+    GIS
+    ├── datos          
+    │   ├── csv
+    │   ├── kml
+    │   ├── mat
+    │   ├── nc
+    │   ├── shp
+    │   └── tif
+    ├── matlab
+    │   ├── 00_gmf_tsunamis.mlx
+    │   ├── 01_gmf_sismos.mlx
+    │ ...
+
+Configuración del path, restaurar ventanas, Tamaño de letra, agregar toolbox
+Tipos de datos (double, single, uint, int, char, string, struct, table,…)
+Warnings y errores, Code analyzer
+Archivos mlx y m
+Funciones
+
+Tipos de archivos ráster
+Mapas con datos ráster
+Proyecciones
+gshhs
+projcrs (códigos EPSG)
+newmap
+shaperead
+Readgeotale
+Readgeoraster
+exportgraphics
+
+Mapas con datos vectoriales
+-----------------------------
+
+Comandos para crear gráficas:
+
+.. code-block:: matlab
+
+    % Cargar datos
+    load('tsunamis.mat')
+    % Crear un mapa
+    figure
+    worldmap('World')
+    % Mostrar los puntos
+    geoshow(tsunamis, 'DisplayType', 'point')
+
+..  code-block:: matlab
+
+    load('tsunamis.mat')
+    readtable('tsunamis.csv')
+
+Ejemplos:
+
+.. code-block:: matlab
+
+    % Mapa de puntos mostrando la ubicación de tsunamis en el mundo. Seleccionar los ocurridos en México.
+    % Cargar datos
+    readtable('tsunamis.mat')
+    % Crear un mapa
+    figure
+    worldmap('World')
+    % Mostrar los puntos
+    geoshow(tsunamis, 'DisplayType', 'point')
+
+.. code-block:: 
+
+   load
+   readtable
+
+   stem
+   plot
+   title
+   xlabel
+   ylabel
+
+   find
+   axesm
+
+   worldmap
+   plotm
+   geoshow
+   geoplot
+   geoscatter
+   geolimits
+   geobasemaps
+
+.. admonition:: Práctica
+    :class: ejemplo
+
+   Mapa de puntos mostrando la ubicación de tsunamis en el mundo. Seleccionar los ocurridos en México.
+   Representación de tsunamis en el mundo y en México
+   Con base en el script 00_tsunamis, presentar la ubicación de los sismos por año en el mundo y en México.
+   Importar fechas (series de tiempo)
+   Cuando las variables importadas no son suficientes para determinar la región (país) a la que corresponden los puntos
+
+Este es un ejemplo de cómo usar la función `mi_funcion` en tu código:
+
+Algunas funciones de uso general:
+
+=================================================================================== =====================================================================
+Función                                                                             Comentario
+=================================================================================== =====================================================================
+`load <https://https://la.mathworks.com/help/matlab/ref/load.html>`_                Cargar variables en el área de trabajo desde un archivo (mat)
+`readtable <https://la.mathworks.com/help/matlab/ref/readtable.html>`_              Crear tabla a partir de archivos (csv, xls, xlsx, txt)
+`stem <https://la.mathworks.com/help/matlab/ref/stem.html>`_                        Crear gráfico de tallo
+`plot <https://la.mathworks.com/help/matlab/ref/plot.html>`_                        Crear gráfico (2D)
+`title <https://la.mathworks.com/help/matlab/ref/title.html>`_                      Añadir título para un gráfico
+`xlabel <https://la.mathworks.com/help/matlab/ref/xlabel.html>`_                    Añadir etiqueta para el eje x
+`ylabel <https://la.mathworks.com/help/matlab/ref/ylabel.html>`_                    Añadir etiqueta para el eje y
+`legend <https://la.mathworks.com/help/matlab/ref/legend.html>`_                    Añadir leyenda para un gráfico
+`find <https://la.mathworks.com/help/matlab/ref/find.html>`_                        Encontrar índices de elementos en un arreglo
+`figure <https://la.mathworks.com/help/matlab/ref/figure.html>`_                    Crear una nueva ventana de figura
+`exportgraphics <https://la.mathworks.com/help/matlab/ref/exportgraphics.html>`_    Exportar gráficos a archivos de imagen
+=================================================================================== =====================================================================
+
+Funciones relacionadas con la creación de mapas:
+
+=================================================================================== =====================================================================
+Función                                                                             Comentario
+=================================================================================== =====================================================================
+`geolimits <https://la.mathworks.com/help/matlab/ref/geolimits.html>`_              Establecer límites geográficos en un mapa
+`geobasemap <https://la.mathworks.com/help/matlab/ref/geobasemap.html>`_            Crear un mapa base
+`geoplot <https://la.mathworks.com/help/matlab/ref/geoplot.html>`_                  Trazado de líneas en coordenadas geográficas
+`geoscatter <https://la.mathworks.com/help/matlab/ref/geoscatter.html>`_            Mostrar gráfica de dispersión en coordenadas geográficas
+`geobubble <https://la.mathworks.com/help/matlab/ref/geobubble.html>`_              Crear gráfica de burbujas geográficas
+
+`axesm <https://la.mathworks.com/help/map/ref/axesm.html>`_                         Crear los ejes para un mapa
+`worldmap <https://la.mathworks.com/help/map/ref/worldmap.html>`_                   Crear un mapa del mundo
+`plotm <https://la.mathworks.com/help/map/ref/plotm.html>`_                         Crear un mapa de líneas
+`geoshow <https://la.mathworks.com/help/map/ref/geoshow.html>`_                     Mostrar puntos en un mapa
+`shaperead <https://la.mathworks.com/help/map/ref/shaperead.html>`_                 Leer archivos shapefile
+`shapewrite <https://la.mathworks.com/help/map/ref/shapewrite.html>`_               Crear archivos shapefile
+`readgeotable <https://la.mathworks.com/help/map/ref/readgeotable.html>`_           Crear tabla geoespacial a partir de archivos (shp, kml, geojson)
+`readgeoraster <https://la.mathworks.com/help/map/ref/readgeoraster.html>`_         Crear tabla geoespacial a partir de archivos (tif, nc)
+=================================================================================== =====================================================================
+
+Datos disponibles para realizar las prácticas
+
+==================================================================== =============== ======== ====================================================================
+Enlace a los datos                                                   Región          Formato  Fuente
+==================================================================== =============== ======== ====================================================================
+:download:`Datos de sismos <_data/sismos-2010.csv>`                  Global          cvs      `USGS <https://earthquake.usgs.gov>`_
+:download:`Temperatura superficial del mar <_data/sismos-2010.csv>`  Sur del GC      mat      `ERDAPPS <https://oceanlab3.rsmas.miami.edu/erddap/griddap/jplMURSST41.html/>`_
+:download:`Clorofila <_data/clorofila_2020.mat>`                     Sur del GC      mat      earthquake.usgs.gov
+:download:`Corrientes marinas <_data/cmems_mod_glo_phy-cur.nc>`      GC              nc       earthquake.usgs.gov
+==================================================================== =============== ======== ====================================================================

@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datos &mdash; documentación de GIS - 0.0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css?v=c9aa5cfe" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6fcc102b"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Matlab" href="matlab.html" />
+    <link rel="prev" title="Software" href="software.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GIS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Datos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vectoriales">Vectoriales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conabio">CONABIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gadm">GADM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#natural-earth">Natural Earth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inegi">INEGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbif">GBIF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#worldclim">WorldClim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wms-de-inegi">WMS de INEGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis-mapserver">ArcGIS MapServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#landsat-path-row">Landsat Path/Row</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#raster">Ráster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rapido">Rápido</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagenes-landsat">Imágenes Landsat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagenes-modis">Imágenes MODIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sentinel-2">Sentinel 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#continuo-de-elevaciones-mexicano-3-0">Continuo de Elevaciones Mexicano 3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srtm">SRTM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gebco">GEBCO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#earth-microwave-data-center">Earth Microwave Data Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bio-oracle">Bio-ORACLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oceancolor">Oceancolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-marine-service">Copernicus Marine Service</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">Matlab</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Datos</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/datos.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datos">
+<h1>Datos<a class="headerlink" href="#datos" title="Link to this heading"></a></h1>
+<p>En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.</p>
+<section id="vectoriales">
+<h2>Vectoriales<a class="headerlink" href="#vectoriales" title="Link to this heading"></a></h2>
+<section id="conabio">
+<h3>CONABIO<a class="headerlink" href="#conabio" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por CONABIO.</p>
+<p>El portal de CONABIO ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de CONABIO en el siguiente enlace: <a class="reference external" href="https://www.conabio.gob.mx/informacion/gis/">CONABIO</a>.
+Puedes descargar datos de diferentes tipos, como mapas topográficos, imágenes satelitales y datos ambientales. Estos datos son útiles para realizar análisis geoespaciales y crear mapas temáticos.
+Puedes acceder a los datos de CONABIO a través de su portal en línea, donde puedes buscar y descargar los datos que necesites. También puedes utilizar herramientas de SIG para visualizar y analizar estos datos en tu computadora.
+Puedes consultar la documentación de CONABIO para obtener más información sobre cómo utilizar sus datos y herramientas. La documentación incluye tutoriales, ejemplos y guías de uso para ayudarte a comenzar.
+Puedes acceder a la documentación de CONABIO en el siguiente enlace: <a class="reference external" href="https://www.conabio.gob.mx/informacion/gis/documentacion.html">Documentación de CONABIO</a>.</p>
+</section>
+<section id="gadm">
+<h3>GADM<a class="headerlink" href="#gadm" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GADM.
+El portal de GADM ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de GADM en el siguiente enlace: <a class="reference external" href="https://gadm.org/">GADM</a>.</p>
+<p>Límites de áreas administrativas. Puedes descargar los datos espaciales por país (por ejemplo, municipios de México, sus estados y límite del país).</p>
+</section>
+<section id="natural-earth">
+<h3>Natural Earth<a class="headerlink" href="#natural-earth" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Natural Earth.
+El portal de Natural Earth ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Natural Earth en el siguiente enlace: <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a>.
+Es un conjunto de datos cartográficos de dominio público disponible a escalas de 1:10m, 1: 50m y 1:110m. Con datos vectoriales y ráster estrechamente integrados, con Natural Earth puedes hacer una variedad de mapas visualmente agradables y bien elaborados con cartografía o software GIS.</p>
+</section>
+<section id="inegi">
+<h3>INEGI<a class="headerlink" href="#inegi" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
+El portal de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de INEGI en el siguiente enlace: <a class="reference external" href="https://www.inegi.org.mx/temas/geo/">INEGI</a>.
+Datos vectoriales del Instituto Nacional de Estadística y Geografía (INEGI).</p>
+</section>
+<section id="gbif">
+<h3>GBIF<a class="headerlink" href="#gbif" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GBIF.
+El portal de GBIF ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de GBIF en el siguiente enlace: <a class="reference external" href="https://www.gbif.org/">GBIF</a>.</p>
+<p>Base de datos de registros primarios de biodiversidad del proyecto GBIF (Global Biodiversity Information Facility).</p>
+</section>
+<section id="worldclim">
+<h3>WorldClim<a class="headerlink" href="#worldclim" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por WorldClim.
+El portal de WorldClim ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de WorldClim en el siguiente enlace: <a class="reference external" href="https://www.worldclim.org/">WorldClim</a>.</p>
+<p>WorldClim es un conjunto de capas climáticas globales (datos climáticos reticulados) con una resolución espacial de aproximadamente 1 km2. Estos datos pueden ser utilizados para mapeo y modelado espacial.</p>
+</section>
+<section id="wms-de-inegi">
+<h3>WMS de INEGI<a class="headerlink" href="#wms-de-inegi" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
+El portal de WMS de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de WMS de INEGI en el siguiente enlace: <a class="reference external" href="https://www.inegi.org.mx/temas/geo/">WMS de INEGI</a>.</p>
+<p>Un WMS (Web Mapping Service que se traduce como Servicio de Mapas Web) es un estándar para publicar cartografía en Internet cuyas especificaciones están recogidas en el Open Geoespatial Consortium (OGC), este servicio permite generar mapas de forma dinámica a partir de coordenadas geográficas en un formato de imagen como PNG, GIF o JPEG, facilitando con ello la construcción de mapas personalizados a partir de datos tomados de distintas fuentes.</p>
+</section>
+<section id="arcgis-mapserver">
+<h3>ArcGIS MapServer<a class="headerlink" href="#arcgis-mapserver" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por ArcGIS.
+El portal de ArcGIS MapServer ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de ArcGIS MapServer en el siguiente enlace: <a class="reference external" href="https://www.arcgis.com/home/webmap/viewer.html">ArcGIS MapServer</a>.</p>
+<p>Servidor de mapas base de ArcGIS.</p>
+</section>
+<section id="landsat-path-row">
+<h3>Landsat Path/Row<a class="headerlink" href="#landsat-path-row" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
+El portal de Landsat Path/Row ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Landsat Path/Row en el siguiente enlace: <a class="reference external" href="https://landsat.usgs.gov/">Landsat Path/Row</a>.
+Landsat Path/Row es un sistema de referencia utilizado para identificar la ubicación de las imágenes satelitales Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de «caminos» (paths) y «filas» (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+El sistema de referencia Path/Row se utiliza para identificar la ubicación de las imágenes Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de «caminos» (paths) y «filas» (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.</p>
+<p>WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.</p>
+</section>
+</section>
+<section id="raster">
+<h2>Ráster<a class="headerlink" href="#raster" title="Link to this heading"></a></h2>
+<p>En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.</p>
+<section id="rapido">
+<h3>Rápido<a class="headerlink" href="#rapido" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Rápido.
+El portal de Rápido ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Rápido en el siguiente enlace: <a class="reference external" href="https://rapid.earth/">Rápido</a>.</p>
+<p>GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-2017, Daily.</p>
+</section>
+<section id="imagenes-landsat">
+<h3>Imágenes Landsat<a class="headerlink" href="#imagenes-landsat" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
+El portal de Imágenes Landsat ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Imágenes Landsat en el siguiente enlace: <a class="reference external" href="https://earthexplorer.usgs.gov/">Imágenes Landsat</a>.</p>
+<p>Sitio del Servicio Geológico de Estados Unidos, en el que se pueden introducir diferentes criterios de búsqueda para descargar imágenes Landsat.</p>
+</section>
+<section id="imagenes-modis">
+<h3>Imágenes MODIS<a class="headerlink" href="#imagenes-modis" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por MODIS.
+El portal de Imágenes MODIS ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Imágenes MODIS en el siguiente enlace: <a class="reference external" href="https://modis.gsfc.nasa.gov/">Imágenes MODIS</a>.</p>
+<p>MODIS (Moderate Resolution Imaging Spectroradiometer) es un sensor a bordo de los satélites Terra y Aqua que proporciona datos de observación de la Tierra en alta resolución. Los datos de MODIS son útiles para el monitoreo ambiental, la detección de cambios en el uso del suelo, el análisis climático y otros estudios geoespaciales.</p>
+</section>
+<section id="sentinel-2">
+<h3>Sentinel 2<a class="headerlink" href="#sentinel-2" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Sentinel 2.
+El portal de Sentinel 2 ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Sentinel 2 en el siguiente enlace: <a class="reference external" href="https://scihub.copernicus.eu/dhus">Sentinel 2</a>.
+Sentinel-2 es una misión de observación de la Tierra de la Agencia Espacial Europea (ESA) que proporciona imágenes de alta resolución de la superficie terrestre. Los datos de Sentinel-2 son útiles para el monitoreo ambiental, la gestión de recursos naturales, la agricultura y otros estudios geoespaciales.
+Los satélites Sentinel-2 están equipados con un sensor óptico que captura imágenes en múltiples bandas espectrales, lo que permite obtener información detallada sobre la vegetación, el agua y otros elementos de la superficie terrestre. Los datos de Sentinel-2 son ampliamente utilizados en aplicaciones de teledetección y análisis geoespacial.
+Los datos de Sentinel-2 son ampliamente utilizados en aplicaciones de teledetección y análisis geoespacial. Estos datos son útiles para el monitoreo ambiental, la gestión de recursos naturales, la agricultura y otros estudios geoespaciales.</p>
+</section>
+<section id="continuo-de-elevaciones-mexicano-3-0">
+<h3>Continuo de Elevaciones Mexicano 3.0<a class="headerlink" href="#continuo-de-elevaciones-mexicano-3-0" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
+El CEM 3.0 es un producto que representa las elevaciones del territorio continental mexicano, mediante valores que indican puntos sobre la superficie del terreno, cuya ubicación geográfica se encuentra definida por coordenadas (X,Y) a las que se le integran valores que representan las elevaciones (Z). Los puntos se encuentran espaciados y distribuidos de modo regular.
+El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
+El Continuo de Elevaciones Mexicano de INEGI 3.0 (CEM 3.0) es un producto que representa las elevaciones del territorio continental mexicano, mediante valores que indican puntos sobre la superficie del terreno, cuya ubicación geográfica se encuentra definida por coordenadas (X,Y) a las que se le integran valores que representan las elevaciones (Z). Los puntos se encuentran espaciados y distribuidos de modo regular.
+El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
+El CEM 3.0 se puede descargar desde el portal de INEGI y se encuentra disponible en diferentes formatos, como GeoTIFF y shapefile. Estos formatos son compatibles con la mayoría de los software de SIG, lo que facilita su uso en proyectos de análisis geoespacial.
+El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
+El CEM 3.0 se puede descargar desde el portal de INEGI y se encuentra disponible en diferentes formatos, como GeoTIFF y shapefile. Estos formatos son compatibles con la mayoría de los software de SIG, lo que facilita su uso en proyectos de análisis geoespacial.</p>
+</section>
+<section id="srtm">
+<h3>SRTM<a class="headerlink" href="#srtm" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por SRTM.
+El portal de SRTM ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de SRTM en el siguiente enlace: <a class="reference external" href="https://www2.jpl.nasa.gov/srtm/">SRTM</a>.
+La Misión Topográfica Shuttle Radar (acrónimo en inglés SRTM, de Shuttle Radar Topography Mission) es un proyecto internacional entre la Agencia Nacional de Inteligencia-Geoespacial, NGA, y la Administración Nacional de la Aeronáutica y del Espacio, NASA. Su fin es obtener un modelo digital de elevación del globo terráqueo entre 56 °S a 60 °N.</p>
+</section>
+<section id="gebco">
+<h3>GEBCO<a class="headerlink" href="#gebco" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GEBCO.
+El portal de GEBCO ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de GEBCO en el siguiente enlace
+<a class="reference external" href="https://www.gebco.net/">GEBCO</a>.
+Conjunto de datos batimétricos y de elevación GEBCO (General Bathymetric Chart of the Oceans).
+El conjunto de datos GEBCO es un recurso valioso para la investigación y el análisis geoespacial, y se utiliza en una variedad de aplicaciones, incluyendo la planificación costera, la gestión de recursos marinos y la investigación científica. Los datos están disponibles en diferentes formatos y resoluciones, lo que permite su uso en una amplia gama de software de SIG y herramientas de análisis geoespacial.
+Los datos de GEBCO son ampliamente utilizados en la investigación científica, la planificación costera y la gestión de recursos marinos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.</p>
+</section>
+<section id="earth-microwave-data-center">
+<h3>Earth Microwave Data Center<a class="headerlink" href="#earth-microwave-data-center" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Earth Microwave Data Center.
+El portal de Earth Microwave Data Center ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Earth Microwave Data Center en el siguiente enlace: <a class="reference external" href="https://www.emdc.org/">Earth Microwave Data Center</a>.
+Centro de Datos de Microondas de la Tierra (EMDC) es un centro de datos que proporciona acceso a datos de microondas y productos derivados para la investigación científica y aplicaciones operativas. El EMDC recopila, procesa y distribuye datos de microondas de satélites y otros sensores, lo que permite a los investigadores y científicos acceder a información valiosa sobre el medio ambiente, el clima y otros fenómenos naturales.
+El EMDC es un recurso valioso para la investigación científica y la monitorización ambiental, y se utiliza en una variedad de aplicaciones, incluyendo la predicción del clima, el monitoreo de desastres naturales y la investigación sobre el cambio climático. Los datos y productos del EMDC son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo.
+El EMDC proporciona acceso a una variedad de datos y productos, incluyendo imágenes de microondas, datos de temperatura de la superficie del mar, datos de humedad del suelo y otros productos derivados. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
+Productos geofísicos con calidad de investigación de sensores de microondas satelitales. Remote Sensing Systems (RSS) procesa y analiza datos de microondas recopilados por sensores satelitales.</p>
+</section>
+<section id="bio-oracle">
+<h3>Bio-ORACLE<a class="headerlink" href="#bio-oracle" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Bio-ORACLE.
+El portal de Bio-ORACLE ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Bio-ORACLE en el siguiente enlace: <a class="reference external" href="https://www.bio-oracle.org/">Bio-ORACLE</a>.
+Bio-ORACLE es un conjunto de capas de datos marinos para la modelización ecológica. Bio-ORACLE es un conjunto de GIS rasters que proporciona datos geofísicos, bióticos y ambientales para los reinos marinos superficiales y bentónicos.</p>
+<p>Marine data layers for ecological modelling. Bio-ORACLE is a set of GIS rasters providing geophysical, biotic, and environmental data for surface and benthic marine realms</p>
+</section>
+<section id="oceancolor">
+<h3>Oceancolor<a class="headerlink" href="#oceancolor" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Oceancolor.
+El portal de Oceancolor ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Oceancolor en el siguiente enlace: <a class="reference external" href="https://oceancolor.gsfc.nasa.gov/">Oceancolor</a>.
+Oceancolor es un programa de la NASA que proporciona datos de color del océano a partir de imágenes satelitales. Los datos de Oceancolor son útiles para el monitoreo de la calidad del agua, la detección de fitoplancton y otros estudios relacionados con el océano y el medio ambiente marino.
+Los datos de Oceancolor son ampliamente utilizados en la investigación científica, la gestión de recursos marinos y la monitorización ambiental. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.</p>
+</section>
+<section id="copernicus-marine-service">
+<h3>Copernicus Marine Service<a class="headerlink" href="#copernicus-marine-service" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Copernicus Marine Service.
+El portal de Copernicus Marine Service ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Copernicus Marine Service en el siguiente enlace: <a class="reference external" href="https://marine.copernicus.eu/">Copernicus Marine Service</a>.
+Copernicus Marine Service es un servicio de la Unión Europea que proporciona acceso a datos y productos relacionados con el océano y el medio ambiente marino. El servicio recopila, procesa y distribuye datos de satélites, boyas y otros sensores para proporcionar información sobre las condiciones oceánicas, la calidad del agua, la temperatura del mar y otros parámetros ambientales.
+El servicio Copernicus Marine es un recurso valioso para la investigación científica, la gestión de recursos marinos y la monitorización ambiental. Los datos y productos del servicio son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo.
+El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
+Los datos y productos del servicio son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo. El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
+El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.</p>
+<p>Copernicus Marine Service es un servicio de la Unión Europea que proporciona acceso a datos y productos relacionados con el océano y el medio ambiente marino. El servicio recopila, procesa y distribuye datos de satélites, boyas y otros sensores para proporcionar información sobre las condiciones oceánicas, la calidad del agua, la temperatura del mar y otros parámetros ambientales.</p>
+<p>Breve descripción de la actividad para solicitar acceso a recursos gratuitos de eoxhub:
+Se espera utilizar estos datos en proyectos académicos y de investigación relacionados con la teledetección y el análisis geoespacial.</p>
+<p>Expected to be used in academic and research projects related to remote sensing and geospatial analysis.</p>
+<p>Descargar <a class="reference download internal" download="" href="_downloads/6814fd3e629b323447175fd016a60fbf/sismos-2010.csv"><code class="xref download docutils literal notranslate"><span class="pre">Datos</span> <span class="pre">de</span> <span class="pre">sismos</span> <span class="pre">(csv)</span></code></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="software.html" class="btn btn-neutral float-left" title="Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="matlab.html" class="btn btn-neutral float-right" title="Matlab" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

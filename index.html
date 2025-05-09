@@ -9,6 +9,7 @@
   <title>GIS &mdash; documentación de GIS - 0.0.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css?v=c9aa5cfe" />
 
   
@@ -17,11 +18,13 @@
       <script src="_static/documentation_options.js?v=6fcc102b"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
       <script src="_static/translations.js?v=f85f4cfb"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Matrices tridimensionales" href="page1.html" /> 
+    <link rel="next" title="Software" href="software.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,9 +48,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="page1.html">Matrices tridimensionales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page2.html">Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">Matlab</a></li>
 </ul>
 
         </div>
@@ -81,20 +84,46 @@
 <p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
 documentation for details.</p>
-<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information.</p>
-<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information, including how to
-<a class="reference internal" href="usage.html#installation"><span class="std std-ref">install</span></a> the project.</p>
+<p>Check out the <a class="reference internal" href="software.html"><span class="doc">Software</span></a> section for further information, including how to
+<a class="reference internal" href="matlab.html#installation"><span class="std std-ref">install</span></a> the project.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="page1.html">Matrices tridimensionales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page2.html">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="page2.html#second">Second</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">Datos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datos.html#vectoriales">Vectoriales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#conabio">CONABIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#gadm">GADM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#inegi">INEGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#gbif">GBIF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#worldclim">WorldClim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#wms-de-inegi">WMS de INEGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#arcgis-mapserver">ArcGIS MapServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#landsat-path-row">Landsat Path/Row</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#creating-recipes">Creating recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datos.html#raster">Ráster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#rapido">Rápido</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#imagenes-landsat">Imágenes Landsat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#imagenes-modis">Imágenes MODIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#sentinel-2">Sentinel 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#continuo-de-elevaciones-mexicano-3-0">Continuo de Elevaciones Mexicano 3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#srtm">SRTM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#gebco">GEBCO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#earth-microwave-data-center">Earth Microwave Data Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#bio-oracle">Bio-ORACLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#oceancolor">Oceancolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datos.html#copernicus-marine-service">Copernicus Marine Service</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">Matlab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html#instalacion">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html#toolboxes">Toolboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html#introduccion-al-matlab">Introducción al Matlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html#mapas-con-datos-vectoriales">Mapas con datos vectoriales</a></li>
 </ul>
 </li>
 </ul>
@@ -105,13 +134,13 @@ documentation for details.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="page1.html" class="btn btn-neutral float-right" title="Matrices tridimensionales" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="software.html" class="btn btn-neutral float-right" title="Software" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Derechos de autor 2025, Guillermo Martínez-Flores.</p>
+    <p>&#169; Derechos de autor 2025.</p>
   </div>
 
    
