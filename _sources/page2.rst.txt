@@ -1,7 +1,0 @@
-Python
-======
-
-Second
-------
-This is the second page of the documentation.
-This page contains information about the Python programming language.

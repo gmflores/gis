@@ -174,7 +174,7 @@ Datos disponibles para realizar las prácticas
 Enlace a los datos                                                   Región          Formato  Fuente
 ==================================================================== =============== ======== ====================================================================
 :download:`Datos de sismos <_data/sismos-2010.csv>`                  Global          cvs      `USGS <https://earthquake.usgs.gov>`_
-:download:`Temperatura superficial del mar <_data/sismos-2010.csv>`  Sur del GC      mat      `ERDAPPS <https://oceanlab3.rsmas.miami.edu/erddap/griddap/jplMURSST41.html/>`_
-:download:`Clorofila <_data/clorofila_2020.mat>`                     Sur del GC      mat      earthquake.usgs.gov
-:download:`Corrientes marinas <_data/cmems_mod_glo_phy-cur.nc>`      GC              nc       earthquake.usgs.gov
+:download:`Temperatura superficial del mar <_data/sismos-2010.csv>`  Sur del GC      mat      `ERDAPP <https://oceanlab3.rsmas.miami.edu/erddap/griddap/jplMURSST41.html/>`_
+:download:`Clorofila <_data/clorofila_2020.mat>`                     Sur del GC      mat      `ERDAPP <https://oceanlab3.rsmas.miami.edu/erddap/griddap/jplMURSST41.html/>`_
+:download:`Corrientes marinas <_data/cmems_mod_glo_phy-cur.nc>`      GC              nc       `Copernicus <https://marine.copernicus.eu>`_
 ==================================================================== =============== ======== ====================================================================
