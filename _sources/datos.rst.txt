@@ -1,43 +1,34 @@
-Datos
-=====
-En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.
+Algunas fuentes de datos 
+========================
+
+Esta sección contiene enlaces a algunos portales de los que puede obtenerse información geográfica en formato :ref:`vectorial <vector>` como :ref:`ráster <raster>`. 
+Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. 
+Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.
+
+.. _vector:
 
 Vectoriales
 -----------
 
 CONABIO
 ^^^^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por CONABIO.
 
-El portal de CONABIO ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de CONABIO en el siguiente enlace: `CONABIO <https://www.conabio.gob.mx/informacion/gis/>`_.
-Puedes descargar datos de diferentes tipos, como mapas topográficos, imágenes satelitales y datos ambientales. Estos datos son útiles para realizar análisis geoespaciales y crear mapas temáticos.
-Puedes acceder a los datos de CONABIO a través de su portal en línea, donde puedes buscar y descargar los datos que necesites. También puedes utilizar herramientas de SIG para visualizar y analizar estos datos en tu computadora.
-Puedes consultar la documentación de CONABIO para obtener más información sobre cómo utilizar sus datos y herramientas. La documentación incluye tutoriales, ejemplos y guías de uso para ayudarte a comenzar.
-Puedes acceder a la documentación de CONABIO en el siguiente enlace: `Documentación de CONABIO <https://www.conabio.gob.mx/informacion/gis/documentacion.html>`_.
+El portal de `CONABIO <http://www.conabio.gob.mx/informacion/gis/>`_ ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Estos datos son útiles para realizar análisis geoespaciales y crear mapas temáticos.
 
 GADM 
 ^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GADM.
-El portal de GADM ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Es un portal de información geográfica donde se puede consultar y descargar las áreas administrativas de todos los paises en tres niveles de subdivisión (fronteras).
 Puedes consultar el portal de GADM en el siguiente enlace: `GADM <https://gadm.org/>`_.
-
-Límites de áreas administrativas. Puedes descargar los datos espaciales por país (por ejemplo, municipios de México, sus estados y límite del país).
 
 Natural Earth
 ^^^^^^^^^^^^^
 
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Natural Earth.
-El portal de Natural Earth ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de Natural Earth en el siguiente enlace: `Natural Earth <https://www.naturalearthdata.com/>`_.
-Es un conjunto de datos cartográficos de dominio público disponible a escalas de 1:10m, 1: 50m y 1:110m. Con datos vectoriales y ráster estrechamente integrados, con Natural Earth puedes hacer una variedad de mapas visualmente agradables y bien elaborados con cartografía o software GIS.
+Es un conjunto de datos cartográficos disponible a escalas de 1:10m, 1: 50m y 1:110m. Con datos vectoriales y ráster integrados, `Natural Earth <https://www.naturalearthdata.com/>`_ permite crear una variedad de mapas visualmente atractivos con software de SIG.
 
 INEGI
 ^^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
-El portal de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de INEGI en el siguiente enlace: `INEGI <https://www.inegi.org.mx/temas/geo/>`_.
-Datos vectoriales del Instituto Nacional de Estadística y Geografía (INEGI).
+Es el portal del Instituto Nacional de Estadística y Geografía (`INEGI <https://inegi.org.mx/app/mapas/>`_), donde se puede consultar, visualizar y descargar cartografía temática a diferentes escalas.
 
 GBIF
 ^^^^
@@ -84,15 +75,12 @@ El sistema de referencia Path/Row se utiliza para identificar la ubicación de l
 
 WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.
 
+.. _raster:
+
 Ráster
 ----------
 En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.
 
-Rápido
-^^^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Rápido.
-El portal de Rápido ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de Rápido en el siguiente enlace: `Rápido <https://rapid.earth/>`_.
 
 GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-2017, Daily.
 

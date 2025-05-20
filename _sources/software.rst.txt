@@ -1,60 +1,65 @@
 
-Software
-=========================
+Software adicional
+==================
 
-Esta es la primera página de la documentación. Aquí puedes incluir información introductoria sobre tu proyecto, su propósito y cómo usarlo.
-Puedes agregar ejemplos de código, imágenes y cualquier otro contenido relevante para ayudar a los usuarios a comprender mejor tu proyecto.
-Puedes usar la sintaxis de reStructuredText para formatear el texto, crear listas, tablas y más. Aquí hay un ejemplo de una lista numerada:
+Además del software revisado en este curso (``QGIS``, ``R``, ``MATLAB``), existen otras aplicaciones que son útiles para el 
+procesamiento y visualización de datos geoespaciales. A continuación se mencionan algunas de ellas:
 
-Matlab
+* Panoply
+* Python
+* Maxent
+* Google Earth Engine
 
-Lenguaje de programación para la manipulación de matrices.
-https://www.mathworks.com/products/matlab.html
-
-
-* Deacargar
-* Instalar
-* Ejecutar "comando"
-    * Configurar
-
-Python
-
-
-Google Earth Engine
-QGIS
-Aplicación SIG de código abierto.
-https://www.qgis.org/es/site/
-
-MATLAB
-
-Instalación con la licencia institucional del IPN:
-https://www.ipn.mx/assets/files/dcyc/docs/computo/GUIA_INST_MATLAB_DMSC012020.pdf
-
-R
-R es un lenguaje de programación para computación estadística y visualización de datos.
-https://www.r-project.org/
- 
-RStudio es un entorno de desarrollo integrado para R.
-https://rstudio.com/products/rstudio/download/ 
 
 Panoply
+-----------------
+
 Software para visualizar matrices georreferenciadas y otros arreglos en formato netCDF , HDF , GRIB, entre otros.
 https://www.giss.nasa.gov/tools/panoply/
 
+Python
+-----------------
+
+Lenguaje de programación de propósito general, ampliamente utilizado en ciencia de datos y análisis geoespacial.
+https://www.python.org/
+
+Estas son algunas de las bibliotecas de Python para realizar análisis geoespacial y visualización de resultados:
+
+- `GeoPandas <https://geopandas.org/>`_
+- `Rasterio <https://rasterio.readthedocs.io/en/latest/>`_
+- `GeoPy <https://geopy.readthedocs.io/en/stable/>`_
+- `GDAL <https://gdal.org/>`_
+- `Pyproj <https://pyproj4.github.io/pyproj/stable/>`_
+- `Shapely <https://shapely.readthedocs.io/en/stable/>`_
+- `Fiona <https://fiona.readthedocs.io/en/latest/>`_
+- `Cartopy <https://scitools.org.uk/cartopy/docs/latest/>`_
+- `Folium <https://python-visualization.github.io/folium/>`_
+- `geemap <https://geemap.org/>`_
+- `Xarray <https://xarray.pydata.org/en/stable/>`_
+- `Rasterstats <https://pythonhosted.org/rasterstats/>`_
+
+Bibliotecas de visualización en general:
+
+- `Matplotlib <https://matplotlib.org/>`_
+- `Seaborn <https://seaborn.pydata.org/>`_
+- `Plotly <https://plotly.com/python/>`_
+- `Bokeh <https://docs.bokeh.org/en/latest/>`_
+- `Pydeck <https://deck.gl/#/documentation/deck-python>`_
+
 Maxent
+------
+
 Software para modelar nichos y distribución de especies.
 http://biodiversityinformatics.amnh.org/open_source/maxent 
 
  
+Google Earth Engine
+-------------------
+Es una plataforma de computación en la nube para el análisis de datos geoespaciales. Se utilizar el 
+lenguaje de programación JavaScript.
+https://earthengine.google.com/
 
 
-Puedes usar la sintaxis de reStructuredText para formatear el texto, crear listas, tablas y más. Aquí hay un ejemplo de una lista numerada:
-
-    1. Primer elemento
-    2. Segundo elemento
-    3. Tercer elemento
-
-También puedes incluir enlaces a otras páginas de la documentación o a recursos externos.
 
 .. note:: 
     Esta es una **nota importante** que los "usuarios" deben *tener* en cuenta.
@@ -80,7 +85,6 @@ También puedes incluir enlaces a otras páginas de la documentación o a recurs
     Este es un ejemplo de cómo usar la función `mi_funcion` en tu código:
 
 
-Asegúrate de seguir
 
 .. figure:: https://en.wikipedia.org/wiki/Globe#/media/File:The_Great_Globe,_Guyot_Hall,_Princeton_University.jpg
     :alt: Texto alternativo para la imagen
@@ -91,8 +95,3 @@ Asegúrate de seguir
     :alt: Texto alternativo para la imagen
     :scale: 60%
     :align: left
-
-Ejemplo: Texto alternativo para la imagen.
-
-    
-Puedes usar este código como referencia para tu propio proyecto.

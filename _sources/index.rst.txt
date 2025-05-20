@@ -3,28 +3,41 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-GIS 
-======
+Sistemas de Información Geográfica
+=================================
+:mod:`MATLAB`
+=================================
 
-Documentación del curso de sistemas de información geográfica
-`CICIMAR-IPN <https://www.cicimar.ipn.mx>`_.
+Documentación del módulo ``MATLAB`` de la asignatura Sistemas de Información Geográfica, 
+`CICIMAR-IPN <https://www.cicimar.ipn.mx>`_, semestre 2025-A.
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+En esta sección del curso se revisan las funciones de ``MATLAB`` para procesar y visualizar datos geoespaciales, primcipalmente con las funciones de ``Mapping Toolbox``. 
+Consultar la documentación de `Mapping Toolbox <https://t.ly/uhlJb>`_ para más detalles.
 
+.. 
+   Revisa lae :doc:`referencias` section for further information, including how to
+   :ref:`install <installation>` the project.
 
-Check out the :doc:`software` section for further information, including how to
-:ref:`install <installation>` the project.
+..
+   .. sectnum::
+   :start: 2
+
+GIS&RS | MATLAB
+===============
 
 
 .. toctree::
-   :maxdepth: 4
-   :caption: Contenido
+   :numbered: 3
+   :maxdepth: 2
+
+   instalacion
    
+   introduccion
+
+   funciones
+
+   ejemplos
+       
    software
 
    datos
-   
-   matlab
-   
