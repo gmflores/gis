@@ -10,8 +10,8 @@ En la siguiente sección se incluyen algunos ejemplos de uso.
 De uso general
 ~~~~~~~~~~~~~~
 
-Estas son algunas funciones para leer archivos ``.mat`` y tabulares (p. ej., ``.csv``, ``.xlsx``), 
-crear gráficos y exportar imágenes.
+Estas son algunas funciones de uso general, por ejemplo, para leer archivos ``.mat`` y tabulares (p. ej., ``.csv``, ``.xlsx``), 
+obtener información del contenido de las carpetas, crear gráficos y exportar imágenes, entre otras.
 
 .. tabularcolumns:: |p{1cm}|p{5cm}|
 

@@ -57,7 +57,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#datos-para-realizar-las-ejemplos">6.1. Datos para realizar las ejemplos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#con-datos-vectoriales">6.2. Con datos vectoriales</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tsunamis">6.2.1. Tsunamis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sismos">6.2.2. Sismos</a></li>
 </ul>
 </li>
 </ul>
@@ -92,10 +91,8 @@
              
   <section id="scripts-de-ejemplo">
 <h1><span class="section-number">6. </span>Scripts de ejemplo<a class="headerlink" href="#scripts-de-ejemplo" title="Link to this heading"></a></h1>
-<p>En esta sección se muestran algunos ejemplos de scripts de MATLAB para crear mapas y mostrar datos geoespaciales.
+<p>En esta sección se muestran algunos ejemplos de scripts de MATLAB para mostrar datos geoespaciales.
 Se utilizan las funciones descritas en la sección anterior para cargar datos, crear mapas y mostrar puntos en un mapa.
-En esta sección se presentan ejemplos de uso de funciones de MATLAB para crear mapas y mostrar datos geoespaciales.
-Se incluyen ejemplos de cómo cargar datos, crear mapas y mostrar puntos en un mapa utilizando funciones específicas de MATLAB.
 Se recomienda revisar la documentación de cada función para obtener más información sobre su uso y opciones disponibles.</p>
 <section id="datos-para-realizar-las-ejemplos">
 <span id="datos-ejercicios"></span><h2><span class="section-number">6.1. </span>Datos para realizar las ejemplos<a class="headerlink" href="#datos-para-realizar-las-ejemplos" title="Link to this heading"></a></h2>
@@ -142,7 +139,8 @@ Se recomienda revisar la documentación de cada función para obtener más infor
 <h3><span class="section-number">6.2.1. </span>Tsunamis<a class="headerlink" href="#tsunamis" title="Link to this heading"></a></h3>
 <p><strong>Tsunamis en el mundo y en México</strong></p>
 <p>Crear varios tipos de mapas para representar los tsunamis almacenados en el archivo <code class="docutils literal notranslate"><span class="pre">tsunamis.xlsx</span></code>.
-Para este ejemplo, no se requiere la descarga de datos los que se utilizan estan disponibles con la instalación de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>.</p>
+Para este ejemplo, no se requiere la descarga de datos adicionales. Los que se utilizan estan
+disponibles con la instalación de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>.</p>
 <ol class="arabic simple">
 <li><p>Utiliza la función <code class="docutils literal notranslate"><span class="pre">readtable</span></code> para cargar los datos desde el archivo de Excel.</p></li>
 <li><p>Crea los ejes del mapa utilizando la función <code class="docutils literal notranslate"><span class="pre">worldmap</span></code>.</p></li>
@@ -176,71 +174,13 @@ los puntos de los tsunamis en el mapa.</p>
 <ol class="arabic simple" start="7">
 <li><p>Agrega un título al mapa utilizando la función <code class="docutils literal notranslate"><span class="pre">title</span></code>.</p></li>
 <li><p>Guarda el mapa como una imagen utilizando la función <code class="docutils literal notranslate"><span class="pre">print</span></code>,  <code class="docutils literal notranslate"><span class="pre">exportgraphics</span></code> o <code class="docutils literal notranslate"><span class="pre">saveas</span></code>.</p></li>
-<li><dl class="simple">
-<dt>Genera un mapa adicional (para todo el mundo), que represente las ubicaciones de los tsunamis (puntos) de tamaño diferente,</dt><dd><p>dependiendo de la “magnitud” del tsunami y de color diferente, dependiendo de la “causa”.
-Para esto, utiliza la función <code class="docutils literal notranslate"><span class="pre">geobubble</span></code>. También agrega un título y guarda el mapa como una imagen (<code class="docutils literal notranslate"><span class="pre">.png</span></code>).</p>
-</dd>
-</dl>
-</li>
+<li><p>Genera un mapa adicional (para todo el mundo), que represente las ubicaciones de los tsunamis (puntos) de tamaño diferente,
+dependiendo de la “magnitud” del tsunami y de color diferente, dependiendo de la “causa”.
+Para esto, utiliza la función <code class="docutils literal notranslate"><span class="pre">geobubble</span></code>. También agrega un título y guarda el mapa como una imagen (<code class="docutils literal notranslate"><span class="pre">.png</span></code>).</p></li>
 <li><p>Guarda el script como <code class="docutils literal notranslate"><span class="pre">00_xyz_tsunamis.mlx</span></code> (<code class="docutils literal notranslate"><span class="pre">xyz</span></code> = tus iniciales) en la carpeta <code class="docutils literal notranslate"><span class="pre">matlab</span></code>.</p></li>
 <li><p>Sube el script y los mapas (<code class="docutils literal notranslate"><span class="pre">.png</span></code>) a la plataforma Teams.</p></li>
 </ol>
-</section>
-<section id="sismos">
-<h3><span class="section-number">6.2.2. </span>Sismos<a class="headerlink" href="#sismos" title="Link to this heading"></a></h3>
-<p><strong>Sismos en México (2010-2024)</strong></p>
-<p>Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos regristrados en México
-por año (2010-2024). Es decir un mapa por año.
-Importar fechas (series de tiempo)</p>
-<ol class="arabic simple">
-<li><p>Descarga los “Datos de sismos” (2010-2023) de la sección de <a class="reference internal" href="#datos-ejercicios"><span class="std std-ref">datos</span></a>. Además, descarga de la página
-<a class="reference external" href="https://tinyurl.com/ywdkwd99">earthquake.usgs.gov</a> los datos de los sismos (≥4 de magnitud) ocurridos durante
-el año 2024 (en formato <code class="docutils literal notranslate"><span class="pre">csv</span></code>). Guargar este archivo como <code class="docutils literal notranslate"><span class="pre">sismos-2024.csv</span></code>.
-Transfiere estos archivos los 14 archivos <code class="docutils literal notranslate"><span class="pre">csv</span></code> a la carpeta <code class="docutils literal notranslate"><span class="pre">datos/csv</span></code>.</p></li>
-<li><p>Modificar el script para acceder a la carpeta datos/csv y leer los archivos de sismos de 2010-2024.</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Sugerencia: Puedes utilizar la función <code class="docutils literal notranslate"><span class="pre">dir</span></code> para obtener una lista de los archivos en la carpeta y luego leer cada archivo en un bucle.
-Por ejemplo, puedes usar <code class="docutils literal notranslate"><span class="pre">dir('../datos/csv/sismos-*.csv')</span></code> para obtener una lista de todos los archivos CSV en la carpeta.
-Luego, usar un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para iterar sobre cada archivo y cargar los datos utilizando la función <code class="docutils literal notranslate"><span class="pre">readtable</span></code>. El procedimiento
-para filtrar los registros de interés es el mismo que en el caso de los tsunamis (funciones <code class="docutils literal notranslate"><span class="pre">find</span></code> y <code class="docutils literal notranslate"><span class="pre">contains</span></code>).</p>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Para cada archivo <code class="docutils literal notranslate"><span class="pre">csv</span></code> leido, seleccionar los sismos ocurridos en México, cuya magnitud fue <code class="docutils literal notranslate"><span class="pre">≥</span> <span class="pre">4</span></code>.</p></li>
-<li><p>Generar los mapas de sismos (uno por año) utilizando la función <code class="docutils literal notranslate"><span class="pre">geoscatter</span></code>. Mostrar una barra de color que indique
-la magnitud de los sismos. En el título de cada mapa especificar el año y en número de sismos en el año. Guardar estos
-mapas en formato png a 300 dpi.</p></li>
-<li><p>Generar un mapa que incluya todos los sismos (2010-2023 ocurridos en México), similar a los obtenidos según el punto
-anterior. En este caso utilizar la función <code class="docutils literal notranslate"><span class="pre">geodensityplot</span></code> para mostrar los datos.</p></li>
-<li><p>Generar una gráfica que muestre la magnitud de los sismos con magnitud <code class="docutils literal notranslate"><span class="pre">≥</span> <span class="pre">7</span></code> grados en el periodo 2010-2024.
-¿Cuándo (fecha y hora) ocurrieron esos sismos? (según la zona horaria <code class="docutils literal notranslate"><span class="pre">'America/Mexico_City'</span></code>).</p></li>
-<li><p>Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.</p></li>
-<li><p>Como evidencia, adjuntar en Teams el script en formato <code class="docutils literal notranslate"><span class="pre">pdf</span></code> (debe incluir los mapas y la gráfica). Además, subir el archivo <code class="docutils literal notranslate"><span class="pre">png</span></code>
-generado con la función <code class="docutils literal notranslate"><span class="pre">geodensityplot</span></code> y uno de los archivos <code class="docutils literal notranslate"><span class="pre">png</span></code> obtenido con la función <code class="docutils literal notranslate"><span class="pre">geoscatter</span></code>.</p></li>
-</ol>
-<p>Ejemplo de script para leer todos los archivos CSV de sismos:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Listar archivos CSV de sismos en la carpeta datos/csv</span>
-<span class="n">archivos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dir</span><span class="p">(</span><span class="s">&#39;../datos/csv/sismos-*.csv&#39;</span><span class="p">);</span>
-
-<span class="c">% Inicializar tabla para almacenar todos los sismos</span>
-<span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">();</span>
-
-<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">archivos</span><span class="p">)</span>
-<span class="w">    </span><span class="c">% Leer cada archivo CSV</span>
-<span class="w">    </span><span class="n">archivo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="n">archivos</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">archivos</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
-<span class="w">    </span><span class="n">sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="n">archivo</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c">% Filtrar sismos en México con magnitud &gt;= 4</span>
-<span class="w">    </span><span class="n">sismos_mex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sismos</span><span class="p">(</span><span class="n">sismos</span><span class="p">.</span><span class="n">mag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nb">contains</span><span class="p">(</span><span class="n">sismos</span><span class="p">.</span><span class="n">place</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mexico&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">:);</span>
-
-<span class="w">    </span><span class="c">% Concatenar a la tabla general</span>
-<span class="w">    </span><span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">todos_sismos</span><span class="p">;</span><span class="w"> </span><span class="n">sismos_mex</span><span class="p">];</span>
-<span class="k">end</span>
-
-<span class="c">% Crear el mapa con todos los sismos en México (insertar tu código aquí)</span>
-</pre></div>
-</div>
+<p>⁂</p>
 </section>
 </section>
 </section>

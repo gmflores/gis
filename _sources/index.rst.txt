@@ -11,8 +11,10 @@ Sistemas de Información Geográfica
 Documentación del módulo ``MATLAB`` de la asignatura Sistemas de Información Geográfica, 
 `CICIMAR-IPN <https://www.cicimar.ipn.mx>`_, semestre 2025-A.
 
-En esta sección del curso se revisan las funciones de ``MATLAB`` para procesar y visualizar datos geoespaciales, primcipalmente con las funciones de ``Mapping Toolbox``. 
-Consultar la documentación de `Mapping Toolbox <https://t.ly/uhlJb>`_ para más detalles.
+En esta sección del curso se revisan las funciones de ``MATLAB`` para procesar y 
+visualizar datos geoespaciales, principalmente con las funciones de ``Mapping Toolbox``. 
+Consultar la documentación de `Mapping Toolbox <https://la.mathworks.com/help/map/index.html?s_tid=CRUX_topnav>`_ 
+para más detalles.
 
 .. 
    Revisa lae :doc:`referencias` section for further information, including how to
@@ -23,7 +25,7 @@ Consultar la documentación de `Mapping Toolbox <https://t.ly/uhlJb>`_ para más
    :start: 2
 
 GIS&RS | MATLAB
-===============
+----------------
 
 
 .. toctree::

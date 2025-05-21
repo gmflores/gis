@@ -122,25 +122,25 @@ información geoespacial.</p>
 <li><p>Combinación de conjuntos de datos raster y vectoriales en una sola visualización</p></li>
 <li><p>Creación de mapas temáticos y visualizaciones de contornos</p></li>
 <li><p>Análisis de terreno y elevación</p></li>
-<li><p>Cálculo de gradiente, pendiente, aspecto, línea de visibilidad ycuenca visual</p></li>
+<li><p>Cálculo de gradiente, pendiente, aspecto, línea de visibilidad y cuenca visual</p></li>
 <li><p>Exportación de datos en formatos estándar como shapefile, GeoTIFF y KML</p></li>
 </ul>
 </section>
 <section id="fragmentos-de-codigo">
 <h2><span class="section-number">4.2. </span>Fragmentos de código<a class="headerlink" href="#fragmentos-de-codigo" title="Link to this heading"></a></h2>
-<p>A continuación se presentan algunos fragmentos de código basados en la documentación oficial de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>
+<p>A continuación se presentan algunos fragmentos de código basados en la documentación <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>
 para ejemplificar algunas de las capacidades de la herramienta (para obtener más información, consultar la
 <a class="reference internal" href="instalacion.html#bibliografia"><span class="std std-ref">documentación de MATLAB</span></a>).</p>
 <section id="importacion-y-visualizacion">
 <h3><span class="section-number">4.2.1. </span>Importación y visualización<a class="headerlink" href="#importacion-y-visualizacion" title="Link to this heading"></a></h3>
 <p>Para trabajar con mapas en MATLAB, primero necesitamos importar datos
-geoespaciales. El Mapping Toolbox proporciona varias funciones para leer
+geoespaciales. <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> proporciona varias funciones para leer
 diferentes tipos de datos geográficos.</p>
 <p>Por ejemplo, para importar datos vectoriales como puntos, líneas y polígonos,
-podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">readgeotable</span></code>, para crear los ejes del mapa
-la función <code class="docutils literal notranslate"><span class="pre">newmap</span></code> y para mostrar los datos la función <code class="docutils literal notranslate"><span class="pre">geoplot</span></code>
+podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">readgeotable</span></code>. Para crear los ejes del mapa
+la función <code class="docutils literal notranslate"><span class="pre">newmap</span></code> y para mostrar los datos, la función <code class="docutils literal notranslate"><span class="pre">geoplot</span></code>
 (ver la sección de <a class="reference internal" href="funciones.html#import-export"><span class="std std-ref">Funciones</span></a>).</p>
-<p>En el siguiente script, importamos tres archivos shapefile que
+<p>En el siguiente script, importamos tres archivos <code class="docutils literal notranslate"><span class="pre">shapefile</span></code> que
 contienen áreas (países), líneas (ríos) y ciudades (puntos).</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos vectoriales</span>
 <span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;landareas.shp&quot;</span><span class="p">);</span>
@@ -161,7 +161,7 @@ contienen áreas (países), líneas (ríos) y ciudades (puntos).</p>
 </section>
 <section id="especificar-la-proyeccion">
 <h3><span class="section-number">4.2.2. </span>Especificar la proyección<a class="headerlink" href="#especificar-la-proyeccion" title="Link to this heading"></a></h3>
-<p>El Mapping Toolbox permite crear mapas con diferentes proyecciones
+<p><code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> permite crear mapas con diferentes proyecciones
 geográficas. La proyección por defecto es la proyección Equal Earth, que
 es una proyección de área equidistante. Sin embargo, existen muchas
 otras proyecciones disponibles, como la proyección Mercator, la
@@ -247,7 +247,7 @@ mapas basados en <code class="docutils literal notranslate"><span class="pre">ax
 </section>
 <section id="visualizacion-del-terreno-en-3d">
 <h3><span class="section-number">4.2.5. </span>Visualización del terreno en 3D<a class="headerlink" href="#visualizacion-del-terreno-en-3d" title="Link to this heading"></a></h3>
-<p>El Mapping Toolbox también permite la visualización y el análisis de
+<p><code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> también permite la visualización y el análisis de
 datos 3D. Por ejemplo, para visualizar un terreno digital en 3D, podemos
 utilizar la función <code class="docutils literal notranslate"><span class="pre">geoglobe</span></code>. Esta función crea una figura 3D interactiva
 que permite rotar, acercar y alejar el mapa. Tambien podemos ubicar la posición
@@ -263,8 +263,7 @@ de la camara (<code class="docutils literal notranslate"><span class="pre">campo
 </pre></div>
 </div>
 <p>También podemos realizar análisis del terreno (como cálculo de pendiente, orientación,
-líneas de visibilidad, etc.) a partir de datos de elevación, batimetría
-y otros productos de datos de cuadrícula.</p>
+líneas de visibilidad, etc.) a partir de datos de elevación y batimetría.</p>
 </section>
 <section id="mapa-de-elevacion">
 <h3><span class="section-number">4.2.6. </span>Mapa de elevación<a class="headerlink" href="#mapa-de-elevacion" title="Link to this heading"></a></h3>

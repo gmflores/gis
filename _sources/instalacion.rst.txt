@@ -7,12 +7,14 @@ Empezar
 Instalación
 -----------
 
-En esta sección se presentan los pasos para instalar y ejecutar MATLAB, así como ejemplos de uso relacionados con el tratamiento de datos geoespaciales
-y la creación de mapas. Se incluyen ejemplos de cómo cargar datos, crear mapas y mostrar puntos en un mapa utilizando funciones específicas de MATLAB.
+En esta sección se presentan los pasos para instalar MATLAB y los complementos necesarios para
+el tratamiento de datos geoespaciales y la creación de mapas. 
+Se sugiere como organizar las carpetas y como configurar la ruta de acceso a la carpeta de datos.
 
 .. note:: 
-    Esta sección está dirigida a estudiantes del CICIMAR-IPN y se basa en la instalación de MATLAB con licencia institucional.
-    Si no cuentas con una licencia institucional, puedes utilizar la versión de prueba de MATLAB.
+    Este módulo está dirigido a estudiantes del CICIMAR-IPN y se asume la instalación de MATLAB 
+    con licencia institucional (opcionalmente, si no cuentas con una cuenta de correo institucional, 
+    puedes utilizar la versión de prueba de MATLAB o MATLAB Online).
 
 .. _installation:
 
@@ -21,7 +23,7 @@ MATLAB y complementos
 
 Para instalar MATLAB sigue estos pasos:
 
-1. Crea una cuenta con tu dirección de correo institucional en el sitio web oficial de  `MathWorks <https://login.mathworks.com/embedded-login/signin.html?cid=mktg&wid=gnav&uri=https%3A%2F%2Fla.mathworks.com%2F target=_blank>`_.
+1. Crea una cuenta con tu dirección de correo institucional en el sitio web de  `MathWorks <https://login.mathworks.com/embedded-login/signin.html?cid=mktg&wid=gnav&uri=https%3A%2F%2Fla.mathworks.com%2F target=_blank>`_.
 2. Descarga y ejecuta el instalador de MATLAB.
 3. Durante la instalación, selecciona las Toolboxes que deseas instalar. Asegúrate de incluir las siguientes:
 
@@ -36,7 +38,7 @@ Para instalar MATLAB sigue estos pasos:
 Organización de carpetas
 ------------------------
 
-Se recomienda utilizar la siguiente estructura de carpetas para organizar tus datos y tus scripts de MATLAB:
+Se recomienda utilizar la siguiente estructura de carpetas para organizar los datos y tus scripts de MATLAB:
 
 .. code-block:: bash
    
@@ -53,9 +55,11 @@ Se recomienda utilizar la siguiente estructura de carpetas para organizar tus da
     │   ├── 01_gmf_sismos.mlx
     │ ...
 
-En la carpeta ``matlab`` guardarás los scripts (``.mlx``). Los primeros dos digitos del nombre del archivo corresponde al número consecutivo de la práctica, las siguentes tres letras a tus iniciales y 
-enseguida una o unas palabras que identifique la práctica (por ejemplo: ``00_gmf_tsunamis.mlx``). 
-Los nombres de los archivos deben empezar con una letra y pueden contener letras, dígitos o guiones bajos. Revisa este documento sobre `rutas y nombres de archivos válidos <http://https://la.mathworks.com/help/matlab/matlab_env/specify-file-names.html>`_ en MATLAB.
+En la carpeta ``matlab`` guardarás los scripts (``.mlx``) que irás realizando durante el curso. 
+Los primeros dos digitos del nombre del archivo corresponden al número consecutivo de la práctica, 
+las siguentes tres letras a tus iniciales y enseguida una o unas palabras que identifique la 
+práctica (por ejemplo: ``00_gmf_tsunamis.mlx``). 
+Los nombres de los archivos pueden contener letras, dígitos o guiones bajos (sin espacios ni caracteres especiales).
 
 Establecer la ruta 
 ==================
@@ -81,18 +85,13 @@ Después selecciona ``Save`` y ``Close``.
    :class: image-class-value
    :figclass: figure-class-value
 
-, restaurar ventanas, Tamaño de letra, agregar toolbox
-Tipos de datos (double, single, uint, int, char, string, struct, table,…)
-Warnings y errores, Code analyzer
-Archivos mlx y m
-Funciones
-
 .. _bibliografia:
 
 Bibliografía
 ============
 
-Las rererencias bibliográficas corresponden principalmente a la documentación de Matlab y sus complementos (Toolboxes), y están disponibles en los siguientes enlaces:
+Las referencias bibliográficas corresponden principalmente a la documentación de MATLAB y sus 
+complementos (Toolboxes), y están disponibles (``pdf``) en los siguientes enlaces
 (también puedes consultar la `documentación en línea de Mapping Toolbox <https://t.ly/uhlJb>`_).
 
 * `MATLAB Manual Básico <https://la.mathworks.com/help/pdf_doc/matlab/learn_matlab_es.pdf>`_
@@ -106,3 +105,5 @@ Las rererencias bibliográficas corresponden principalmente a la documentación 
     :alt: Texto alternativo para la imagen
     :scale: 25%
     :align: left
+
+⁂

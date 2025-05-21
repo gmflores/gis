@@ -30,13 +30,13 @@ Capacidades principales
 - Combinación de conjuntos de datos raster y vectoriales en una sola visualización
 - Creación de mapas temáticos y visualizaciones de contornos
 - Análisis de terreno y elevación
-- Cálculo de gradiente, pendiente, aspecto, línea de visibilidad ycuenca visual
+- Cálculo de gradiente, pendiente, aspecto, línea de visibilidad y cuenca visual
 - Exportación de datos en formatos estándar como shapefile, GeoTIFF y KML
 
 Fragmentos de código
 --------------------
 
-A continuación se presentan algunos fragmentos de código basados en la documentación oficial de ``Mapping Toolbox``
+A continuación se presentan algunos fragmentos de código basados en la documentación ``Mapping Toolbox``
 para ejemplificar algunas de las capacidades de la herramienta (para obtener más información, consultar la
 :ref:`documentación de MATLAB <bibliografia>`).
 
@@ -44,15 +44,15 @@ Importación y visualización
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Para trabajar con mapas en MATLAB, primero necesitamos importar datos
-geoespaciales. El Mapping Toolbox proporciona varias funciones para leer
+geoespaciales. ``Mapping Toolbox`` proporciona varias funciones para leer
 diferentes tipos de datos geográficos.
 
 Por ejemplo, para importar datos vectoriales como puntos, líneas y polígonos,
-podemos utilizar la función ``readgeotable``, para crear los ejes del mapa 
-la función ``newmap`` y para mostrar los datos la función ``geoplot`` 
+podemos utilizar la función ``readgeotable``. Para crear los ejes del mapa 
+la función ``newmap`` y para mostrar los datos, la función ``geoplot`` 
 (ver la sección de :ref:`Funciones <import_export>`).
 
-En el siguiente script, importamos tres archivos shapefile que
+En el siguiente script, importamos tres archivos ``shapefile`` que
 contienen áreas (países), líneas (ríos) y ciudades (puntos).
 
 .. code:: matlab
@@ -74,7 +74,8 @@ contienen áreas (países), líneas (ríos) y ciudades (puntos).
 
 Especificar la proyección
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-El Mapping Toolbox permite crear mapas con diferentes proyecciones
+
+``Mapping Toolbox`` permite crear mapas con diferentes proyecciones
 geográficas. La proyección por defecto es la proyección Equal Earth, que
 es una proyección de área equidistante. Sin embargo, existen muchas
 otras proyecciones disponibles, como la proyección Mercator, la
@@ -169,7 +170,7 @@ Para crear un mapa de una región específica:
 Visualización del terreno en 3D
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-El Mapping Toolbox también permite la visualización y el análisis de
+``Mapping Toolbox`` también permite la visualización y el análisis de
 datos 3D. Por ejemplo, para visualizar un terreno digital en 3D, podemos
 utilizar la función ``geoglobe``. Esta función crea una figura 3D interactiva
 que permite rotar, acercar y alejar el mapa. Tambien podemos ubicar la posición 
@@ -187,8 +188,7 @@ de la camara (``campos``), su ángulo de inclinación (``campitch``) y de rumbo 
    camheading(g,20)
 
 También podemos realizar análisis del terreno (como cálculo de pendiente, orientación, 
-líneas de visibilidad, etc.) a partir de datos de elevación, batimetría 
-y otros productos de datos de cuadrícula.
+líneas de visibilidad, etc.) a partir de datos de elevación y batimetría.
 
 Mapa de elevación
 ~~~~~~~~~~~~~~~~~
