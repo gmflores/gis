@@ -50,34 +50,35 @@ WorldClim es una base de datos meteorológicos y climáticos globales disponible
 resoluciones espaciales. Estos datos pueden utilizarse para la cartografía y la modelización espacial. 
 Se proporcionan para su uso en investigación y actividades afines. Enlace: `<https://www.worldclim.org/>`_.
 
-WMS de INEGI
-^^^^^^^^^^^^
+.. coment
+    WMS de INEGI
+    ^^^^^^^^^^^^
 
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
-El portal de WMS de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de WMS de INEGI en el siguiente enlace: `WMS de INEGI <https://www.inegi.org.mx/temas/geo/>`_.
-
-
-Un WMS (Web Mapping Service que se traduce como Servicio de Mapas Web) es un estándar para publicar cartografía en Internet cuyas especificaciones están recogidas en el Open Geoespatial Consortium (OGC), este servicio permite generar mapas de forma dinámica a partir de coordenadas geográficas en un formato de imagen como PNG, GIF o JPEG, facilitando con ello la construcción de mapas personalizados a partir de datos tomados de distintas fuentes. 
-
-ArcGIS MapServer
-^^^^^^^^^^^^^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por ArcGIS.
-El portal de ArcGIS MapServer ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de ArcGIS MapServer en el siguiente enlace: `ArcGIS MapServer <https://www.arcgis.com/home/webmap/viewer.html>`_.
-
-Servidor de mapas base de ArcGIS.
-
-Landsat Path/Row
-^^^^^^^^^^^^^^^^
-Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
-El portal de Landsat Path/Row ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Puedes consultar el portal de Landsat Path/Row en el siguiente enlace: `Landsat Path/Row <https://landsat.usgs.gov/>`_.
-Landsat Path/Row es un sistema de referencia utilizado para identificar la ubicación de las imágenes satelitales Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
-El sistema de referencia Path/Row se utiliza para identificar la ubicación de las imágenes Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
+    El portal de WMS de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+    Puedes consultar el portal de WMS de INEGI en el siguiente enlace: `WMS de INEGI <https://www.inegi.org.mx/temas/geo/>`_.
 
 
-WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.
+    Un WMS (Web Mapping Service que se traduce como Servicio de Mapas Web) es un estándar para publicar cartografía en Internet cuyas especificaciones están recogidas en el Open Geoespatial Consortium (OGC), este servicio permite generar mapas de forma dinámica a partir de coordenadas geográficas en un formato de imagen como PNG, GIF o JPEG, facilitando con ello la construcción de mapas personalizados a partir de datos tomados de distintas fuentes. 
+
+    ArcGIS MapServer
+    ^^^^^^^^^^^^^^^^
+    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por ArcGIS.
+    El portal de ArcGIS MapServer ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+    Puedes consultar el portal de ArcGIS MapServer en el siguiente enlace: `ArcGIS MapServer <https://www.arcgis.com/home/webmap/viewer.html>`_.
+
+    Servidor de mapas base de ArcGIS.
+
+    Landsat Path/Row
+    ^^^^^^^^^^^^^^^^
+    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
+    El portal de Landsat Path/Row ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+    Puedes consultar el portal de Landsat Path/Row en el siguiente enlace: `Landsat Path/Row <https://landsat.usgs.gov/>`_.
+    Landsat Path/Row es un sistema de referencia utilizado para identificar la ubicación de las imágenes satelitales Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+    El sistema de referencia Path/Row se utiliza para identificar la ubicación de las imágenes Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+
+
+    WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.
 
 .. _raster:
 
