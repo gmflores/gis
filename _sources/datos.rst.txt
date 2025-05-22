@@ -15,191 +15,172 @@ Vectoriales
 CONABIO
 ^^^^^^^
 
-El portal de `CONABIO <http://www.conabio.gob.mx/informacion/gis/>`_ ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-Estos datos son útiles para realizar análisis geoespaciales y crear mapas temáticos.
+El portal de la Comisión Nacional para el Conocimiento y Uso de la Biodiversidad 
+(`<http://www.conabio.gob.mx/informacion/gis/>`_) ofrece una amplia variedad de 
+datos geoespaciales desde una plataforma que permite su visualización. 
+Incluye capas ambientales, de biodiversidads, población, infraestructura, entre otras.
 
 GADM 
 ^^^^
 Es un portal de información geográfica donde se puede consultar y descargar las áreas administrativas de todos los paises en tres niveles de subdivisión (fronteras).
-Puedes consultar el portal de GADM en el siguiente enlace: `GADM <https://gadm.org/>`_.
+Puedes consultar el portal de GADM en el siguiente enlace: `<https://gadm.org/>`_.
 
 Natural Earth
 ^^^^^^^^^^^^^
 
 Es un conjunto de datos cartográficos disponible a escalas de 1:10m, 1: 50m y 1:110m. Con datos vectoriales y ráster integrados, `Natural Earth <https://www.naturalearthdata.com/>`_ permite crear una variedad de mapas visualmente atractivos con software de SIG.
 
-.. note::
-    Esta página está en construcción. Se añadirán más portales con información geográfica vectorial y ráster
-    disponible gratuitamente. 
+INEGI 
+^^^^^
+
+Es el portal del Instituto Nacional de Estadística y Geografía (`<https://inegi.org.mx/app/mapas/>`_), 
+donde se puede consultar, visualizar y descargar cartografía temática a diferentes escalas.
+
+GBIF
+^^^^
+GBIF (Global Biodiversity Information Facility) es una plataforma que facilita el acceso y uso de información 
+sobre la biodiversidad, incluyendo las ocurrencias de diferentes especies. Los datos de ocurrencia son un 
+tipo específico de información que GBIF publica y que es muy útil para estudios científicos y ambientales. 
+Puedes consultar su portal en el siguiente enlace: `<https://www.gbif.org/>`_.
+
+WorldClim
+^^^^^^^^^
+
+WorldClim es una base de datos meteorológicos y climáticos globales disponibles a diferentes 
+resoluciones espaciales. Estos datos pueden utilizarse para la cartografía y la modelización espacial. 
+Se proporcionan para su uso en investigación y actividades afines. Enlace: `<https://www.worldclim.org/>`_.
+
+WMS de INEGI
+^^^^^^^^^^^^
+
+Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
+El portal de WMS de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de WMS de INEGI en el siguiente enlace: `WMS de INEGI <https://www.inegi.org.mx/temas/geo/>`_.
+
+
+Un WMS (Web Mapping Service que se traduce como Servicio de Mapas Web) es un estándar para publicar cartografía en Internet cuyas especificaciones están recogidas en el Open Geoespatial Consortium (OGC), este servicio permite generar mapas de forma dinámica a partir de coordenadas geográficas en un formato de imagen como PNG, GIF o JPEG, facilitando con ello la construcción de mapas personalizados a partir de datos tomados de distintas fuentes. 
+
+ArcGIS MapServer
+^^^^^^^^^^^^^^^^
+Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por ArcGIS.
+El portal de ArcGIS MapServer ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de ArcGIS MapServer en el siguiente enlace: `ArcGIS MapServer <https://www.arcgis.com/home/webmap/viewer.html>`_.
+
+Servidor de mapas base de ArcGIS.
+
+Landsat Path/Row
+^^^^^^^^^^^^^^^^
+Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
+El portal de Landsat Path/Row ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
+Puedes consultar el portal de Landsat Path/Row en el siguiente enlace: `Landsat Path/Row <https://landsat.usgs.gov/>`_.
+Landsat Path/Row es un sistema de referencia utilizado para identificar la ubicación de las imágenes satelitales Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+El sistema de referencia Path/Row se utiliza para identificar la ubicación de las imágenes Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
+
+
+WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.
 
 .. _raster:
 
-..  Ráster
-    -----------
+Ráster
+------
+
+En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.
+
+ERDDAP
+^^^^^^
+
+Es un servidor de datos que pone a disposición la descarga de datos datos oceanográficos 
+(por ejemplo, datos de satélites y boyas) en formatos de archivo comunes y crear gráficos y mapas. 
+Actualmente dispone de más de 3000 conjuntos de datos, incluyendo datos de temperatura, salinidad, 
+corrientes y otros parámetros oceanográficos. 
+Puedes consultar su portal en el siguiente enlace: `<https://coastwatch.pfeg.noaa.gov/erddap/index.html>`_
+
+Por ejemplo, para descargar datos de temperatura del mar, puedes utilizar el siguiente enlace:
+`<https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+
+Imágenes Landsat
+^^^^^^^^^^^^^^^^
+
+Las Misiones Landsat están compuestas por satélites operativos de observación terrestre que transportan sensores 
+remotos para recopilar datos y obtener imágenes de nuestro planeta como parte del Programa Nacional de Imágenes 
+Terrestres (NLI) del Servicio Geológico de Estados Unidos (USGS). Consulta los portales de la USGS 
+para obtener mayor información (`<https://www.usgs.gov/landsat-missions/landsat-satellite-missions>`_) 
+y para descargar imágenes en: `<https://earthexplorer.usgs.gov/>`_
+
+Imágenes MODIS
+^^^^^^^^^^^^^^
+
+MODIS (Moderate Resolution Imaging Spectroradiometer) es un instrumento  a 
+bordo de los satélites Terra y Aqua que obtiene datos de la superficie terrestre 
+cada uno o dos días. Estos datos mejorarán nuestra comprensión de la dinámica global 
+y los procesos que ocurren en la tierra, los océanos y la atmósfera inferior. 
+Puedes consultar su portal en: `Imágenes MODIS <https://modis.gsfc.nasa.gov/>`_
+
+Imágenes Sentinel
+^^^^^^^^^^^^^^^^^^
+
+Las Sentinel-1, Sentinel-2, Sentinel-3, Sentinel-5P, Sentinel-6
+son una plataformas de observación de la Tierra de la Agencia Espacial Europea (ESA) 
+que proporcionan imágenes de la superficie terrestre a diferentes resoluciones espaciales, espectrales y temporales.
+Estos datos  son útiles para el monitoreo ambiental, la gestión de recursos naturales, la 
+agricultura y otros estudios geoespaciales. Su objetivo es monitorear los cambios en las condiciones de la superficie terrestre. 
+Puedes más detalles en el portal: `<https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2>`_
+
+Continuo de Elevaciones Mexicano
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+El Continuo de Elevaciones Mexicano es un producto de INEGI que representa las elevaciones 
+del territorio continental mexicano a diferentes resoluciones espaciales. 
+Estos datos pueden obtenerse del portal: `<https://www.inegi.org.mx/app/geo2/elevacionesmex/>`_
+
+SRTM
+^^^^
+
+SRTM (Shuttle Radar Topography Mission) es un proyecto de Agencia Nacional de Inteligencia 
+Geoespacial (NGA) y la Administración Nacional de la Aeronáutica y del Espacio (NASA) que 
+generó un modelo digital de elevación (MDE) de la superficie terrestre. 
+Puedes obtener estos datos del portal: `<https://srtm.csi.cgiar.org/srtmdata/>`_
+
+GEBCO
+^^^^^
+
+El portal de GEBCO (General Bathymetric Chart of the Oceans) ofrece datos batimétricos y de elevación.
+Puedes consultar el portal de GEBCO en el siguiente enlace:  `<https://www.gebco.net/>`_
+
+Bio-ORACLE
+^^^^^^^^^^
+
+Bio-ORACLE ofrece capas de datos físicos, químicos, biológicos y topográficos 
+con extensión global y resolución uniforme para modelar la distribución de la 
+biodiversidad marina.
+Puedes consultar el portal de Bio-ORACLE en el siguiente enlace: `<https://www.bio-oracle.org/>`_
+
+Oceancolor
+^^^^^^^^^^
+
+Oceancolor es un programa de la NASA que proporciona datos del océano a partir de 
+imágenes satelitales. Los datos de Oceancolor son útiles para el monitoreo de la 
+calidad del agua, la detección de fitoplancton y otros estudios relacionados 
+con el océano y el medio ambiente marino.
+Los datos de Oceancolor son ampliamente utilizados en la investigación científica, 
+la gestión de recursos marinos y la monitorización ambiental. 
+Puedes consultar el portal de Oceancolor en el siguiente enlace: `<https://oceancolor.gsfc.nasa.gov/>`_
+
+
+Copernicus Marine Service
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Copernicus Marine Service es un servicio de la Unión Europea que proporciona 
+acceso a datos y productos relacionados con el océano y el medio ambiente marino. 
+El servicio recopila, procesa y distribuye datos de satélites, boyas y otros 
+sensores para proporcionar información sobre las condiciones oceánicas, la calidad 
+del agua, la temperatura del mar y otros parámetros ambientales. Puedes consultar 
+su portal en: `<https://marine.copernicus.eu/>`_
 
 .. coment
-
-    INEGI
-    ^^^^^
-    Es el portal del Instituto Nacional de Estadística y Geografía (`INEGI <https://inegi.org.mx/app/mapas/>`_), donde se puede consultar, visualizar y descargar cartografía temática a diferentes escalas.
-
-    GBIF
-    ^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GBIF.
-    El portal de GBIF ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de GBIF en el siguiente enlace: `GBIF <https://www.gbif.org/>`_.
-
-    Base de datos de registros primarios de biodiversidad del proyecto GBIF (Global Biodiversity Information Facility).
-
-    WorldClim
-    ^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por WorldClim.
-    El portal de WorldClim ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de WorldClim en el siguiente enlace: `WorldClim <https://www.worldclim.org/>`_.
-
-
-    WorldClim es un conjunto de capas climáticas globales (datos climáticos reticulados) con una resolución espacial de aproximadamente 1 km2. Estos datos pueden ser utilizados para mapeo y modelado espacial.
-
-    WMS de INEGI
-    ^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
-    El portal de WMS de INEGI ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de WMS de INEGI en el siguiente enlace: `WMS de INEGI <https://www.inegi.org.mx/temas/geo/>`_.
-
-
-    Un WMS (Web Mapping Service que se traduce como Servicio de Mapas Web) es un estándar para publicar cartografía en Internet cuyas especificaciones están recogidas en el Open Geoespatial Consortium (OGC), este servicio permite generar mapas de forma dinámica a partir de coordenadas geográficas en un formato de imagen como PNG, GIF o JPEG, facilitando con ello la construcción de mapas personalizados a partir de datos tomados de distintas fuentes. 
-
-    ArcGIS MapServer
-    ^^^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por ArcGIS.
-    El portal de ArcGIS MapServer ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de ArcGIS MapServer en el siguiente enlace: `ArcGIS MapServer <https://www.arcgis.com/home/webmap/viewer.html>`_.
-
-    Servidor de mapas base de ArcGIS.
-
-    Landsat Path/Row
-    ^^^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
-    El portal de Landsat Path/Row ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Landsat Path/Row en el siguiente enlace: `Landsat Path/Row <https://landsat.usgs.gov/>`_.
-    Landsat Path/Row es un sistema de referencia utilizado para identificar la ubicación de las imágenes satelitales Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
-    El sistema de referencia Path/Row se utiliza para identificar la ubicación de las imágenes Landsat en la superficie terrestre. Cada imagen Landsat se divide en una serie de "caminos" (paths) y "filas" (rows) que representan diferentes áreas geográficas. El sistema de referencia Path/Row se basa en un sistema de coordenadas geográficas que permite localizar y catalogar las imágenes Landsat de manera precisa.
-
-
-    WRS (Worlwide Reference Sytem) es una notación global utilizada para catalogar datos Landsat. Los satélites Landsat 1, 2 y 3 utilizaron WRS-1, y los satélites Landsat 4, 5, 7 y 8 utilizan WRS-2.
-
-    .. _raster:
-
-    Ráster
-    ----------
-    En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.
-
-
-    GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-2017, Daily.
-
-    Imágenes Landsat
-    ^^^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Landsat.
-    El portal de Imágenes Landsat ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Imágenes Landsat en el siguiente enlace: `Imágenes Landsat <https://earthexplorer.usgs.gov/>`_.
-
-    Sitio del Servicio Geológico de Estados Unidos, en el que se pueden introducir diferentes criterios de búsqueda para descargar imágenes Landsat.
-
-    Imágenes MODIS
-    ^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por MODIS.
-    El portal de Imágenes MODIS ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Imágenes MODIS en el siguiente enlace: `Imágenes MODIS <https://modis.gsfc.nasa.gov/>`_.
-
-    MODIS (Moderate Resolution Imaging Spectroradiometer) es un sensor a bordo de los satélites Terra y Aqua que proporciona datos de observación de la Tierra en alta resolución. Los datos de MODIS son útiles para el monitoreo ambiental, la detección de cambios en el uso del suelo, el análisis climático y otros estudios geoespaciales.
-
-    Sentinel 2
-    ^^^^^^^^^^
-
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Sentinel 2.
-    El portal de Sentinel 2 ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Sentinel 2 en el siguiente enlace: `Sentinel 2 <https://scihub.copernicus.eu/dhus>`_.
-    Sentinel-2 es una misión de observación de la Tierra de la Agencia Espacial Europea (ESA) que proporciona imágenes de alta resolución de la superficie terrestre. Los datos de Sentinel-2 son útiles para el monitoreo ambiental, la gestión de recursos naturales, la agricultura y otros estudios geoespaciales.
-    Los satélites Sentinel-2 están equipados con un sensor óptico que captura imágenes en múltiples bandas espectrales, lo que permite obtener información detallada sobre la vegetación, el agua y otros elementos de la superficie terrestre. Los datos de Sentinel-2 son ampliamente utilizados en aplicaciones de teledetección y análisis geoespacial.
-    Los datos de Sentinel-2 son ampliamente utilizados en aplicaciones de teledetección y análisis geoespacial. Estos datos son útiles para el monitoreo ambiental, la gestión de recursos naturales, la agricultura y otros estudios geoespaciales.
-
-    Continuo de Elevaciones Mexicano 3.0
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por el INEGI.
-    El CEM 3.0 es un producto que representa las elevaciones del territorio continental mexicano, mediante valores que indican puntos sobre la superficie del terreno, cuya ubicación geográfica se encuentra definida por coordenadas (X,Y) a las que se le integran valores que representan las elevaciones (Z). Los puntos se encuentran espaciados y distribuidos de modo regular.
-    El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
-    El Continuo de Elevaciones Mexicano de INEGI 3.0 (CEM 3.0) es un producto que representa las elevaciones del territorio continental mexicano, mediante valores que indican puntos sobre la superficie del terreno, cuya ubicación geográfica se encuentra definida por coordenadas (X,Y) a las que se le integran valores que representan las elevaciones (Z). Los puntos se encuentran espaciados y distribuidos de modo regular.
-    El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
-    El CEM 3.0 se puede descargar desde el portal de INEGI y se encuentra disponible en diferentes formatos, como GeoTIFF y shapefile. Estos formatos son compatibles con la mayoría de los software de SIG, lo que facilita su uso en proyectos de análisis geoespacial.
-    El CEM 3.0 es un producto de elevaciones que se genera a partir de la integración de diferentes fuentes de información, como datos topográficos, imágenes satelitales y modelos digitales de elevación. Este producto es útil para realizar análisis geoespaciales, crear mapas topográficos y realizar estudios ambientales.
-    El CEM 3.0 se puede descargar desde el portal de INEGI y se encuentra disponible en diferentes formatos, como GeoTIFF y shapefile. Estos formatos son compatibles con la mayoría de los software de SIG, lo que facilita su uso en proyectos de análisis geoespacial.
-
-    SRTM
-    ^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por SRTM.
-    El portal de SRTM ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de SRTM en el siguiente enlace: `SRTM <https://www2.jpl.nasa.gov/srtm/>`_.
-    La Misión Topográfica Shuttle Radar (acrónimo en inglés SRTM, de Shuttle Radar Topography Mission) es un proyecto internacional entre la Agencia Nacional de Inteligencia-Geoespacial, NGA, y la Administración Nacional de la Aeronáutica y del Espacio, NASA. Su fin es obtener un modelo digital de elevación del globo terráqueo entre 56 °S a 60 °N.
-
-    GEBCO
-    ^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por GEBCO.
-    El portal de GEBCO ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de GEBCO en el siguiente enlace  
-    `GEBCO <https://www.gebco.net/>`_.
-    Conjunto de datos batimétricos y de elevación GEBCO (General Bathymetric Chart of the Oceans).
-    El conjunto de datos GEBCO es un recurso valioso para la investigación y el análisis geoespacial, y se utiliza en una variedad de aplicaciones, incluyendo la planificación costera, la gestión de recursos marinos y la investigación científica. Los datos están disponibles en diferentes formatos y resoluciones, lo que permite su uso en una amplia gama de software de SIG y herramientas de análisis geoespacial.
-    Los datos de GEBCO son ampliamente utilizados en la investigación científica, la planificación costera y la gestión de recursos marinos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-
-    Earth Microwave Data Center
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Earth Microwave Data Center.
-    El portal de Earth Microwave Data Center ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Earth Microwave Data Center en el siguiente enlace: `Earth Microwave Data Center <https://www.emdc.org/>`_.
-    Centro de Datos de Microondas de la Tierra (EMDC) es un centro de datos que proporciona acceso a datos de microondas y productos derivados para la investigación científica y aplicaciones operativas. El EMDC recopila, procesa y distribuye datos de microondas de satélites y otros sensores, lo que permite a los investigadores y científicos acceder a información valiosa sobre el medio ambiente, el clima y otros fenómenos naturales.
-    El EMDC es un recurso valioso para la investigación científica y la monitorización ambiental, y se utiliza en una variedad de aplicaciones, incluyendo la predicción del clima, el monitoreo de desastres naturales y la investigación sobre el cambio climático. Los datos y productos del EMDC son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo.
-    El EMDC proporciona acceso a una variedad de datos y productos, incluyendo imágenes de microondas, datos de temperatura de la superficie del mar, datos de humedad del suelo y otros productos derivados. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-    Productos geofísicos con calidad de investigación de sensores de microondas satelitales. Remote Sensing Systems (RSS) procesa y analiza datos de microondas recopilados por sensores satelitales. 
-
-    Bio-ORACLE
-    ^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Bio-ORACLE.
-    El portal de Bio-ORACLE ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Bio-ORACLE en el siguiente enlace: `Bio-ORACLE <https://www.bio-oracle.org/>`_.
-    Bio-ORACLE es un conjunto de capas de datos marinos para la modelización ecológica. Bio-ORACLE es un conjunto de GIS rasters que proporciona datos geofísicos, bióticos y ambientales para los reinos marinos superficiales y bentónicos.
-
-    Marine data layers for ecological modelling. Bio-ORACLE is a set of GIS rasters providing geophysical, biotic, and environmental data for surface and benthic marine realms
-
-    Oceancolor
-    ^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Oceancolor.
-    El portal de Oceancolor ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Oceancolor en el siguiente enlace: `Oceancolor <https://oceancolor.gsfc.nasa.gov/>`_.
-    Oceancolor es un programa de la NASA que proporciona datos de color del océano a partir de imágenes satelitales. Los datos de Oceancolor son útiles para el monitoreo de la calidad del agua, la detección de fitoplancton y otros estudios relacionados con el océano y el medio ambiente marino.
-    Los datos de Oceancolor son ampliamente utilizados en la investigación científica, la gestión de recursos marinos y la monitorización ambiental. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-
-
-    Copernicus Marine Service
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-    Es un portal de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por Copernicus Marine Service.
-    El portal de Copernicus Marine Service ofrece una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de su sitio web y utilizarlos en tus proyectos de SIG.
-    Puedes consultar el portal de Copernicus Marine Service en el siguiente enlace: `Copernicus Marine Service <https://marine.copernicus.eu/>`_.
-    Copernicus Marine Service es un servicio de la Unión Europea que proporciona acceso a datos y productos relacionados con el océano y el medio ambiente marino. El servicio recopila, procesa y distribuye datos de satélites, boyas y otros sensores para proporcionar información sobre las condiciones oceánicas, la calidad del agua, la temperatura del mar y otros parámetros ambientales.
-    El servicio Copernicus Marine es un recurso valioso para la investigación científica, la gestión de recursos marinos y la monitorización ambiental. Los datos y productos del servicio son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo.
-    El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-    Los datos y productos del servicio son ampliamente utilizados por investigadores, científicos y profesionales en todo el mundo. El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-    El servicio proporciona acceso a una variedad de datos y productos, incluyendo imágenes satelitales, datos de temperatura del mar, datos de salinidad y otros parámetros oceánicos. Estos datos son útiles para el análisis geoespacial, la creación de mapas temáticos y la realización de estudios ambientales.
-
-    Copernicus Marine Service es un servicio de la Unión Europea que proporciona acceso a datos y productos relacionados con el océano y el medio ambiente marino. El servicio recopila, procesa y distribuye datos de satélites, boyas y otros sensores para proporcionar información sobre las condiciones oceánicas, la calidad del agua, la temperatura del mar y otros parámetros ambientales.
-
-
-    
-    Breve descripción de la actividad para solicitar acceso a recursos gratuitos de eoxhub:
-    Se espera utilizar estos datos en proyectos académicos y de investigación relacionados con la teledetección y el análisis geoespacial.
-
-    Expected to be used in academic and research projects related to remote sensing and geospatial analysis.
-
-    Descargar :download:`Datos de sismos (csv) <_data/sismos-2010.csv>`.
-
+    .. note::
+        Esta página está en construcción. Se añadirán más portales con información geográfica vectorial y ráster
+        disponible gratuitamente. 
+        Si conoces algún portal que no esté listado aquí, por favor házmelo saber para incluirlo en la lista.
+        Puedes enviarme un correo a: `
 ⁂

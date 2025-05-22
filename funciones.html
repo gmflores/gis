@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5. Funciones &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
+  <title>3. Funciones &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -24,8 +24,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="6. Scripts de ejemplo" href="ejemplos.html" />
-    <link rel="prev" title="4. Introducción" href="introduccion.html" /> 
+    <link rel="next" title="4. Scripts de ejemplo" href="ejemplos.html" />
+    <link rel="prev" title="2. Introducción" href="introduccion.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,22 +49,20 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instalacion.html">1. Empezar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instalacion.html#establecer-la-ruta">2. Establecer la ruta</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instalacion.html#bibliografia">3. Bibliografía</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduccion.html">4. Introducción</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Funciones</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#de-uso-general">5.1. De uso general</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manipulacion-de-arreglos">5.2. Manipulación de arreglos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#importacion-y-exportacion">5.3. Importación y exportación</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#establecer-ejes-de-mapa">5.4. Establecer ejes de mapa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#visualizacion">5.5. Visualización</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-coordenadas">5.6. Transformación de coordenadas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#analisis-del-terreno">5.7. Análisis del terreno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">2. Introducción</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Funciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#de-uso-general">3.1. De uso general</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipulacion-de-arreglos">3.2. Manipulación de arreglos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importacion-y-exportacion">3.3. Importación y exportación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#establecer-ejes-de-mapa">3.4. Establecer ejes de mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizacion">3.5. Visualización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-coordenadas">3.6. Transformación de coordenadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analisis-del-terreno">3.7. Análisis del terreno</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ejemplos.html">6. Scripts de ejemplo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html">7. Software adicional</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datos.html">8. Algunas fuentes de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejemplos.html">4. Scripts de ejemplo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">6. Algunas fuentes de datos</a></li>
 </ul>
 
         </div>
@@ -81,9 +79,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">5. </span>Funciones</li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Funciones</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/funciones.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
       </li>
   </ul>
   <hr/>
@@ -92,14 +89,14 @@
            <div itemprop="articleBody">
              
   <section id="funciones">
-<h1><span class="section-number">5. </span>Funciones<a class="headerlink" href="#funciones" title="Link to this heading"></a></h1>
+<h1><span class="section-number">3. </span>Funciones<a class="headerlink" href="#funciones" title="Link to this heading"></a></h1>
 <p>En esta sección se presentan algunas de las principales funciones para la creación de mapas y la
 visualización de datos geoespaciales (con enlaces a la documentación oficial de <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>).
 Estas funciones son útiles para la importación, exportación y manipulación de datos geoespaciales,
 así como para la creación de gráficos y mapas.
 En la siguiente sección se incluyen algunos ejemplos de uso.</p>
 <section id="de-uso-general">
-<h2><span class="section-number">5.1. </span>De uso general<a class="headerlink" href="#de-uso-general" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.1. </span>De uso general<a class="headerlink" href="#de-uso-general" title="Link to this heading"></a></h2>
 <p>Estas son algunas funciones de uso general, por ejemplo, para leer archivos <code class="docutils literal notranslate"><span class="pre">.mat</span></code> y tabulares (p. ej., <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>),
 obtener información del contenido de las carpetas, crear gráficos y exportar imágenes, entre otras.</p>
 <table class="docutils align-default">
@@ -165,7 +162,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="manipulacion-de-arreglos">
-<h2><span class="section-number">5.2. </span>Manipulación de arreglos<a class="headerlink" href="#manipulacion-de-arreglos" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.2. </span>Manipulación de arreglos<a class="headerlink" href="#manipulacion-de-arreglos" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -232,7 +229,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="importacion-y-exportacion">
-<span id="import-export"></span><h2><span class="section-number">5.3. </span>Importación y exportación<a class="headerlink" href="#importacion-y-exportacion" title="Link to this heading"></a></h2>
+<span id="import-export"></span><h2><span class="section-number">3.3. </span>Importación y exportación<a class="headerlink" href="#importacion-y-exportacion" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25.0%" />
@@ -266,7 +263,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="establecer-ejes-de-mapa">
-<h2><span class="section-number">5.4. </span>Establecer ejes de mapa<a class="headerlink" href="#establecer-ejes-de-mapa" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.4. </span>Establecer ejes de mapa<a class="headerlink" href="#establecer-ejes-de-mapa" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -291,7 +288,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="visualizacion">
-<h2><span class="section-number">5.5. </span>Visualización<a class="headerlink" href="#visualizacion" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.5. </span>Visualización<a class="headerlink" href="#visualizacion" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -343,7 +340,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="transformacion-de-coordenadas">
-<h2><span class="section-number">5.6. </span>Transformación de coordenadas<a class="headerlink" href="#transformacion-de-coordenadas" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.6. </span>Transformación de coordenadas<a class="headerlink" href="#transformacion-de-coordenadas" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -371,7 +368,7 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
 </table>
 </section>
 <section id="analisis-del-terreno">
-<h2><span class="section-number">5.7. </span>Análisis del terreno<a class="headerlink" href="#analisis-del-terreno" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.7. </span>Análisis del terreno<a class="headerlink" href="#analisis-del-terreno" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -414,8 +411,8 @@ obtener información del contenido de las carpetas, crear gráficos y exportar i
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="introduccion.html" class="btn btn-neutral float-left" title="4. Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="ejemplos.html" class="btn btn-neutral float-right" title="6. Scripts de ejemplo" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introduccion.html" class="btn btn-neutral float-left" title="2. Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="ejemplos.html" class="btn btn-neutral float-right" title="4. Scripts de ejemplo" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
