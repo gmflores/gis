@@ -1,0 +1,285 @@
+Scripts de ejemplo
+==================
+
+En esta sección se muestran algunos ejemplos de scripts de MATLAB para mostrar datos geoespaciales. 
+Se utilizan las funciones descritas en la sección anterior para cargar datos, crear mapas y mostrar puntos en un mapa. 
+Se recomienda revisar la documentación de cada función para obtener más información sobre su uso y opciones disponibles.
+
+.. _datos_ejercicios:
+
+Datos para realizar las ejemplos
+--------------------------------
+
+================================================================================================ ================ ======== ====================================================================
+Enlace a los datos                                                                               Región           Formato  Fuente
+================================================================================================ ================ ======== ====================================================================
+:download:`Datos de sismos (2010-2023) <_data/sismos_2010_2023.zip>`                             Global           csv      `USGS <https://earthquake.usgs.gov>`_
+:download:`Temperatura superficial del mar (2018) <_data/sst_2018.mat.zip>`                      Sur del GC       mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Clorofila (2020) <_data/clorofila_2020.mat>`                                          Sur del GC       mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
+:download:`Clorofila (2015) <_data/clorofila_2015.nc>`                                           Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
+:download:`Temperatura superficial del mar (2015) <_data/sst_2015.nc.zip>`                       Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Temperatura superficial del mar (2022) <_data/sst_2022.nc.zip>`                       Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Corrientes marinas CMEMS <_data/cmems_mod_glo_phy-cur.nc.zip>`                        Golfo de Mexico  nc       `Copernicus <https://marine.copernicus.eu>`_
+:download:`Corrientes geostróficas <_data/dataset-armor-3d-nrt-weekly_1716614690241.nc>`         Pacífico NE      nc       `Copernicus <https://marine.copernicus.eu>`_
+================================================================================================ ================ ======== ====================================================================
+
+Con datos vectoriales
+----------------------
+
+Tsunamis 
+~~~~~~~~
+
+**Tsunamis en el mundo y en México**
+
+Crear varios tipos de mapas para representar los tsunamis almacenados en el archivo ``tsunamis.xlsx``.
+Para este ejemplo, no se requiere la descarga de datos adicionales. Los que se utilizan estan 
+disponibles con la instalación de ``Mapping Toolbox``.
+
+1. Utiliza la función ``readtable`` para cargar los datos desde el archivo de Excel.
+2. Crea los ejes del mapa utilizando la función ``worldmap``.
+3. Utiliza la función ``geoshow`` para mostrar los continentes (``landareas``).
+4. Muestra la ubicación de los tsunamis utilizando la función ``geoshow``.
+
+.. code-block:: matlab
+
+    % Cargar los datos (tsunamis y continentes)
+    tsunamis = readtable('tsunamis.xlsx');
+    land = readgeotable('landareas.shp');
+
+    % Crear los ejes del mapa
+    figure
+    worldmap('World')
+
+    % Mostrar los continentes (polígonos) y tsunamis (puntos)
+    geoshow(land, 'DisplayType', 'polygon')
+    geoshow(tsunamis.Latitude, tsunamis.Longitude, 'DisplayType', 'point')
+
+5. Modifica el script para mejorar la apariencia del mapa (visualización de los tsunamis y los continentes).
+6. Agrega instrucciones al script para crear otro mapa, esta vez de los sismos ocurridos en México. 
+
+.. note:: 
+    Sugerencia: Primero filtra los datos de los tsunamis para seleccionar solo aquellos que ocurrieron en México 
+    (por ejemplo, usando las funciones ``find`` y ``contains`` en la columna que almacena el nombre del país). 
+    Posteriormente la función ``worldmap`` para crear un mapa de México y la función ``geoshow`` para mostrar 
+    los puntos de los tsunamis en el mapa.
+
+7. Agrega un título al mapa utilizando la función ``title``.
+8. Guarda el mapa como una imagen utilizando la función ``print``,  ``exportgraphics`` o ``saveas``.
+9. Genera un mapa adicional (para todo el mundo), que represente las ubicaciones de los tsunamis (puntos) 
+   de tamaño diferente (dependiendo de la 'magnitud') y con la escala de color según la 'causa'. 
+   Para esto, utiliza la función ``geobubble``. También agrega un título y guarda el mapa como una imagen (``.png``).
+10. Guarda el script como ``xyz_00_tsunamis.mlx`` (``xyz`` = tus iniciales) en la carpeta ``matlab``.
+11. Sube el script y los mapas (``.png``) a la plataforma Teams.
+
+Sismos 
+~~~~~~
+
+**Sismos en México (2010-2024)**
+
+Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos en México 
+por año (2010-2024). Además, crear un mapa con todos los sismos en México en ese periodo.
+
+1. Descarga los 'Datos de sismos' (2010-2023) de la sección de :ref:`datos <datos_ejercicios>`. Además, descarga de la página 
+   `earthquake.usgs.gov <https://tinyurl.com/ywdkwd99>`_ los datos de los sismos (≥4 de magnitud) ocurridos durante 
+   el año 2024 en todo el mundo (en formato ``csv``). Guargar este archivo como ``sismos-2024.csv``. Transfiere estos 14 archivos 
+   ``csv`` a la carpeta ``datos/csv``.
+2. Modificar el script para acceder a la carpeta ``datos/csv`` y leer todos los archivos ``csv`` (sismos de 2010-2024).
+3. Para cada archivo ``csv`` seleccionar los sismos ocurridos en México, cuya magnitud fue ``≥ 4``.
+
+.. note::
+    Sugerencia: Puedes utilizar la función ``dir`` para obtener una lista de los archivos en la carpeta y luego leer cada archivo en un bucle.
+    Por ejemplo, puedes usar ``dir('../datos/csv/sismos-*.csv')`` para obtener la lista de archivos ``csv``.
+    Luego, usar un ciclo ``for`` para iterar sobre cada archivo y cargar los datos utilizando la función ``readtable``. El procedimiento
+    para filtrar los registros de interés es el mismo que en el ejercicio anterior (funciones ``find`` y ``contains``).
+    
+4. Generar los mapas de sismos (uno por año) utilizando la función ``geoscatter``. Mostrar una barra de color que indique 
+   la magnitud de los sismos. En el título de cada mapa especificar el año y el número de sismos en el año. Guardar estos 
+   mapas en formato ``png`` a 300 dpi.
+5. Generar un mapa que incluya todos los sismos ocurridos en México (2010-2024), similar a los obtenidos según el punto 
+   anterior. En este caso utilizar la función ``geodensityplot`` para presentar el mapa. Utilizar ``grayterrain`` como
+   mapa base. ¿Cuántos sismos ocurrieron en ese periodo? (mostrarlo en el título del mapa). Guardar el mapa en formato 
+   ``png`` a 300 dpi.
+6. Crear una gráfica que muestre la magnitud de los sismos con magnitud ``≥ 7`` grados en el periodo 2010-2024. 
+   ¿Cuándo (fecha y hora) ocurrieron esos sismos? (según la zona horaria ``'America/Mexico_City'``).
+
+.. note::
+    Utilizar la función ``datetime`` para convertir las fechas y horas de los sismos a un formato 
+    de fechas, así como para especificar la zona horaria (con el argumento ``'TimeZone', 'UTC'``). Después de crear 
+    la variable de tipo ``datetime`` puedes configurar propiedad ``TimeZone`` para cambiar la zona horaria.  
+    Así, cambia la zona horaria a ``'America/Mexico_City'``.
+
+7. Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.
+8. Como evidencia, adjuntar en Teams el script (``xyz_01_sismos.pdf``). Debe incluir todos los mapas y la gráfica. 
+   Además, subir el archivo ``png`` generado con la función ``geodensityplot`` y uno de los archivos ``png`` obtenido 
+   con la función ``geoscatter``.
+
+Ejemplo de script para leer todos los archivos en una carpeta, especificando la ruta a la carpeta, parte del nombre 
+de los archivos y su extensión (en este caso ``csv``):
+
+.. code:: matlab
+
+    % Recuperar los nombres de archivos CSV de sismos en la carpeta datos/csv
+    archivos = dir('../datos/csv/sismos-*.csv');
+
+    % Inicializar tabla para almacenar todos los sismos
+    todos_sismos = table();
+
+    % Ciclo para leer cada archivo CSV
+    for k = 1:length(archivos)
+        % Leer el archivo k 
+        sismos = readtable(archivos(k).name);
+
+        % Filtrar sismos en México con magnitud >= 4
+        rens = find(contains(sismos.place, 'Mexico') & sismos.mag >= 4);
+
+        % Crear tabla con sismos en México y magnitud >= 4
+        sismos_mex = sismos(rens, :);
+
+        % Concatenar a la tabla general
+        todos_sismos = [todos_sismos; sismos_mex];
+
+        % Crear mapa para cada año...
+    end
+
+    % Crear el mapa con los sismos (2010-2024) en México...
+
+Leer archivos ``shp``
+~~~~~~~~~~~~~~~~~~~~~
+
+Los archivos 'shapefile' aun son ampliamente utilizados para almacenar datos
+geoespaciales de tipo vectorial. En este ejemplo, se muestra cómo leer un
+archivo ``shp`` utilizando la función ``shaperead``.
+La función ``shaperead`` permite incluir condiciones para filtrar los registros.
+Devuelve una estructura tipo ``struct`` con los atributos almacenados en el 'shapefile'.
+
+.. code:: matlab
+
+    % Importar datos de un shapefile (solo los estados de interés)
+    estados_interes = shaperead("gadm41_MEX_1.shp", "UseGeoCoords", true, "Selector", ...
+        {@(name) any(contains(name, {'Baja California', 'Sonora', 'Sinaloa'})), 'NAME_1'});
+
+    % Crear mapa
+    figure
+    worldmap("Mexico")
+    geoshow(estados_interes, "DisplayType", "polygon", "FaceColor", [0.5 0.5 0.5])
+    title("Estados de interés")
+
+Con ``shaperead`` también podemos especificar la región (``BoundingBox``) que nos 
+interesa extraer del 'shapefile', como se muestra a continuación:
+
+.. note:: 
+    En este caso, la región se especifica con una matriz de ``2×2`` de la forma ``[lonmin,latmin; lonmax,latmax]`` 
+    (para coordenadas geográficas). La función ``shaperead`` no recorta las entidades que intersecan 
+    parcialmente el rectángulo. El parámetro ``Àttributes`` permite seleccionar los atributos (columnas) que se desean
+    incluir en la estructura de salida.
+
+.. code:: matlab
+
+    % Importar datos de un shapefile (región específica)
+    bbox = [-117, 20; -105, 32]; % [longitud, latitud]
+    estados_interes = shaperead("gadm41_MEX_1.shp", "UseGeoCoords", true, "BoundingBox", bbox, "Attributes", {'NAME_1'});
+
+    % Crear mapa
+    figure
+    worldmap([bbox(1,2),bbox(2,2)],[bbox(1,1), bbox(2,1)]) % ([limlat], [limlon])
+    geoshow(estados_interes, "DisplayType", "polygon", "FaceColor", [0.5 0.5 0.5])
+    title("Estados en la región especificada")
+
+También se puede usar la función ``readgeotable`` para leer 'shapefiles'. Esta función 
+es una alternativa más reciente para acceder a archivos vectoriales. Devuelve un tipo de
+estructura ``table``:
+
+.. code:: matlab
+
+    % Importar datos de un shapefile
+    estados = readgeotable("gadm41_MEX_1.shp");
+
+    % Filtrar los estados de interés
+    estados_interes = estados(contains(estados.NAME_1, {'Baja California', 'Sonora', 'Sinaloa'}), :);
+
+    % Crear mapa
+    figure
+    worldmap("Mexico")
+    geoshow(estados_interes, "DisplayType", "polygon", "FaceColor", [0.5 0.5 0.5])
+    title("Estados de interés")
+
+.. comentario
+    Con datos ráster
+    ----------------
+
+    Temperatura superficial del mar
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    En este ejemplo, creamos un mapa que muestra la temperatura global
+    utilizando datos raster:
+
+    .. code:: matlab
+
+        % Importar datos de temperatura global
+        [temp, R] = readgeoraster("globaltemp.tif");
+
+        % Crear mapa
+        figure
+        worldmap world
+        geoshow(temp, R, "DisplayType", "texturemap")
+        colorbar
+        colormap("jet")
+        title("Mapa de Temperatura Global")
+
+⁂
+
+.. coment
+    Análisis de Rutas de Transporte
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    En este ejemplo, visualizamos y analizamos rutas de transporte:
+
+    .. code:: matlab
+
+    % Importar datos de carreteras y ciudades
+    roads = readgeotable("roads.shp");
+    cities = readgeotable("cities.shp");
+
+    % Crear mapa
+    figure
+    newmap
+    geoplot(roads, "LineWidth", 1.5)
+    hold on
+    geoplot(cities, "Marker", "o", "MarkerFaceColor", "red", "MarkerSize", 8)
+
+    % Añadir etiquetas a las ciudades principales
+    for i = 1:height(cities)
+        if cities.Population(i) > 1000000
+            text(cities.Longitude(i), cities.Latitude(i), cities.Name(i), ...
+                "VerticalAlignment", "bottom", "HorizontalAlignment", "right")
+        end
+    end
+
+    title("Red de Carreteras y Ciudades Principales")
+
+    Estudio de Inundaciones
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    En este ejemplo, utilizamos datos de elevación para simular áreas de
+    posible inundación:
+
+    .. code:: matlab
+
+    % Importar datos de elevación
+    [elev, R] = readgeoraster("elevation.tif");
+
+    % Definir nivel de inundación (en metros)
+    floodLevel = 10;
+
+    % Crear máscara de áreas inundadas
+    floodMask = elev < floodLevel;
+
+    % Crear mapa
+    figure
+    worldmap(R.LatitudeLimits, R.LongitudeLimits)
+    geoshow(elev, R, "DisplayType", "texturemap")
+    hold on
+    geoshow(floodMask, R, "DisplayType", "texturemap", "FaceAlpha", 0.5, ...
+        "CData", ones(size(floodMask)) * 0.3, "ColorMap", [0 0 1])
+    colorbar
+    title("Simulación de Áreas Inundadas")

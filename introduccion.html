@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Introducción &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=4936afed"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="3. Funciones" href="funciones.html" />
+    <link rel="prev" title="1. Empezar" href="instalacion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GIS&RS | MATLAB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">1. Empezar</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Introducción</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#capacidades-principales">2.1. Capacidades principales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragmentos-de-codigo">2.2. Fragmentos de código</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importacion-y-visualizacion">2.2.1. Importación y visualización</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#especificar-la-proyeccion">2.2.2. Especificar la proyección</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exportar-mapas">2.2.3. Exportar mapas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapas-basados-en-axesm">2.2.4. Mapas basados en <code class="docutils literal notranslate"><span class="pre">axesm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualizacion-del-terreno-en-3d">2.2.5. Visualización del terreno en 3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapa-de-elevacion">2.2.6. Mapa de elevación</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">3. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejemplos.html">4. Scripts de ejemplo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">6. Algunas fuentes de datos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS&RS | MATLAB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Introducción</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduccion">
+<h1><span class="section-number">2. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading"></a></h1>
+<p>Mapping Toolbox es una extensión especializada de MATLAB que proporciona
+algoritmos y funciones para transformar datos geográficos y crear
+visualizaciones de mapas. Esta herramienta permite visualizar datos en
+un contexto geográfico, crear mapas a partir de más de 60 proyecciones y
+transformar datos de diversas fuentes en un sistema de coordenadas geográficas
+coherente.</p>
+<p>Mapping Toolbox admite un flujo de trabajo completo para la gestión de datos
+geográficos, desde la importación hasta la visualización y el análisis.
+Esto incluye la capacidad de importar datos raster y vectoriales desde
+una amplia gama de formatos, procesarlos mediante técnicas como recorte,
+interpolación y transformación de coordenadas, y combinarlos con capas
+de mapas base de diversas fuentes. Esto facilita la integración
+de análisis geoespaciales con otras capacidades de MATLAB, como el
+procesamiento de señales, la estadística o el aprendizaje automático.</p>
+<p>Estas herramientas tienen aplicaciones en el análisis territorial, la
+planificación urbana, la gestión de recursos naturales, la evaluación de
+riesgos ambientales y muchas otras áreas que requieren el manejo de
+información geoespacial.</p>
+<section id="capacidades-principales">
+<h2><span class="section-number">2.1. </span>Capacidades principales<a class="headerlink" href="#capacidades-principales" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Importación y exportación de datos GIS raster y vectoriales</p></li>
+<li><p>Visualización de mapas en 2D y 3D</p></li>
+<li><p>Combinación de conjuntos de datos raster y vectoriales en una sola visualización</p></li>
+<li><p>Creación de mapas temáticos y visualizaciones de contornos</p></li>
+<li><p>Análisis de terreno y elevación</p></li>
+<li><p>Cálculo de gradiente, pendiente, aspecto, línea de visibilidad y cuenca visual</p></li>
+<li><p>Exportación de datos en formatos estándar como shapefile, GeoTIFF y KML</p></li>
+</ul>
+</section>
+<section id="fragmentos-de-codigo">
+<h2><span class="section-number">2.2. </span>Fragmentos de código<a class="headerlink" href="#fragmentos-de-codigo" title="Link to this heading"></a></h2>
+<p>A continuación se presentan algunos fragmentos de código basados en la documentación <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>
+para ejemplificar algunas de las capacidades de la herramienta (para obtener más información, consultar la
+<a class="reference internal" href="instalacion.html#bibliografia"><span class="std std-ref">documentación de MATLAB</span></a>).</p>
+<section id="importacion-y-visualizacion">
+<h3><span class="section-number">2.2.1. </span>Importación y visualización<a class="headerlink" href="#importacion-y-visualizacion" title="Link to this heading"></a></h3>
+<p>Para trabajar con mapas en MATLAB, primero necesitamos importar datos
+geoespaciales. <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> proporciona varias funciones para leer
+diferentes tipos de datos geográficos.</p>
+<p>Por ejemplo, para importar datos vectoriales como puntos, líneas y polígonos,
+podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">readgeotable</span></code>. Para crear los ejes del mapa
+la función <code class="docutils literal notranslate"><span class="pre">newmap</span></code> y para mostrar los datos, la función <code class="docutils literal notranslate"><span class="pre">geoplot</span></code>
+(ver la sección de <a class="reference internal" href="funciones.html#import-export"><span class="std std-ref">Funciones</span></a>).</p>
+<p>En el siguiente script, importamos tres archivos <code class="docutils literal notranslate"><span class="pre">shapefile</span></code> que
+contienen áreas (países), líneas (ríos) y ciudades (puntos).</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos vectoriales</span>
+<span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;landareas.shp&quot;</span><span class="p">);</span>
+<span class="n">rivers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;worldrivers.shp&quot;</span><span class="p">);</span>
+<span class="n">cities</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;worldcities.shp&quot;</span><span class="p">);</span>
+
+<span class="c">% Crear ejes de mapa con proyección Equal Earth (por defecto)</span>
+<span class="nb">figure</span>
+<span class="n">newmap</span>
+
+<span class="s">%</span><span class="w"> </span><span class="s">Mostrar</span><span class="w"> </span><span class="s">las</span><span class="w"> </span><span class="s">áreas</span><span class="w"> </span><span class="s">terrestres,</span><span class="w"> </span><span class="s">ríos</span><span class="w"> </span><span class="s">y</span><span class="w"> </span><span class="s">ciudades</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">rivers</span><span class="p">)</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="especificar-la-proyeccion">
+<h3><span class="section-number">2.2.2. </span>Especificar la proyección<a class="headerlink" href="#especificar-la-proyeccion" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> permite crear mapas con diferentes proyecciones
+geográficas. La proyección por defecto es la proyección Equal Earth, que
+es una proyección de área equidistante. Sin embargo, existen muchas
+otras proyecciones disponibles, como la proyección Mercator, la
+proyección Robinson y la proyección Lambert Conformal Conic, entre
+otras.</p>
+<p>Para crear un mapa con una proyección específica, se puede utilizar la
+función <code class="docutils literal notranslate"><span class="pre">projcrs</span></code>. Los códigos de las proyecciones se pueden consultar en
+<a class="reference external" href="https://epsg.io/">https://epsg.io/</a>. Por ejemplo, para
+crear un mapa con la proyección Lambert Azimuthal Equal Area Europa (<a class="reference external" href="https://epsg.io/3035">https://epsg.io/3035</a>),
+podemos utilizar el siguiente código:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Crea ejes de mapa en coordenadas proyectadas Lambert Azimuthal Equal Area (Europa)</span>
+<span class="nb">figure</span>
+<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">projcrs</span><span class="p">(</span><span class="mi">3035</span><span class="p">);</span>
+<span class="n">newmap</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="c">% Mostrar datos con diferentes colores</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">land</span><span class="p">,</span><span class="w"> </span><span class="n">FaceColor</span><span class="p">=[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span><span class="w"> </span><span class="c">% Áreas terrestres en gris</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span><span class="w"> </span><span class="n">Color</span><span class="p">=</span><span class="s">&#39;c&#39;</span><span class="p">)</span><span class="w"> </span><span class="c">% Ríos en cyan</span>
+<span class="nb">geoplot</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="w"> </span><span class="n">MarkerEdgeColor</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="c">% Ciudades en rojo</span>
+
+<span class="c">% Añadir etiqueta</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">39</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Océano Atlántico&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="exportar-mapas">
+<h3><span class="section-number">2.2.3. </span>Exportar mapas<a class="headerlink" href="#exportar-mapas" title="Link to this heading"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Aqui va el código para generar el mapa (por ejemplo el script anterior)</span>
+<span class="c">% Una vez creado el mapa, podemos exportarlo a diferentes formatos, por ejemplo:</span>
+
+<span class="c">% Exportar el mapa como imagen PNG a 300 dpi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;mapa_export_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;-dpng&#39;</span><span class="p">,</span><span class="s">&#39;-r300&#39;</span><span class="p">);</span>
+
+<span class="c">% Alternativamente se puede exportar con la función exportgraphics:</span>
+<span class="nb">exportgraphics</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mapa_export_2.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Resolution&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+
+<span class="c">% Exportar el mapa como archivo PDF</span>
+<span class="nb">exportgraphics</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mapa_export_3.pdf&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;ContentType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;vector&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> también permite exportar datos geoespaciales en
+formatos estándar como shapefile, GeoTIFF y KML, facilitando el
+intercambio de datos con Sistemas de Información Geográfica (GIS) y
+otras aplicaciones geoespaciales. Se revisarán algunos de estos ejemplos más adelante en el curso.</p>
+</section>
+<section id="mapas-basados-en-axesm">
+<h3><span class="section-number">2.2.4. </span>Mapas basados en <code class="docutils literal notranslate"><span class="pre">axesm</span></code><a class="headerlink" href="#mapas-basados-en-axesm" title="Link to this heading"></a></h3>
+<p>El enfoque tradicional de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox``utiliza</span> <span class="pre">la</span> <span class="pre">función</span> <span class="pre">``worldmap</span></code> para configurar
+mapas basados en <code class="docutils literal notranslate"><span class="pre">axesm</span></code> (<code class="docutils literal notranslate"><span class="pre">axesm-based</span> <span class="pre">map</span></code>):</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Crea un mapa mundial con proyección Robinson</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="w"> </span><span class="s">world</span>
+
+<span class="c">% Mostrar líneas de costa</span>
+<span class="nb">load</span><span class="w"> </span><span class="n">coastlines</span>
+<span class="n">plotm</span><span class="p">(</span><span class="n">coastlat</span><span class="p">,</span><span class="w"> </span><span class="n">coastlon</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para crear un mapa de una región específica:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% importa los shapefiles</span>
+<span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;landareas.shp&quot;</span><span class="p">);</span>
+<span class="n">rivers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;worldrivers.shp&quot;</span><span class="p">);</span>
+<span class="n">cities</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;worldcities.shp&quot;</span><span class="p">);</span>
+
+<span class="c">% Crea un mapa de Europa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="w"> </span><span class="s">europe</span>
+
+<span class="c">% Consultar la proyección utilizada</span>
+<span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">gca</span><span class="p">;</span>
+<span class="n">getm</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MapProjection&quot;</span><span class="p">)</span>
+
+<span class="c">% Mostrar datos</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">land</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.88</span><span class="w"> </span><span class="mf">0.95</span><span class="w"> </span><span class="mf">0.81</span><span class="p">])</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Marker&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MarkerEdgeColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.6350</span><span class="w"> </span><span class="mf">0.0780</span><span class="w"> </span><span class="mf">0.1840</span><span class="p">])</span>
+
+<span class="c">% Añadir etiquetas</span>
+<span class="n">textm</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mar Mediterráneo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualizacion-del-terreno-en-3d">
+<h3><span class="section-number">2.2.5. </span>Visualización del terreno en 3D<a class="headerlink" href="#visualizacion-del-terreno-en-3d" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code> también permite la visualización y el análisis de
+datos 3D. Por ejemplo, para visualizar un terreno digital en 3D, podemos
+utilizar la función <code class="docutils literal notranslate"><span class="pre">geoglobe</span></code>. Esta función crea una figura 3D interactiva
+que permite rotar, acercar y alejar el mapa. Tambien podemos ubicar la posición
+de la camara (<code class="docutils literal notranslate"><span class="pre">campos</span></code>), su ángulo de inclinación (<code class="docutils literal notranslate"><span class="pre">campitch</span></code>) y de rumbo (<code class="docutils literal notranslate"><span class="pre">camheading</span></code>).</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Muestra un globo geográfico en una figura</span>
+<span class="n">uif</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">uifigure</span><span class="p">;</span>
+<span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">geoglobe</span><span class="p">(</span><span class="n">uif</span><span class="p">);</span>
+
+<span class="c">% Ubica la posición de la cámara</span>
+<span class="nb">campos</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="mf">24.03</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">110.37</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">campitch</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">camheading</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>También podemos realizar análisis del terreno (como cálculo de pendiente, orientación,
+líneas de visibilidad, etc.) a partir de datos de elevación y batimetría.</p>
+</section>
+<section id="mapa-de-elevacion">
+<h3><span class="section-number">2.2.6. </span>Mapa de elevación<a class="headerlink" href="#mapa-de-elevacion" title="Link to this heading"></a></h3>
+<p>Para visualizar datos de elevación podemos utilizar un avariante de la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code>
+(también se puede usar <code class="docutils literal notranslate"><span class="pre">meshm</span></code> o <code class="docutils literal notranslate"><span class="pre">surfm</span></code>). En el siguiente ejemplo, el archivo <code class="docutils literal notranslate"><span class="pre">n39_w106_3arc_v2.dt1</span></code>
+contiene datos de elevación correspondientes a un área de South Boulder Peak, Colorado (en formato DT1).
+El formato  <code class="docutils literal notranslate"><span class="pre">.DT1</span></code> se utiliza principalmente para almacenar datos de elevación.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Cargar datos de elevación (tipo de datos &#39;double&#39;)</span>
+<span class="c">% Observa que se recuperan dos variables [A, R] ¿a que corresponde cada una?</span>
+<span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeoraster</span><span class="p">(</span><span class="s">&quot;n39_w106_3arc_v2.dt1&quot;</span><span class="p">,</span><span class="n">OutputType</span><span class="p">=</span><span class="s">&quot;double&quot;</span><span class="p">);</span>
+
+<span class="c">% Obtiene los límites de la región</span>
+<span class="n">latlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">LatitudeLimits</span><span class="p">;</span>
+<span class="n">lonlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">LongitudeLimits</span><span class="p">;</span>
+
+<span class="c">% Crea un mapa de elevación</span>
+<span class="n">worldmap</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">DisplayType</span><span class="p">=</span><span class="s">&quot;surface&quot;</span><span class="p">)</span>
+<span class="n">demcmap</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>⁂</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="instalacion.html" class="btn btn-neutral float-left" title="1. Empezar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="funciones.html" class="btn btn-neutral float-right" title="3. Funciones" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor GISLAB-CICIMAR-2025.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

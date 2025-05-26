@@ -1,0 +1,110 @@
+..  Primeros pasos: instalación de Matlab y Toolboxes,
+..  estructura de carpetas y organización de datos
+
+Empezar
+=======
+
+Instalación
+-----------
+
+En esta sección se presentan los pasos para instalar MATLAB y los complementos necesarios para
+el tratamiento de datos geoespaciales y la creación de mapas. 
+Se sugiere como organizar las carpetas y como configurar la ruta de acceso a la carpeta de datos.
+
+.. note:: 
+    Este módulo está dirigido a estudiantes del CICIMAR-IPN y se asume la instalación de MATLAB 
+    con licencia institucional (opcionalmente, si no cuentas con una cuenta de correo institucional, 
+    puedes utilizar la versión de prueba de MATLAB o MATLAB Online).
+
+.. _installation:
+
+MATLAB y complementos
+^^^^^^^^^^^^^^^^^^^^^
+
+Para instalar MATLAB sigue estos pasos:
+
+1. Crea una cuenta con tu dirección de correo institucional en el sitio web de  `MathWorks <https://login.mathworks.com/embedded-login/signin.html?cid=mktg&wid=gnav&uri=https%3A%2F%2Fla.mathworks.com%2F target=_blank>`_.
+2. Descarga y ejecuta el instalador de MATLAB.
+3. Durante la instalación, selecciona las Toolboxes que deseas instalar. Asegúrate de incluir las siguientes:
+
+   - `Mapping Toolbox <https://www.mathworks.com/products/mapping.html>`_
+   - `Image Processing Toolbox <https://la.mathworks.com/products/image-processing.html>`_
+
+4. Complementos opcionales:
+
+   - `Statistics and Machine Learning Toolbox <https://la.mathworks.com/products/image-processing.html>`_
+   - `Hyperspectral Imaging Toolbox <https://la.mathworks.com/products/hyperspectral-imaging.html>`_
+
+Organización de carpetas
+------------------------
+
+Se recomienda utilizar la siguiente estructura de carpetas para organizar los datos y tus scripts de MATLAB:
+
+.. code-block:: bash
+   
+    GIS
+    ├── datos          
+    │   ├── csv
+    │   ├── kml
+    │   ├── mat
+    │   ├── nc
+    │   ├── shp
+    │   └── tif
+    ├── matlab
+    │   ├── gmf_00_tsunamis.mlx
+    │   ├── gmf_01_sismos.mlx
+    │ ...
+
+En la carpeta ``matlab`` guardarás los scripts (``.mlx``) que irás realizando durante el curso. 
+Los primeros dos digitos del nombre del archivo corresponden al número consecutivo de la práctica, 
+las siguentes tres letras a tus iniciales y enseguida una o unas palabras que identifique la 
+práctica (por ejemplo: ``gmf_00_tsunamis.mlx``). 
+Los nombres de los archivos deben empezar con una letra, pueden contener letras, números o guiones 
+bajos (sin espacios ni caracteres especiales).
+
+Establecer la ruta 
+------------------
+
+Para que MATLAB (desde tus scripts) localice los ``datos``, agrega esa carpeta a la ruta de búsqueda desde la pestaña ``HOME`` y seleccionando ``Set Path``.
+Luego selecciona ``Add with Subfolders...`` y elige la carpeta ``datos``.
+Después selecciona ``Save`` y ``Close``.
+
+..
+    |Red light| means stop, |green light| means go.
+
+    .. |red light|    image:: path_setup.png
+       :align: top
+    .. |green light|  image:: path_setup.png
+       :align: bottom
+
+.. rst-class:: image-no-text-wrap
+
+.. figure:: images/path.png
+   :alt: Texto alternativo para la imagen
+   :name: path_setup
+   :align: left
+   :class: image-class-value
+   :figclass: figure-class-value
+
+.. _bibliografia:
+
+Bibliografía
+------------
+
+Las referencias bibliográficas corresponden principalmente a la documentación de MATLAB y sus 
+complementos (Toolboxes), y están disponibles (``pdf``) en los siguientes enlaces
+(también puedes consultar la `documentación en línea de Mapping Toolbox <https://t.ly/uhlJb>`_).
+
+* `MATLAB Manual Básico <https://la.mathworks.com/help/pdf_doc/matlab/learn_matlab_es.pdf>`_
+* `Mapping Toolbox User's Guide <https://la.mathworks.com/help/releases/R2024b/pdf_doc/map/map_ug.pdf>`_
+* `Image Processing Toolbox User's Guide <https://la.mathworks.com/help/releases/R2024b/pdf_doc/images/images_ug.pdf>`_
+* `MATLAB Recipies for Earth Sciences, 4th edition <https://link.springer.com/book/10.1007/978-3-662-46244-7>`_
+* `MATLAB Recipies for Earth Sciences, 6th edition <https://link.springer.com/book/10.1007/978-3-031-57949-3>`_
+
+
+.. figure:: /images/978-3-031-57949-3.webp
+    :alt: Texto alternativo para la imagen
+    :scale: 25%
+    :align: left
+
+⁂

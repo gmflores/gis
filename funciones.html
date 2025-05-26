@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Funciones &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=4936afed"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="4. Scripts de ejemplo" href="ejemplos.html" />
+    <link rel="prev" title="2. Introducción" href="introduccion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GIS&RS | MATLAB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">1. Empezar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">2. Introducción</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Funciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#de-uso-general">3.1. De uso general</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipulacion-de-arreglos">3.2. Manipulación de arreglos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importacion-y-exportacion">3.3. Importación y exportación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#establecer-ejes-de-mapa">3.4. Establecer ejes de mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizacion">3.5. Visualización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-coordenadas">3.6. Transformación de coordenadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analisis-del-terreno">3.7. Análisis del terreno</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ejemplos.html">4. Scripts de ejemplo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">6. Algunas fuentes de datos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS&RS | MATLAB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Funciones</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="funciones">
+<h1><span class="section-number">3. </span>Funciones<a class="headerlink" href="#funciones" title="Link to this heading"></a></h1>
+<p>En esta sección se presentan algunas de las principales funciones para la creación de mapas y la
+visualización de datos geoespaciales (con enlaces a la documentación oficial de <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>).
+Estas funciones son útiles para la importación, exportación y manipulación de datos geoespaciales,
+así como para la creación de gráficos y mapas.
+En la siguiente sección se incluyen algunos ejemplos de uso.</p>
+<section id="de-uso-general">
+<h2><span class="section-number">3.1. </span>De uso general<a class="headerlink" href="#de-uso-general" title="Link to this heading"></a></h2>
+<p>Estas son algunas funciones de uso general, por ejemplo, para leer archivos <code class="docutils literal notranslate"><span class="pre">.mat</span></code> y tabulares (p. ej., <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>),
+obtener información del contenido de las carpetas, crear gráficos y exportar imágenes, entre otras.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/dir.html">dir</a></p></td>
+<td><p>Listar archivos y carpetas en un directorio</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/fullfile.html">fullfile</a></p></td>
+<td><p>Crear ruta de archivo a partir de partes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://https://la.mathworks.com/help/matlab/ref/load.html">load</a></p></td>
+<td><p>Cargar variables en el área de trabajo desde un archivo (.mat)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/readtable.html">readtable</a></p></td>
+<td><p>Crear tabla a partir de archivos (.csv, .xls, .xlsx, .txt)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/stem.html">stem</a></p></td>
+<td><p>Crear gráfico de tallo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/plot.html">plot</a></p></td>
+<td><p>Crear gráfico (2D)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/title.html">title</a></p></td>
+<td><p>Añadir título para un gráfico</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/xlabel.html">xlabel</a></p></td>
+<td><p>Añadir etiqueta para el eje x</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/ylabel.html">ylabel</a></p></td>
+<td><p>Añadir etiqueta para el eje y</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/legend.html">legend</a></p></td>
+<td><p>Añadir leyenda para un gráfico</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/find.html">find</a></p></td>
+<td><p>Encontrar índices de elementos en un arreglo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/contains.html">contains</a></p></td>
+<td><p>Encontrar elementos en un arreglo de caracteres</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/figure.html">figure</a></p></td>
+<td><p>Crear una nueva ventana de figura</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/exportgraphics.html">exportgraphics</a></p></td>
+<td><p>Exportar gráficos a archivos de imagen (.png, .pdf, .jpg)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/print.html">print</a></p></td>
+<td><p>Guardar mapa o gráfico en formato de imagen (.png, .jpg, .pdf)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/saveas.html">saveas</a></p></td>
+<td><p>Guardar figura en un archivo (.fig, .png, .jpg, .pdf)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="manipulacion-de-arreglos">
+<h2><span class="section-number">3.2. </span>Manipulación de arreglos<a class="headerlink" href="#manipulacion-de-arreglos" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/ismember.html">ismember</a></p></td>
+<td><p>Determina si los elementos de un arreglo son miembros de otro</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/unique.html">unique</a></p></td>
+<td><p>Encuentra los elementos únicos de un arreglo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/sort.html">sort</a></p></td>
+<td><p>Ordena los elementos de un arreglo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/sortrows.html">sortrows</a></p></td>
+<td><p>Ordena las filas de una tabla o matriz</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/length.html">length</a></p></td>
+<td><p>Devuelve el número de elementos en un arreglo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/size.html">size</a></p></td>
+<td><p>Devuelve el tamaño de un arreglo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/numel.html">numel</a></p></td>
+<td><p>Devuelve el número de elementos en un arreglo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/find.html">find</a></p></td>
+<td><p>Encuentra los índices de los elementos que cumplen una condición</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/isnan.html">isnan</a></p></td>
+<td><p>Determina si los elementos de un arreglo son NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/permute.html">permute</a></p></td>
+<td><p>Permuta las dimensiones de un arreglo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/reshape.html">reshape</a></p></td>
+<td><p>Reorganiza los elementos de un arreglo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/repmat.html">repmat</a></p></td>
+<td><p>Repite un arreglo en una matriz de tamaño especificado</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/cat.html">cat</a></p></td>
+<td><p>Concatena matrices a lo largo de una dimensión especificada</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/ndims.html">ndims</a></p></td>
+<td><p>Devuelve el número de dimensiones de un arreglo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/ndgrid.html">ndgrid</a></p></td>
+<td><p>Genera matrices de coordenadas para un espacio multidimensional</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/meshgrid.html">meshgrid</a></p></td>
+<td><p>Genera matrices de coordenadas para un espacio bidimensional</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/griddata.html">griddata</a></p></td>
+<td><p>Interpola datos en un espacio multidimensional</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="importacion-y-exportacion">
+<span id="import-export"></span><h2><span class="section-number">3.3. </span>Importación y exportación<a class="headerlink" href="#importacion-y-exportacion" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/shaperead.html">shaperead</a></p></td>
+<td><p>Leer archivos shapefile</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/shapewrite.html">shapewrite</a></p></td>
+<td><p>Escribir archivos shapefile</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/readgeotable.html">readgeotable</a></p></td>
+<td><p>Lee datos vectoriales en varios formatos (.shp, .kml, .json)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/readgeoraster.html">readgeoraster</a></p></td>
+<td><p>Lee archivos rastes geoespaciales en varios formatos (.tif, .nc)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/geotiffread.html">geotiffread</a></p></td>
+<td><p>Leer archivos GeoTIFF</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/geotiffwrite.html">geotiffwrite</a></p></td>
+<td><p>Escribir archivos GeoTIFF</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="establecer-ejes-de-mapa">
+<h2><span class="section-number">3.4. </span>Establecer ejes de mapa<a class="headerlink" href="#establecer-ejes-de-mapa" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/worldmap.html">worldmap</a></p></td>
+<td><p>Crea un mapa del mundo o de una región específica</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/axesm.html">axesm</a></p></td>
+<td><p>Crear los ejes para un mapa en una proyección específica</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/newmap.html">newmap</a></p></td>
+<td><p>Crear nuevos ejes de mapa con proyección Equal Earth por defecto</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="visualizacion">
+<h2><span class="section-number">3.5. </span>Visualización<a class="headerlink" href="#visualizacion" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/geoshow.html">geoshow</a></p></td>
+<td><p>Mostrar datos vectoriales o ráster en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/plotm.html">plotm</a></p></td>
+<td><p>Graficar datos vectoriales en un mapa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/meshm.html">meshm</a></p></td>
+<td><p>Crear un gráfico de malla en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/surfm.html">surfm</a></p></td>
+<td><p>Crear un gráfico de superficie (3D) en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/geosurface.html">geosurface</a></p></td>
+<td><p>Crear un gráfico de superficie en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geolimits.html">geolimits</a></p></td>
+<td><p>Establecer límites geográficos en un mapa</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geoplot.html">geoplot</a></p></td>
+<td><p>Traza datos vectoriales en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geoscatter.html">geoscatter</a></p></td>
+<td><p>Grafica puntos de dispersión en coordenadas geográficas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geobubble.html">geobubble</a></p></td>
+<td><p>Crear gráfica de burbujas geográficas</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geodensityplot.html">geodensityplot</a></p></td>
+<td><p>Crear un gráfico de densidad geográfica</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/matlab/ref/geobasemap.html">geobasemap</a></p></td>
+<td><p>Muestra un mapa base</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="transformacion-de-coordenadas">
+<h2><span class="section-number">3.6. </span>Transformación de coordenadas<a class="headerlink" href="#transformacion-de-coordenadas" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/projcrs.html">projcrs</a></p></td>
+<td><p>Define un sistema de coordenadas proyectado</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/projfwd.html">projfwd</a></p></td>
+<td><p>Proyecta coordenadas geográficas a coordenadas en un sistema proyectado</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/projinv.html">projinv</a></p></td>
+<td><p>Proyecta coordenadas de un sistema proyectado a coordenadas geográficas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/georefcells.html">georefcells</a></p></td>
+<td><p>Define un sistema de referencia de celdas geográficas</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="analisis-del-terreno">
+<h2><span class="section-number">3.7. </span>Análisis del terreno<a class="headerlink" href="#analisis-del-terreno" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Función</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/gradientm.html">gradientm</a></p></td>
+<td><p>Calcula el gradiente de datos raster geoespaciales</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/los2.html">los2</a></p></td>
+<td><p>Calcula línea de visibilidad</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/viewshed.html">viewshed</a></p></td>
+<td><p>Calcula cuenca visual</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/terrain.html">terrain</a></p></td>
+<td><p>Calcula pendiente, aspecto y elevación</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/geodist.html">geodist</a></p></td>
+<td><p>Calcula la distancia geodésica entre dos puntos</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://la.mathworks.com/help/map/ref/distance.html">distance</a></p></td>
+<td><p>Calcula la distancia entre dos puntos en un mapa</p></td>
+</tr>
+</tbody>
+</table>
+<p>⁂</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="introduccion.html" class="btn btn-neutral float-left" title="2. Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="ejemplos.html" class="btn btn-neutral float-right" title="4. Scripts de ejemplo" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor GISLAB-CICIMAR-2025.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

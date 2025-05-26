@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Algunas fuentes de datos &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=4936afed"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="5. Software adicional" href="software.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GIS&RS | MATLAB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">1. Empezar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">2. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">3. Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejemplos.html">4. Scripts de ejemplo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Algunas fuentes de datos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vectoriales">6.1. Vectoriales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conabio">6.1.1. CONABIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gadm">6.1.2. GADM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#natural-earth">6.1.3. Natural Earth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inegi">6.1.4. INEGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbif">6.1.5. GBIF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#worldclim">6.1.6. WorldClim</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#raster">6.2. Ráster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#erddap">6.2.1. ERDDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagenes-landsat">6.2.2. Imágenes Landsat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagenes-modis">6.2.3. Imágenes MODIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagenes-sentinel">6.2.4. Imágenes Sentinel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#continuo-de-elevaciones-mexicano">6.2.5. Continuo de Elevaciones Mexicano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srtm">6.2.6. SRTM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gebco">6.2.7. GEBCO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bio-oracle">6.2.8. Bio-ORACLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oceancolor">6.2.9. Oceancolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-marine-service">6.2.10. Copernicus Marine Service</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS&RS | MATLAB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>Algunas fuentes de datos</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="algunas-fuentes-de-datos">
+<h1><span class="section-number">6. </span>Algunas fuentes de datos<a class="headerlink" href="#algunas-fuentes-de-datos" title="Link to this heading"></a></h1>
+<p>Esta sección contiene enlaces a algunos portales de los que puede obtenerse información
+geográfica en formato <a class="reference internal" href="#vector"><span class="std std-ref">vectorial</span></a> como <a class="reference internal" href="#raster"><span class="std std-ref">ráster</span></a>.
+Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas,
+imágenes satelitales y datos ambientales.
+Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.</p>
+<section id="vectoriales">
+<span id="vector"></span><h2><span class="section-number">6.1. </span>Vectoriales<a class="headerlink" href="#vectoriales" title="Link to this heading"></a></h2>
+<section id="conabio">
+<h3><span class="section-number">6.1.1. </span>CONABIO<a class="headerlink" href="#conabio" title="Link to this heading"></a></h3>
+<p>El portal de la Comisión Nacional para el Conocimiento y Uso de la Biodiversidad
+(<a class="reference external" href="http://www.conabio.gob.mx/informacion/gis/">http://www.conabio.gob.mx/informacion/gis/</a>) ofrece una amplia variedad de
+datos geoespaciales desde una plataforma que permite su visualización.
+Incluye capas ambientales, de biodiversidads, población, infraestructura, entre otras.</p>
+</section>
+<section id="gadm">
+<h3><span class="section-number">6.1.2. </span>GADM<a class="headerlink" href="#gadm" title="Link to this heading"></a></h3>
+<p>Es un portal de información geográfica donde se puede consultar y descargar las áreas administrativas de todos los paises en tres niveles de subdivisión (fronteras).
+Puedes consultar el portal de GADM en el siguiente enlace: <a class="reference external" href="https://gadm.org/">https://gadm.org/</a>.</p>
+</section>
+<section id="natural-earth">
+<h3><span class="section-number">6.1.3. </span>Natural Earth<a class="headerlink" href="#natural-earth" title="Link to this heading"></a></h3>
+<p>Es un conjunto de datos cartográficos disponible a escalas de 1:10m, 1: 50m y 1:110m. Con datos vectoriales y ráster integrados, <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a> permite crear una variedad de mapas visualmente atractivos con software de SIG.</p>
+</section>
+<section id="inegi">
+<h3><span class="section-number">6.1.4. </span>INEGI<a class="headerlink" href="#inegi" title="Link to this heading"></a></h3>
+<p>Es el portal del Instituto Nacional de Estadística y Geografía (<a class="reference external" href="https://inegi.org.mx/app/mapas/">https://inegi.org.mx/app/mapas/</a>),
+donde se puede consultar, visualizar y descargar cartografía temática a diferentes escalas.</p>
+</section>
+<section id="gbif">
+<h3><span class="section-number">6.1.5. </span>GBIF<a class="headerlink" href="#gbif" title="Link to this heading"></a></h3>
+<p>GBIF (Global Biodiversity Information Facility) es una plataforma que facilita el acceso y uso de información
+sobre la biodiversidad, incluyendo las ocurrencias de diferentes especies. Los datos de ocurrencia son un
+tipo específico de información que GBIF publica y que es muy útil para estudios científicos y ambientales.
+Puedes consultar su portal en el siguiente enlace: <a class="reference external" href="https://www.gbif.org/">https://www.gbif.org/</a>.</p>
+</section>
+<section id="worldclim">
+<h3><span class="section-number">6.1.6. </span>WorldClim<a class="headerlink" href="#worldclim" title="Link to this heading"></a></h3>
+<p>WorldClim es una base de datos meteorológicos y climáticos globales disponibles a diferentes
+resoluciones espaciales. Estos datos pueden utilizarse para la cartografía y la modelización espacial.
+Se proporcionan para su uso en investigación y actividades afines. Enlace: <a class="reference external" href="https://www.worldclim.org/">https://www.worldclim.org/</a>.</p>
+</section>
+</section>
+<section id="raster">
+<span id="id2"></span><h2><span class="section-number">6.2. </span>Ráster<a class="headerlink" href="#raster" title="Link to this heading"></a></h2>
+<p>En esta sección se describen los portales de información geográfica donde se puede consultar, visualizar y descargar cartografía temática de diferentes escalas generada y recopilada por diferentes instituciones. Estos portales ofrecen una amplia variedad de datos geoespaciales, incluyendo mapas, imágenes satelitales y datos ambientales. Puedes acceder a estos datos a través de sus sitios web y utilizarlos en tus proyectos de SIG.</p>
+<section id="erddap">
+<h3><span class="section-number">6.2.1. </span>ERDDAP<a class="headerlink" href="#erddap" title="Link to this heading"></a></h3>
+<p>Es un servidor de datos que pone a disposición la descarga de datos datos oceanográficos
+(por ejemplo, datos de satélites y boyas) en formatos de archivo comunes y crear gráficos y mapas.
+Actualmente dispone de más de 3000 conjuntos de datos, incluyendo datos de temperatura, salinidad,
+corrientes y otros parámetros oceanográficos.
+Puedes consultar su portal en el siguiente enlace: <a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/index.html">https://coastwatch.pfeg.noaa.gov/erddap/index.html</a></p>
+<p>Por ejemplo, para descargar datos de temperatura del mar, puedes utilizar el siguiente enlace:
+<a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html">https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html</a></p>
+</section>
+<section id="imagenes-landsat">
+<h3><span class="section-number">6.2.2. </span>Imágenes Landsat<a class="headerlink" href="#imagenes-landsat" title="Link to this heading"></a></h3>
+<p>Las Misiones Landsat están compuestas por satélites operativos de observación terrestre que transportan sensores
+remotos para recopilar datos y obtener imágenes de nuestro planeta como parte del Programa Nacional de Imágenes
+Terrestres (NLI) del Servicio Geológico de Estados Unidos (USGS). Consulta los portales de la USGS
+para obtener mayor información (<a class="reference external" href="https://www.usgs.gov/landsat-missions/landsat-satellite-missions">https://www.usgs.gov/landsat-missions/landsat-satellite-missions</a>)
+y para descargar imágenes en: <a class="reference external" href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></p>
+</section>
+<section id="imagenes-modis">
+<h3><span class="section-number">6.2.3. </span>Imágenes MODIS<a class="headerlink" href="#imagenes-modis" title="Link to this heading"></a></h3>
+<p>MODIS (Moderate Resolution Imaging Spectroradiometer) es un instrumento  a
+bordo de los satélites Terra y Aqua que obtiene datos de la superficie terrestre
+cada uno o dos días. Estos datos mejorarán nuestra comprensión de la dinámica global
+y los procesos que ocurren en la tierra, los océanos y la atmósfera inferior.
+Puedes consultar su portal en: <a class="reference external" href="https://modis.gsfc.nasa.gov/">Imágenes MODIS</a></p>
+</section>
+<section id="imagenes-sentinel">
+<h3><span class="section-number">6.2.4. </span>Imágenes Sentinel<a class="headerlink" href="#imagenes-sentinel" title="Link to this heading"></a></h3>
+<p>Las Sentinel-1, Sentinel-2, Sentinel-3, Sentinel-5P, Sentinel-6
+son una plataformas de observación de la Tierra de la Agencia Espacial Europea (ESA)
+que proporcionan imágenes de la superficie terrestre a diferentes resoluciones espaciales, espectrales y temporales.
+Estos datos  son útiles para el monitoreo ambiental, la gestión de recursos naturales, la
+agricultura y otros estudios geoespaciales. Su objetivo es monitorear los cambios en las condiciones de la superficie terrestre.
+Puedes más detalles en el portal: <a class="reference external" href="https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2">https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2</a></p>
+</section>
+<section id="continuo-de-elevaciones-mexicano">
+<h3><span class="section-number">6.2.5. </span>Continuo de Elevaciones Mexicano<a class="headerlink" href="#continuo-de-elevaciones-mexicano" title="Link to this heading"></a></h3>
+<p>El Continuo de Elevaciones Mexicano es un producto de INEGI que representa las elevaciones
+del territorio continental mexicano a diferentes resoluciones espaciales.
+Estos datos pueden obtenerse del portal: <a class="reference external" href="https://www.inegi.org.mx/app/geo2/elevacionesmex/">https://www.inegi.org.mx/app/geo2/elevacionesmex/</a></p>
+</section>
+<section id="srtm">
+<h3><span class="section-number">6.2.6. </span>SRTM<a class="headerlink" href="#srtm" title="Link to this heading"></a></h3>
+<p>SRTM (Shuttle Radar Topography Mission) es un proyecto de Agencia Nacional de Inteligencia
+Geoespacial (NGA) y la Administración Nacional de la Aeronáutica y del Espacio (NASA) que
+generó un modelo digital de elevación (MDE) de la superficie terrestre.
+Puedes obtener estos datos del portal: <a class="reference external" href="https://srtm.csi.cgiar.org/srtmdata/">https://srtm.csi.cgiar.org/srtmdata/</a></p>
+</section>
+<section id="gebco">
+<h3><span class="section-number">6.2.7. </span>GEBCO<a class="headerlink" href="#gebco" title="Link to this heading"></a></h3>
+<p>El portal de GEBCO (General Bathymetric Chart of the Oceans) ofrece datos batimétricos y de elevación.
+Puedes consultar el portal de GEBCO en el siguiente enlace:  <a class="reference external" href="https://www.gebco.net/">https://www.gebco.net/</a></p>
+</section>
+<section id="bio-oracle">
+<h3><span class="section-number">6.2.8. </span>Bio-ORACLE<a class="headerlink" href="#bio-oracle" title="Link to this heading"></a></h3>
+<p>Bio-ORACLE ofrece capas de datos físicos, químicos, biológicos y topográficos
+con extensión global y resolución uniforme para modelar la distribución de la
+biodiversidad marina.
+Puedes consultar el portal de Bio-ORACLE en el siguiente enlace: <a class="reference external" href="https://www.bio-oracle.org/">https://www.bio-oracle.org/</a></p>
+</section>
+<section id="oceancolor">
+<h3><span class="section-number">6.2.9. </span>Oceancolor<a class="headerlink" href="#oceancolor" title="Link to this heading"></a></h3>
+<p>Oceancolor es un programa de la NASA que proporciona datos del océano a partir de
+imágenes satelitales. Los datos de Oceancolor son útiles para el monitoreo de la
+calidad del agua, la detección de fitoplancton y otros estudios relacionados
+con el océano y el medio ambiente marino.
+Los datos de Oceancolor son ampliamente utilizados en la investigación científica,
+la gestión de recursos marinos y la monitorización ambiental.
+Puedes consultar el portal de Oceancolor en el siguiente enlace: <a class="reference external" href="https://oceancolor.gsfc.nasa.gov/">https://oceancolor.gsfc.nasa.gov/</a></p>
+</section>
+<section id="copernicus-marine-service">
+<h3><span class="section-number">6.2.10. </span>Copernicus Marine Service<a class="headerlink" href="#copernicus-marine-service" title="Link to this heading"></a></h3>
+<p>Copernicus Marine Service es un servicio de la Unión Europea que proporciona
+acceso a datos y productos relacionados con el océano y el medio ambiente marino.
+El servicio recopila, procesa y distribuye datos de satélites, boyas y otros
+sensores para proporcionar información sobre las condiciones oceánicas, la calidad
+del agua, la temperatura del mar y otros parámetros ambientales. Puedes consultar
+su portal en: <a class="reference external" href="https://marine.copernicus.eu/">https://marine.copernicus.eu/</a></p>
+<p>⁂</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="software.html" class="btn btn-neutral float-left" title="5. Software adicional" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor GISLAB-CICIMAR-2025.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

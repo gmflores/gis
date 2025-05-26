@@ -1,0 +1,73 @@
+Funciones
+=========
+
+En esta sección se presentan algunas de las principales funciones para la creación de mapas y la 
+visualización de datos geoespaciales (con enlaces a la documentación oficial de ``MATLAB``).
+Estas funciones son útiles para la importación, exportación y manipulación de datos geoespaciales, 
+así como para la creación de gráficos y mapas.
+En la siguiente sección se incluyen algunos ejemplos de uso.
+
+De uso general
+~~~~~~~~~~~~~~
+
+Estas son algunas funciones de uso general, por ejemplo, para leer archivos ``.mat`` y tabulares (p. ej., ``.csv``, ``.xlsx``), 
+obtener información del contenido de las carpetas, crear gráficos y exportar imágenes, entre otras.
+
+.. tabularcolumns:: |p{1cm}|p{5cm}|
+
+.. csv-table:: 
+   :file: _data/funciones_generales.csv
+   :header-rows: 1
+   :widths: 20, 80
+
+Manipulación de arreglos
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_matrices.csv
+   :header-rows: 1
+   :widths: 20, 80
+
+.. _import_export:
+
+Importación y exportación
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_import_export.csv
+   :header-rows: 1
+   :widths: 20, 60
+
+Establecer ejes de mapa
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_ejes_mapa.csv
+   :header-rows: 1
+   :widths: 20, 80
+
+Visualización
+~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_visualiza.csv
+   :header-rows: 1
+   :widths: 20, 80
+
+Transformación de coordenadas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_transforma_coordenadas.csv
+   :header-rows: 1
+   :widths: 20, 80
+
+Análisis del terreno
+~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: 
+   :file: _data/funciones_analisis_terreno.csv
+   :header-rows: 1
+   :widths: 20 80
+
+⁂

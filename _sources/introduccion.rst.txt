@@ -1,0 +1,216 @@
+Introducción
+======================================================
+
+Mapping Toolbox es una extensión especializada de MATLAB que proporciona
+algoritmos y funciones para transformar datos geográficos y crear
+visualizaciones de mapas. Esta herramienta permite visualizar datos en
+un contexto geográfico, crear mapas a partir de más de 60 proyecciones y 
+transformar datos de diversas fuentes en un sistema de coordenadas geográficas 
+coherente.
+
+Mapping Toolbox admite un flujo de trabajo completo para la gestión de datos
+geográficos, desde la importación hasta la visualización y el análisis.
+Esto incluye la capacidad de importar datos raster y vectoriales desde
+una amplia gama de formatos, procesarlos mediante técnicas como recorte,
+interpolación y transformación de coordenadas, y combinarlos con capas
+de mapas base de diversas fuentes. Esto facilita la integración
+de análisis geoespaciales con otras capacidades de MATLAB, como el
+procesamiento de señales, la estadística o el aprendizaje automático.
+
+Estas herramientas tienen aplicaciones en el análisis territorial, la
+planificación urbana, la gestión de recursos naturales, la evaluación de
+riesgos ambientales y muchas otras áreas que requieren el manejo de
+información geoespacial.
+
+Capacidades principales 
+-----------------------
+
+- Importación y exportación de datos GIS raster y vectoriales
+- Visualización de mapas en 2D y 3D
+- Combinación de conjuntos de datos raster y vectoriales en una sola visualización
+- Creación de mapas temáticos y visualizaciones de contornos
+- Análisis de terreno y elevación
+- Cálculo de gradiente, pendiente, aspecto, línea de visibilidad y cuenca visual
+- Exportación de datos en formatos estándar como shapefile, GeoTIFF y KML
+
+Fragmentos de código
+--------------------
+
+A continuación se presentan algunos fragmentos de código basados en la documentación ``Mapping Toolbox``
+para ejemplificar algunas de las capacidades de la herramienta (para obtener más información, consultar la
+:ref:`documentación de MATLAB <bibliografia>`).
+
+Importación y visualización
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para trabajar con mapas en MATLAB, primero necesitamos importar datos
+geoespaciales. ``Mapping Toolbox`` proporciona varias funciones para leer
+diferentes tipos de datos geográficos.
+
+Por ejemplo, para importar datos vectoriales como puntos, líneas y polígonos,
+podemos utilizar la función ``readgeotable``. Para crear los ejes del mapa 
+la función ``newmap`` y para mostrar los datos, la función ``geoplot`` 
+(ver la sección de :ref:`Funciones <import_export>`).
+
+En el siguiente script, importamos tres archivos ``shapefile`` que
+contienen áreas (países), líneas (ríos) y ciudades (puntos).
+
+.. code:: matlab
+
+   % Importar datos vectoriales
+   land = readgeotable("landareas.shp");
+   rivers = readgeotable("worldrivers.shp");
+   cities = readgeotable("worldcities.shp");
+
+   % Crear ejes de mapa con proyección Equal Earth (por defecto)
+   figure
+   newmap
+
+   % Mostrar las áreas terrestres, ríos y ciudades
+   geoplot(land)
+   hold on
+   geoplot(rivers)
+   geoplot(cities)
+
+Especificar la proyección
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``Mapping Toolbox`` permite crear mapas con diferentes proyecciones
+geográficas. La proyección por defecto es la proyección Equal Earth, que
+es una proyección de área equidistante. Sin embargo, existen muchas
+otras proyecciones disponibles, como la proyección Mercator, la
+proyección Robinson y la proyección Lambert Conformal Conic, entre
+otras.
+
+Para crear un mapa con una proyección específica, se puede utilizar la
+función ``projcrs``. Los códigos de las proyecciones se pueden consultar en
+https://epsg.io/. Por ejemplo, para
+crear un mapa con la proyección Lambert Azimuthal Equal Area Europa (https://epsg.io/3035),
+podemos utilizar el siguiente código:
+
+.. code:: matlab
+
+   % Crea ejes de mapa en coordenadas proyectadas Lambert Azimuthal Equal Area (Europa)
+   figure
+   p = projcrs(3035);  
+   newmap(p)
+
+   % Mostrar datos con diferentes colores
+   geoplot(land, FaceColor=[0.5 0.5 0.5]) % Áreas terrestres en gris
+   hold on
+   geoplot(rivers, Color='c') % Ríos en cyan
+   geoplot(cities, MarkerEdgeColor=[1 0 0]) % Ciudades en rojo
+
+   % Añadir etiqueta
+   text(39, -43, "Océano Atlántico")
+   
+Exportar mapas
+~~~~~~~~~~~~~~
+
+.. code:: matlab
+
+   % Aqui va el código para generar el mapa (por ejemplo el script anterior)
+   % Una vez creado el mapa, podemos exportarlo a diferentes formatos, por ejemplo:
+
+   % Exportar el mapa como imagen PNG a 300 dpi
+   print('mapa_export_1', '-dpng','-r300'); 
+
+   % Alternativamente se puede exportar con la función exportgraphics:
+   exportgraphics(gcf, 'mapa_export_2.png', 'Resolution', 300); 
+
+   % Exportar el mapa como archivo PDF
+   exportgraphics(gcf, 'mapa_export_3.pdf', 'ContentType', 'vector')
+
+``Mapping Toolbox`` también permite exportar datos geoespaciales en
+formatos estándar como shapefile, GeoTIFF y KML, facilitando el
+intercambio de datos con Sistemas de Información Geográfica (GIS) y
+otras aplicaciones geoespaciales. Se revisarán algunos de estos ejemplos más adelante en el curso.
+
+Mapas basados en ``axesm``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+El enfoque tradicional de ``Mapping Toolbox``utiliza la función ``worldmap`` para configurar
+mapas basados en ``axesm`` (``axesm-based map``):
+
+.. code:: matlab
+
+   % Crea un mapa mundial con proyección Robinson
+   figure
+   worldmap world 
+
+   % Mostrar líneas de costa
+   load coastlines
+   plotm(coastlat, coastlon)
+
+Para crear un mapa de una región específica:
+
+.. code:: matlab
+
+   % importa los shapefiles
+   land = readgeotable("landareas.shp");
+   rivers = readgeotable("worldrivers.shp");
+   cities = readgeotable("worldcities.shp");
+
+   % Crea un mapa de Europa
+   figure
+   worldmap europe 
+
+   % Consultar la proyección utilizada
+   ax = gca;
+   getm(ax, "MapProjection")
+
+   % Mostrar datos
+   geoshow(land, "FaceColor", [0.88 0.95 0.81])
+   geoshow(rivers, "Color", "b")
+   geoshow(cities, "Marker", ".", "MarkerEdgeColor", [0.6350 0.0780 0.1840])
+
+   % Añadir etiquetas
+   textm(35, 14, "Mar Mediterráneo")
+
+Visualización del terreno en 3D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``Mapping Toolbox`` también permite la visualización y el análisis de
+datos 3D. Por ejemplo, para visualizar un terreno digital en 3D, podemos
+utilizar la función ``geoglobe``. Esta función crea una figura 3D interactiva
+que permite rotar, acercar y alejar el mapa. Tambien podemos ubicar la posición 
+de la camara (``campos``), su ángulo de inclinación (``campitch``) y de rumbo (``camheading``).
+
+.. code:: matlab
+   
+   % Muestra un globo geográfico en una figura
+   uif = uifigure;
+   g = geoglobe(uif);
+
+   % Ubica la posición de la cámara
+   campos(g, 24.03, -110.37, 1000)
+   campitch(g,-10);
+   camheading(g,20)
+
+También podemos realizar análisis del terreno (como cálculo de pendiente, orientación, 
+líneas de visibilidad, etc.) a partir de datos de elevación y batimetría.
+
+Mapa de elevación
+~~~~~~~~~~~~~~~~~
+
+Para visualizar datos de elevación podemos utilizar un avariante de la función ``geoshow`` 
+(también se puede usar ``meshm`` o ``surfm``). En el siguiente ejemplo, el archivo ``n39_w106_3arc_v2.dt1`` 
+contiene datos de elevación correspondientes a un área de South Boulder Peak, Colorado (en formato DT1).
+El formato  ``.DT1`` se utiliza principalmente para almacenar datos de elevación.
+
+.. code:: matlab
+
+   % Cargar datos de elevación (tipo de datos 'double')
+   % Observa que se recuperan dos variables [A, R] ¿a que corresponde cada una?
+   [A, R] = readgeoraster("n39_w106_3arc_v2.dt1",OutputType="double");
+
+   % Obtiene los límites de la región
+   latlim = R.LatitudeLimits;
+   lonlim = R.LongitudeLimits;
+
+   % Crea un mapa de elevación
+   worldmap(latlim,lonlim)
+   geoshow(A,R,DisplayType="surface")
+   demcmap(A)
+
+⁂

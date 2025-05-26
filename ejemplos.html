@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Scripts de ejemplo &mdash; documentación de GIS&amp;RS | MATLAB - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/customWidth.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=4936afed"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=f85f4cfb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="5. Software adicional" href="software.html" />
+    <link rel="prev" title="3. Funciones" href="funciones.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GIS&RS | MATLAB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">1. Empezar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">2. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">3. Funciones</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Scripts de ejemplo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datos-para-realizar-las-ejemplos">4.1. Datos para realizar las ejemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#con-datos-vectoriales">4.2. Con datos vectoriales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tsunamis">4.2.1. Tsunamis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sismos">4.2.2. Sismos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leer-archivos-shp">4.2.3. Leer archivos <code class="docutils literal notranslate"><span class="pre">shp</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">6. Algunas fuentes de datos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GIS&RS | MATLAB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Scripts de ejemplo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scripts-de-ejemplo">
+<h1><span class="section-number">4. </span>Scripts de ejemplo<a class="headerlink" href="#scripts-de-ejemplo" title="Link to this heading"></a></h1>
+<p>En esta sección se muestran algunos ejemplos de scripts de MATLAB para mostrar datos geoespaciales.
+Se utilizan las funciones descritas en la sección anterior para cargar datos, crear mapas y mostrar puntos en un mapa.
+Se recomienda revisar la documentación de cada función para obtener más información sobre su uso y opciones disponibles.</p>
+<section id="datos-para-realizar-las-ejemplos">
+<span id="datos-ejercicios"></span><h2><span class="section-number">4.1. </span>Datos para realizar las ejemplos<a class="headerlink" href="#datos-para-realizar-las-ejemplos" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Enlace a los datos</p></th>
+<th class="head"><p>Región</p></th>
+<th class="head"><p>Formato</p></th>
+<th class="head"><p>Fuente</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="_downloads/6e507cddd370cc7dc3b473f644da9b31/sismos_2010_2023.zip"><code class="xref download docutils literal notranslate"><span class="pre">Datos</span> <span class="pre">de</span> <span class="pre">sismos</span> <span class="pre">(2010-2023)</span></code></a></p></td>
+<td><p>Global</p></td>
+<td><p>csv</p></td>
+<td><p><a class="reference external" href="https://earthquake.usgs.gov">USGS</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="_downloads/5a8dc29fec069c5c2fd4c8e0038af1cb/sst_2018.mat.zip"><code class="xref download docutils literal notranslate"><span class="pre">Temperatura</span> <span class="pre">superficial</span> <span class="pre">del</span> <span class="pre">mar</span> <span class="pre">(2018)</span></code></a></p></td>
+<td><p>Sur del GC</p></td>
+<td><p>mat</p></td>
+<td><p><a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html">ERDDAP</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="_downloads/4d2c2fe7bb5bf1770baa0af0d62f983c/clorofila_2020.mat"><code class="xref download docutils literal notranslate"><span class="pre">Clorofila</span> <span class="pre">(2020)</span></code></a></p></td>
+<td><p>Sur del GC</p></td>
+<td><p>mat</p></td>
+<td><p><a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html">ERDDAP</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="_downloads/1fddd07a718791e09cfe19af3ead6560/clorofila_2015.nc"><code class="xref download docutils literal notranslate"><span class="pre">Clorofila</span> <span class="pre">(2015)</span></code></a></p></td>
+<td><p>Sur del GC</p></td>
+<td><p>nc</p></td>
+<td><p><a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html">ERDDAP</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="_downloads/ba99d60ad962b128cb72db6a8ca43035/sst_2015.nc.zip"><code class="xref download docutils literal notranslate"><span class="pre">Temperatura</span> <span class="pre">superficial</span> <span class="pre">del</span> <span class="pre">mar</span> <span class="pre">(2015)</span></code></a></p></td>
+<td><p>Sur del GC</p></td>
+<td><p>nc</p></td>
+<td><p><a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html">ERDDAP</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="_downloads/b01d8541bb1478ca88a56479fbcc741d/sst_2022.nc.zip"><code class="xref download docutils literal notranslate"><span class="pre">Temperatura</span> <span class="pre">superficial</span> <span class="pre">del</span> <span class="pre">mar</span> <span class="pre">(2022)</span></code></a></p></td>
+<td><p>Sur del GC</p></td>
+<td><p>nc</p></td>
+<td><p><a class="reference external" href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html">ERDDAP</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="_downloads/be5fcf9dba95126fe5c4e855536a84cc/cmems_mod_glo_phy-cur.nc.zip"><code class="xref download docutils literal notranslate"><span class="pre">Corrientes</span> <span class="pre">marinas</span> <span class="pre">CMEMS</span></code></a></p></td>
+<td><p>Golfo de Mexico</p></td>
+<td><p>nc</p></td>
+<td><p><a class="reference external" href="https://marine.copernicus.eu">Copernicus</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="_downloads/03154015427985285df133cb6340ed8a/dataset-armor-3d-nrt-weekly_1716614690241.nc"><code class="xref download docutils literal notranslate"><span class="pre">Corrientes</span> <span class="pre">geostróficas</span></code></a></p></td>
+<td><p>Pacífico NE</p></td>
+<td><p>nc</p></td>
+<td><p><a class="reference external" href="https://marine.copernicus.eu">Copernicus</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="con-datos-vectoriales">
+<h2><span class="section-number">4.2. </span>Con datos vectoriales<a class="headerlink" href="#con-datos-vectoriales" title="Link to this heading"></a></h2>
+<section id="tsunamis">
+<h3><span class="section-number">4.2.1. </span>Tsunamis<a class="headerlink" href="#tsunamis" title="Link to this heading"></a></h3>
+<p><strong>Tsunamis en el mundo y en México</strong></p>
+<p>Crear varios tipos de mapas para representar los tsunamis almacenados en el archivo <code class="docutils literal notranslate"><span class="pre">tsunamis.xlsx</span></code>.
+Para este ejemplo, no se requiere la descarga de datos adicionales. Los que se utilizan estan
+disponibles con la instalación de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Utiliza la función <code class="docutils literal notranslate"><span class="pre">readtable</span></code> para cargar los datos desde el archivo de Excel.</p></li>
+<li><p>Crea los ejes del mapa utilizando la función <code class="docutils literal notranslate"><span class="pre">worldmap</span></code>.</p></li>
+<li><p>Utiliza la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code> para mostrar los continentes (<code class="docutils literal notranslate"><span class="pre">landareas</span></code>).</p></li>
+<li><p>Muestra la ubicación de los tsunamis utilizando la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code>.</p></li>
+</ol>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Cargar los datos (tsunamis y continentes)</span>
+<span class="n">tsunamis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="s">&#39;tsunamis.xlsx&#39;</span><span class="p">);</span>
+<span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&#39;landareas.shp&#39;</span><span class="p">);</span>
+
+<span class="c">% Crear los ejes del mapa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="p">(</span><span class="s">&#39;World&#39;</span><span class="p">)</span>
+
+<span class="c">% Mostrar los continentes (polígonos) y tsunamis (puntos)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">land</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;polygon&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Latitude</span><span class="p">,</span><span class="w"> </span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Longitude</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;point&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Modifica el script para mejorar la apariencia del mapa (visualización de los tsunamis y los continentes).</p></li>
+<li><p>Agrega instrucciones al script para crear otro mapa, esta vez de los sismos ocurridos en México.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Sugerencia: Primero filtra los datos de los tsunamis para seleccionar solo aquellos que ocurrieron en México
+(por ejemplo, usando las funciones <code class="docutils literal notranslate"><span class="pre">find</span></code> y <code class="docutils literal notranslate"><span class="pre">contains</span></code> en la columna que almacena el nombre del país).
+Posteriormente la función <code class="docutils literal notranslate"><span class="pre">worldmap</span></code> para crear un mapa de México y la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code> para mostrar
+los puntos de los tsunamis en el mapa.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Agrega un título al mapa utilizando la función <code class="docutils literal notranslate"><span class="pre">title</span></code>.</p></li>
+<li><p>Guarda el mapa como una imagen utilizando la función <code class="docutils literal notranslate"><span class="pre">print</span></code>,  <code class="docutils literal notranslate"><span class="pre">exportgraphics</span></code> o <code class="docutils literal notranslate"><span class="pre">saveas</span></code>.</p></li>
+<li><p>Genera un mapa adicional (para todo el mundo), que represente las ubicaciones de los tsunamis (puntos)
+de tamaño diferente (dependiendo de la “magnitud”) y con la escala de color según la “causa”.
+Para esto, utiliza la función <code class="docutils literal notranslate"><span class="pre">geobubble</span></code>. También agrega un título y guarda el mapa como una imagen (<code class="docutils literal notranslate"><span class="pre">.png</span></code>).</p></li>
+<li><p>Guarda el script como <code class="docutils literal notranslate"><span class="pre">xyz_00_tsunamis.mlx</span></code> (<code class="docutils literal notranslate"><span class="pre">xyz</span></code> = tus iniciales) en la carpeta <code class="docutils literal notranslate"><span class="pre">matlab</span></code>.</p></li>
+<li><p>Sube el script y los mapas (<code class="docutils literal notranslate"><span class="pre">.png</span></code>) a la plataforma Teams.</p></li>
+</ol>
+</section>
+<section id="sismos">
+<h3><span class="section-number">4.2.2. </span>Sismos<a class="headerlink" href="#sismos" title="Link to this heading"></a></h3>
+<p><strong>Sismos en México (2010-2024)</strong></p>
+<p>Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos en México
+por año (2010-2024). Además, crear un mapa con todos los sismos en México en ese periodo.</p>
+<ol class="arabic simple">
+<li><p>Descarga los “Datos de sismos” (2010-2023) de la sección de <a class="reference internal" href="#datos-ejercicios"><span class="std std-ref">datos</span></a>. Además, descarga de la página
+<a class="reference external" href="https://tinyurl.com/ywdkwd99">earthquake.usgs.gov</a> los datos de los sismos (≥4 de magnitud) ocurridos durante
+el año 2024 en todo el mundo (en formato <code class="docutils literal notranslate"><span class="pre">csv</span></code>). Guargar este archivo como <code class="docutils literal notranslate"><span class="pre">sismos-2024.csv</span></code>. Transfiere estos 14 archivos
+<code class="docutils literal notranslate"><span class="pre">csv</span></code> a la carpeta <code class="docutils literal notranslate"><span class="pre">datos/csv</span></code>.</p></li>
+<li><p>Modificar el script para acceder a la carpeta <code class="docutils literal notranslate"><span class="pre">datos/csv</span></code> y leer todos los archivos <code class="docutils literal notranslate"><span class="pre">csv</span></code> (sismos de 2010-2024).</p></li>
+<li><p>Para cada archivo <code class="docutils literal notranslate"><span class="pre">csv</span></code> seleccionar los sismos ocurridos en México, cuya magnitud fue <code class="docutils literal notranslate"><span class="pre">≥</span> <span class="pre">4</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Sugerencia: Puedes utilizar la función <code class="docutils literal notranslate"><span class="pre">dir</span></code> para obtener una lista de los archivos en la carpeta y luego leer cada archivo en un bucle.
+Por ejemplo, puedes usar <code class="docutils literal notranslate"><span class="pre">dir('../datos/csv/sismos-*.csv')</span></code> para obtener la lista de archivos <code class="docutils literal notranslate"><span class="pre">csv</span></code>.
+Luego, usar un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para iterar sobre cada archivo y cargar los datos utilizando la función <code class="docutils literal notranslate"><span class="pre">readtable</span></code>. El procedimiento
+para filtrar los registros de interés es el mismo que en el ejercicio anterior (funciones <code class="docutils literal notranslate"><span class="pre">find</span></code> y <code class="docutils literal notranslate"><span class="pre">contains</span></code>).</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Generar los mapas de sismos (uno por año) utilizando la función <code class="docutils literal notranslate"><span class="pre">geoscatter</span></code>. Mostrar una barra de color que indique
+la magnitud de los sismos. En el título de cada mapa especificar el año y el número de sismos en el año. Guardar estos
+mapas en formato <code class="docutils literal notranslate"><span class="pre">png</span></code> a 300 dpi.</p></li>
+<li><p>Generar un mapa que incluya todos los sismos ocurridos en México (2010-2024), similar a los obtenidos según el punto
+anterior. En este caso utilizar la función <code class="docutils literal notranslate"><span class="pre">geodensityplot</span></code> para presentar el mapa. Utilizar <code class="docutils literal notranslate"><span class="pre">grayterrain</span></code> como
+mapa base. ¿Cuántos sismos ocurrieron en ese periodo? (mostrarlo en el título del mapa). Guardar el mapa en formato
+<code class="docutils literal notranslate"><span class="pre">png</span></code> a 300 dpi.</p></li>
+<li><p>Crear una gráfica que muestre la magnitud de los sismos con magnitud <code class="docutils literal notranslate"><span class="pre">≥</span> <span class="pre">7</span></code> grados en el periodo 2010-2024.
+¿Cuándo (fecha y hora) ocurrieron esos sismos? (según la zona horaria <code class="docutils literal notranslate"><span class="pre">'America/Mexico_City'</span></code>).</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Utilizar la función <code class="docutils literal notranslate"><span class="pre">datetime</span></code> para convertir las fechas y horas de los sismos a un formato
+de fechas, así como para especificar la zona horaria (con el argumento <code class="docutils literal notranslate"><span class="pre">'TimeZone',</span> <span class="pre">'UTC'</span></code>). Después de crear
+la variable de tipo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> puedes configurar propiedad <code class="docutils literal notranslate"><span class="pre">TimeZone</span></code> para cambiar la zona horaria.
+Así, cambia la zona horaria a <code class="docutils literal notranslate"><span class="pre">'America/Mexico_City'</span></code>.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.</p></li>
+<li><p>Como evidencia, adjuntar en Teams el script (<code class="docutils literal notranslate"><span class="pre">xyz_01_sismos.pdf</span></code>). Debe incluir todos los mapas y la gráfica.
+Además, subir el archivo <code class="docutils literal notranslate"><span class="pre">png</span></code> generado con la función <code class="docutils literal notranslate"><span class="pre">geodensityplot</span></code> y uno de los archivos <code class="docutils literal notranslate"><span class="pre">png</span></code> obtenido
+con la función <code class="docutils literal notranslate"><span class="pre">geoscatter</span></code>.</p></li>
+</ol>
+<p>Ejemplo de script para leer todos los archivos en una carpeta, especificando la ruta a la carpeta, parte del nombre
+de los archivos y su extensión (en este caso <code class="docutils literal notranslate"><span class="pre">csv</span></code>):</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Recuperar los nombres de archivos CSV de sismos en la carpeta datos/csv</span>
+<span class="n">archivos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dir</span><span class="p">(</span><span class="s">&#39;../datos/csv/sismos-*.csv&#39;</span><span class="p">);</span>
+
+<span class="c">% Inicializar tabla para almacenar todos los sismos</span>
+<span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">();</span>
+
+<span class="c">% Ciclo para leer cada archivo CSV</span>
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">archivos</span><span class="p">)</span>
+<span class="w">    </span><span class="c">% Leer el archivo k</span>
+<span class="w">    </span><span class="n">sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="n">archivos</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% Filtrar sismos en México con magnitud &gt;= 4</span>
+<span class="w">    </span><span class="n">rens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">find</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">sismos</span><span class="p">.</span><span class="n">place</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mexico&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">sismos</span><span class="p">.</span><span class="n">mag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% Crear tabla con sismos en México y magnitud &gt;= 4</span>
+<span class="w">    </span><span class="n">sismos_mex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sismos</span><span class="p">(</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
+
+<span class="w">    </span><span class="c">% Concatenar a la tabla general</span>
+<span class="w">    </span><span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">todos_sismos</span><span class="p">;</span><span class="w"> </span><span class="n">sismos_mex</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c">% Crear mapa para cada año...</span>
+<span class="k">end</span>
+
+<span class="c">% Crear el mapa con los sismos (2010-2024) en México...</span>
+</pre></div>
+</div>
+</section>
+<section id="leer-archivos-shp">
+<h3><span class="section-number">4.2.3. </span>Leer archivos <code class="docutils literal notranslate"><span class="pre">shp</span></code><a class="headerlink" href="#leer-archivos-shp" title="Link to this heading"></a></h3>
+<p>Los archivos “shapefile” aun son ampliamente utilizados para almacenar datos
+geoespaciales de tipo vectorial. En este ejemplo, se muestra cómo leer un
+archivo <code class="docutils literal notranslate"><span class="pre">shp</span></code> utilizando la función <code class="docutils literal notranslate"><span class="pre">shaperead</span></code>.
+La función <code class="docutils literal notranslate"><span class="pre">shaperead</span></code> permite incluir condiciones para filtrar los registros.
+Devuelve una estructura tipo <code class="docutils literal notranslate"><span class="pre">struct</span></code> con los atributos almacenados en el “shapefile”.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile (solo los estados de interés)</span>
+<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Selector&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="p">{@(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="nb">any</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">})),</span><span class="w"> </span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
+
+<span class="c">% Crear mapa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Con <code class="docutils literal notranslate"><span class="pre">shaperead</span></code> también podemos especificar la región (<code class="docutils literal notranslate"><span class="pre">BoundingBox</span></code>) que nos
+interesa extraer del “shapefile”, como se muestra a continuación:</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En este caso, la región se especifica con una matriz de <code class="docutils literal notranslate"><span class="pre">2×2</span></code> de la forma <code class="docutils literal notranslate"><span class="pre">[lonmin,latmin;</span> <span class="pre">lonmax,latmax]</span></code>
+(para coordenadas geográficas). La función <code class="docutils literal notranslate"><span class="pre">shaperead</span></code> no recorta las entidades que intersecan
+parcialmente el rectángulo. El parámetro <code class="docutils literal notranslate"><span class="pre">Àttributes</span></code> permite seleccionar los atributos (columnas) que se desean
+incluir en la estructura de salida.</p>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile (región específica)</span>
+<span class="n">bbox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">117</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="o">-</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">];</span><span class="w"> </span><span class="c">% [longitud, latitud]</span>
+<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BoundingBox&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bbox</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Attributes&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
+
+<span class="c">% Crear mapa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="p">([</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)],[</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)])</span><span class="w"> </span><span class="c">% ([limlat], [limlon])</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados en la región especificada&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>También se puede usar la función <code class="docutils literal notranslate"><span class="pre">readgeotable</span></code> para leer “shapefiles”. Esta función
+es una alternativa más reciente para acceder a archivos vectoriales. Devuelve un tipo de
+estructura <code class="docutils literal notranslate"><span class="pre">table</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile</span>
+<span class="n">estados</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">);</span>
+
+<span class="c">% Filtrar los estados de interés</span>
+<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">estados</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">estados</span><span class="p">.</span><span class="n">NAME_1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">}),</span><span class="w"> </span><span class="p">:);</span>
+
+<span class="c">% Crear mapa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>⁂</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="funciones.html" class="btn btn-neutral float-left" title="3. Funciones" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="software.html" class="btn btn-neutral float-right" title="5. Software adicional" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor GISLAB-CICIMAR-2025.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
