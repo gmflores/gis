@@ -14,6 +14,7 @@ Datos para realizar las ejemplos
 Enlace a los datos                                                                                   Región               Formato  Fuente
 ==================================================================================================== ==================== ======== ====================================================================
 :download:`Datos de sismos (2010-2023) <_data/sismos_2010_2023.zip>`                                 Global               csv      `USGS <https://earthquake.usgs.gov>`_
+:download:`Temperatura superficial del mar (2015) <_data/jplG1SST_blap_2015.mat>`                    Bahía de La Paz      mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
 :download:`Temperatura superficial del mar (2018) <_data/sst_2018.mat.zip>`                          Sur del GC           mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
 :download:`Clorofila (2020) <_data/clorofila_2020.mat>`                                              Sur del GC           mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
 :download:`Clorofila (2015) <_data/clorofila_2015.nc>`                                               Sur del GC           nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
