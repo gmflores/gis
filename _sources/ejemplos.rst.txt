@@ -10,18 +10,20 @@ Se recomienda revisar la documentación de cada función para obtener más infor
 Datos para realizar las ejemplos
 --------------------------------
 
-================================================================================================ ================ ======== ====================================================================
-Enlace a los datos                                                                               Región           Formato  Fuente
-================================================================================================ ================ ======== ====================================================================
-:download:`Datos de sismos (2010-2023) <_data/sismos_2010_2023.zip>`                             Global           csv      `USGS <https://earthquake.usgs.gov>`_
-:download:`Temperatura superficial del mar (2018) <_data/sst_2018.mat.zip>`                      Sur del GC       mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
-:download:`Clorofila (2020) <_data/clorofila_2020.mat>`                                          Sur del GC       mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
-:download:`Clorofila (2015) <_data/clorofila_2015.nc>`                                           Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
-:download:`Temperatura superficial del mar (2015) <_data/sst_2015.nc.zip>`                       Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
-:download:`Temperatura superficial del mar (2022) <_data/sst_2022.nc.zip>`                       Sur del GC       nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
-:download:`Corrientes marinas CMEMS <_data/cmems_mod_glo_phy-cur.nc.zip>`                        Golfo de Mexico  nc       `Copernicus <https://marine.copernicus.eu>`_
-:download:`Corrientes geostróficas <_data/dataset-armor-3d-nrt-weekly_1716614690241.nc>`         Pacífico NE      nc       `Copernicus <https://marine.copernicus.eu>`_
-================================================================================================ ================ ======== ====================================================================
+==================================================================================================== ==================== ======== ====================================================================
+Enlace a los datos                                                                                   Región               Formato  Fuente
+==================================================================================================== ==================== ======== ====================================================================
+:download:`Datos de sismos (2010-2023) <_data/sismos_2010_2023.zip>`                                 Global               csv      `USGS <https://earthquake.usgs.gov>`_
+:download:`Temperatura superficial del mar (2018) <_data/sst_2018.mat.zip>`                          Sur del GC           mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Clorofila (2020) <_data/clorofila_2020.mat>`                                              Sur del GC           mat      `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
+:download:`Clorofila (2015) <_data/clorofila_2015.nc>`                                               Sur del GC           nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.html>`_
+:download:`Temperatura superficial del mar (2015) <_data/sst_2015.nc.zip>`                           Sur del GC           nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Temperatura superficial del mar (2022) <_data/sst_2022.nc.zip>`                           Sur del GC           nc       `ERDDAP <https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html>`_
+:download:`Corrientes marinas CMEMS (2023) <_data/cmems_mod_glo_phy-cur.nc.zip>`                     Golfo de Mexico      nc       `Copernicus <https://marine.copernicus.eu>`_
+:download:`Corrientes geostróficas (2023) <https://tinyurl.com/2dhuzhjt>`                            Atlántico ecuatorial nc       `Copernicus <https://marine.copernicus.eu>`_
+==================================================================================================== ==================== ======== ====================================================================
+
+.. _data/dataset-armor-3d-nrt-weekly_1715238084305.nc.zip
 
 Con datos vectoriales
 ----------------------
@@ -75,6 +77,12 @@ Sismos
 ~~~~~~
 
 **Sismos en México (2010-2024)**
+
+.. figure:: /images/sismos_mex.png
+    :alt: Sismos en México (2010-2024)
+    :scale: 40%
+    :align: left
+
 
 Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos en México 
 por año (2010-2024). Además, crear un mapa con todos los sismos en México en ese periodo.
