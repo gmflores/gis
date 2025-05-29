@@ -24,7 +24,9 @@ Enlace a los datos                                                              
 :download:`Corrientes geostróficas (2023) <https://tinyurl.com/2dhuzhjt>`                            Atlántico ecuatorial nc       `Copernicus <https://marine.copernicus.eu>`_
 ==================================================================================================== ==================== ======== ====================================================================
 
-.. _data/dataset-armor-3d-nrt-weekly_1715238084305.nc.zip
+.. 
+    _data/dataset-armor-3d-nrt-weekly_1715238084305.nc.zip
+
 
 Con datos vectoriales
 ----------------------
@@ -212,28 +214,65 @@ estructura ``table``:
     geoshow(estados_interes, "DisplayType", "polygon", "FaceColor", [0.5 0.5 0.5])
     title("Estados de interés")
 
-.. comentario
-    Con datos ráster
-    ----------------
+Con datos ráster
+----------------
 
-    Temperatura superficial del mar
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Temperatura superficial del mar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    En este ejemplo, creamos un mapa que muestra la temperatura global
-    utilizando datos raster:
 
-    .. code:: matlab
+**TSM en la Baía de La Paz (2015) y en el sur del GC (2018)**
 
-        % Importar datos de temperatura global
-        [temp, R] = readgeoraster("globaltemp.tif");
+En este ejemplo, creamos un mapa que muestra la temperatura superficial del mar (TSM)
+en la Bahía de La Paz (2015). Estos datos están disponibles en la :ref:`sección 4.1 <datos_ejercicios>` 
+en formato ``.mat`` y se pueden leer utilizando la función ``load``. 
+La variable de interés es ``jplG1SST.SST``.
 
-        % Crear mapa
-        figure
-        worldmap world
-        geoshow(temp, R, "DisplayType", "texturemap")
-        colorbar
-        colormap("jet")
-        title("Mapa de Temperatura Global")
+.. note::
+    Nota que las variables están contenidas en una estructura (tipo ``struct``) llamada ``jplG1SST``.
+    Los datos de TSM están en un arreglo  (3D) con dimensiones ``[tiempo, latitud, longitud]``.
+    Para crear el mapa, primero es necesario obtener una referencia geográfica utilizando la función 
+    ``georefcells``, posteriormente, seleccionar una capa específica (por ejemplo, la primera capa) y
+    utilizar la función ``geoshow`` para mostrar los datos en un mapa. 
+
+.. code:: matlab
+
+    % Importar datos de TSM
+    load jplG1SST_blap_2015.mat;
+
+    % Obtener los datos de la variable (struct) jplG1SST
+    % (Verificar el tipo de datos)
+    SST = jplG1SST.SST;
+    lat = jplG1SST.latitude;
+    lon = jplG1SST.longitude;
+
+    % Obtener los límites de latitud y longitud
+    latlim = [lat(1), lat(end)];
+    lonlim = [lon(1), lon(end)];
+
+    % Consular el tamaño del arreglo (3D)
+    [t, rens, cols] = size(SST);
+
+    % Crear la referencia geográfica
+    R = georefcells(latlim,lonlim,[rens, cols]);
+
+    % Seleccionar la primera capa de datos
+    sst = squeeze(SST(1,:,:));
+
+    % Crear el mapa
+    figure
+    worldmap(latlim, lonlim) % Verificar el tipo de las variables
+    geoshow(sst, R, 'DisplayType', 'surface')
+    colorbar
+    colormap('jet')
+    title('TSM en la Bahía de La Paz')
+
+
+Agrega al mapa un polígono que represente el municipio de La Paz (utiliza el archivo 
+``gadm41_MEX_2.shp`` para obtener los límites del municipio).
+
+¿Cuál es la resolución temporal y espacial de los datos de TSM? ¿Cuál es la variación de la TSM 
+promedio en el área (en la resolución y cobertura temporal de los datos)?
 
 ⁂
 

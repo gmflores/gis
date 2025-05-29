@@ -59,6 +59,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#leer-archivos-shp">4.2.3. Leer archivos <code class="docutils literal notranslate"><span class="pre">shp</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#con-datos-raster">4.3. Con datos ráster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temperatura-superficial-del-mar">4.3.1. Temperatura superficial del mar</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">5. Software adicional</a></li>
@@ -331,6 +335,60 @@ estructura <code class="docutils literal notranslate"><span class="pre">table</s
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="con-datos-raster">
+<h2><span class="section-number">4.3. </span>Con datos ráster<a class="headerlink" href="#con-datos-raster" title="Link to this heading"></a></h2>
+<section id="temperatura-superficial-del-mar">
+<h3><span class="section-number">4.3.1. </span>Temperatura superficial del mar<a class="headerlink" href="#temperatura-superficial-del-mar" title="Link to this heading"></a></h3>
+<p><strong>TSM en la Baía de La Paz (2015) y en el sur del GC (2018)</strong></p>
+<p>En este ejemplo, creamos un mapa que muestra la temperatura superficial del mar (TSM)
+en la Bahía de La Paz (2015). Estos datos están disponibles en la <a class="reference internal" href="#datos-ejercicios"><span class="std std-ref">sección 4.1</span></a>
+en formato <code class="docutils literal notranslate"><span class="pre">.mat</span></code> y se pueden leer utilizando la función <code class="docutils literal notranslate"><span class="pre">load</span></code>.
+La variable de interés es <code class="docutils literal notranslate"><span class="pre">jplG1SST.SST</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Nota que las variables están contenidas en una estructura (tipo <code class="docutils literal notranslate"><span class="pre">struct</span></code>) llamada <code class="docutils literal notranslate"><span class="pre">jplG1SST</span></code>.
+Los datos de TSM están en un arreglo  (3D) con dimensiones <code class="docutils literal notranslate"><span class="pre">[tiempo,</span> <span class="pre">latitud,</span> <span class="pre">longitud]</span></code>.
+Para crear el mapa, primero es necesario obtener una referencia geográfica utilizando la función
+<code class="docutils literal notranslate"><span class="pre">georefcells</span></code>, posteriormente, seleccionar una capa específica (por ejemplo, la primera capa) y
+utilizar la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code> para mostrar los datos en un mapa.</p>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de TSM</span>
+<span class="nb">load</span><span class="w"> </span><span class="n">jplG1SST_blap_2015</span><span class="p">.</span><span class="n">mat</span><span class="p">;</span>
+
+<span class="c">% Obtener los datos de la variable (struct) jplG1SST</span>
+<span class="c">% (Verificar el tipo de datos)</span>
+<span class="n">SST</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">SST</span><span class="p">;</span>
+<span class="n">lat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">latitude</span><span class="p">;</span>
+<span class="n">lon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">longitude</span><span class="p">;</span>
+
+<span class="c">% Obtener los límites de latitud y longitud</span>
+<span class="n">latlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lat</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lat</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
+<span class="n">lonlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lon</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
+
+<span class="c">% Consular el tamaño del arreglo (3D)</span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">SST</span><span class="p">);</span>
+
+<span class="c">% Crear la referencia geográfica</span>
+<span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">georefcells</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">,[</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]);</span>
+
+<span class="c">% Seleccionar la primera capa de datos</span>
+<span class="n">sst</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">squeeze</span><span class="p">(</span><span class="n">SST</span><span class="p">(</span><span class="mi">1</span><span class="p">,:,:));</span>
+
+<span class="c">% Crear el mapa</span>
+<span class="nb">figure</span>
+<span class="n">worldmap</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="w"> </span><span class="n">lonlim</span><span class="p">)</span><span class="w"> </span><span class="c">% Verificar el tipo de las variables</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">sst</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;surface&#39;</span><span class="p">)</span>
+<span class="nb">colorbar</span>
+<span class="nb">colormap</span><span class="p">(</span><span class="s">&#39;jet&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;TSM en la Bahía de La Paz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Agrega al mapa un polígono que represente el municipio de La Paz (utiliza el archivo
+<code class="docutils literal notranslate"><span class="pre">gadm41_MEX_2.shp</span></code> para obtener los límites del municipio).</p>
+<p>¿Cuál es la resolución temporal y espacial de los datos de TSM? ¿Cuál es la variación de la TSM
+promedio en el área (en la resolución y cobertura temporal de los datos)?</p>
 <p>⁂</p>
 </section>
 </section>
