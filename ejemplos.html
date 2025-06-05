@@ -60,7 +60,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#con-datos-raster">4.3. Con datos ráster</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#temperatura-superficial-del-mar">4.3.1. Temperatura superficial del mar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archivos-mat">4.3.1. Archivos <code class="docutils literal notranslate"><span class="pre">mat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archivos-nc-netcdf">4.3.2. Archivos <code class="docutils literal notranslate"><span class="pre">.nc</span></code> (NetCDF)</a></li>
 </ul>
 </li>
 </ul>
@@ -170,18 +171,18 @@ disponibles con la instalación de <code class="docutils literal notranslate"><s
 <li><p>Utiliza la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code> para mostrar los continentes (<code class="docutils literal notranslate"><span class="pre">landareas</span></code>).</p></li>
 <li><p>Muestra la ubicación de los tsunamis utilizando la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code>.</p></li>
 </ol>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Cargar los datos (tsunamis y continentes)</span>
-<span class="n">tsunamis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="s">&#39;tsunamis.xlsx&#39;</span><span class="p">);</span>
-<span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&#39;landareas.shp&#39;</span><span class="p">);</span>
-
-<span class="c">% Crear los ejes del mapa</span>
-<span class="nb">figure</span>
-<span class="n">worldmap</span><span class="p">(</span><span class="s">&#39;World&#39;</span><span class="p">)</span>
-
-<span class="c">% Mostrar los continentes (polígonos) y tsunamis (puntos)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">land</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;polygon&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Latitude</span><span class="p">,</span><span class="w"> </span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Longitude</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;point&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% Cargar los datos (tsunamis y continentes)</span>
+<span class="linenos"> 2</span><span class="n">tsunamis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="s">&#39;tsunamis.xlsx&#39;</span><span class="p">);</span>
+<span class="linenos"> 3</span><span class="n">land</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&#39;landareas.shp&#39;</span><span class="p">);</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c">% Crear los ejes del mapa</span>
+<span class="linenos"> 6</span><span class="nb">figure</span>
+<span class="hll"><span class="linenos"> 7</span><span class="n">worldmap</span><span class="p">(</span><span class="s">&#39;World&#39;</span><span class="p">)</span>
+</span><span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="c">% Mostrar los continentes (polígonos) y tsunamis (puntos)</span>
+<span class="hll"><span class="linenos">10</span><span class="n">geoshow</span><span class="p">(</span><span class="n">land</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;polygon&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">11</span><span class="n">geoshow</span><span class="p">(</span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Latitude</span><span class="p">,</span><span class="w"> </span><span class="n">tsunamis</span><span class="p">.</span><span class="n">Longitude</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;point&#39;</span><span class="p">)</span>
+</span></pre></div>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>Modifica el script para mejorar la apariencia del mapa (visualización de los tsunamis y los continentes).</p></li>
@@ -254,30 +255,30 @@ con la función <code class="docutils literal notranslate"><span class="pre">geo
 </ol>
 <p>Ejemplo de script para leer todos los archivos en una carpeta, especificando la ruta a la carpeta, parte del nombre
 de los archivos y su extensión (en este caso <code class="docutils literal notranslate"><span class="pre">csv</span></code>):</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Recuperar los nombres de archivos CSV de sismos en la carpeta datos/csv</span>
-<span class="n">archivos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dir</span><span class="p">(</span><span class="s">&#39;../datos/csv/sismos-*.csv&#39;</span><span class="p">);</span>
-
-<span class="c">% Inicializar tabla para almacenar todos los sismos</span>
-<span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">();</span>
-
-<span class="c">% Ciclo para leer cada archivo CSV</span>
-<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">archivos</span><span class="p">)</span>
-<span class="w">    </span><span class="c">% Leer el archivo k</span>
-<span class="w">    </span><span class="n">sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="n">archivos</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c">% Filtrar sismos en México con magnitud &gt;= 4</span>
-<span class="w">    </span><span class="n">rens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">find</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">sismos</span><span class="p">.</span><span class="n">place</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mexico&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">sismos</span><span class="p">.</span><span class="n">mag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c">% Crear tabla con sismos en México y magnitud &gt;= 4</span>
-<span class="w">    </span><span class="n">sismos_mex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sismos</span><span class="p">(</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
-
-<span class="w">    </span><span class="c">% Concatenar a la tabla general</span>
-<span class="w">    </span><span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">todos_sismos</span><span class="p">;</span><span class="w"> </span><span class="n">sismos_mex</span><span class="p">];</span>
-
-<span class="w">    </span><span class="c">% Crear mapa para cada año...</span>
-<span class="k">end</span>
-
-<span class="c">% Crear el mapa con los sismos (2010-2024) en México...</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% Recuperar los nombres de archivos CSV de sismos en la carpeta datos/csv</span>
+<span class="hll"><span class="linenos"> 2</span><span class="n">archivos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dir</span><span class="p">(</span><span class="s">&#39;../datos/csv/sismos-*.csv&#39;</span><span class="p">);</span>
+</span><span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c">% Inicializar tabla para almacenar todos los sismos</span>
+<span class="linenos"> 5</span><span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">();</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c">% Ciclo para leer cada archivo CSV</span>
+<span class="hll"><span class="linenos"> 8</span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">archivos</span><span class="p">)</span>
+</span><span class="linenos"> 9</span><span class="w">    </span><span class="c">% Leer el archivo k</span>
+<span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="n">sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="n">archivos</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
+</span><span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="c">% Filtrar sismos en México con magnitud &gt;= 4</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">rens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">find</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">sismos</span><span class="p">.</span><span class="n">place</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mexico&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">sismos</span><span class="p">.</span><span class="n">mag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="w">    </span><span class="c">% Crear tabla con sismos en México y magnitud &gt;= 4</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">sismos_mex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sismos</span><span class="p">(</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">    </span><span class="c">% Concatenar a la tabla general</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">todos_sismos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">todos_sismos</span><span class="p">;</span><span class="w"> </span><span class="n">sismos_mex</span><span class="p">];</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="w">    </span><span class="c">% Crear mapa para cada año...</span>
+<span class="linenos">22</span><span class="k">end</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="c">% Crear el mapa con los sismos (2010-2024) en México...</span>
 </pre></div>
 </div>
 </section>
@@ -288,15 +289,15 @@ geoespaciales de tipo vectorial. En este ejemplo, se muestra cómo leer un
 archivo <code class="docutils literal notranslate"><span class="pre">shp</span></code> utilizando la función <code class="docutils literal notranslate"><span class="pre">shaperead</span></code>.
 La función <code class="docutils literal notranslate"><span class="pre">shaperead</span></code> permite incluir condiciones para filtrar los registros.
 Devuelve una estructura tipo <code class="docutils literal notranslate"><span class="pre">struct</span></code> con los atributos almacenados en el “shapefile”.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile (solo los estados de interés)</span>
-<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Selector&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
-<span class="w">    </span><span class="p">{@(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="nb">any</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">})),</span><span class="w"> </span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
-
-<span class="c">% Crear mapa</span>
-<span class="nb">figure</span>
-<span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">% Importar datos de un shapefile (solo los estados de interés)</span>
+<span class="hll"><span class="linenos">2</span><span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Selector&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+</span><span class="hll"><span class="linenos">3</span><span class="w">    </span><span class="p">{@(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="nb">any</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">})),</span><span class="w"> </span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
+</span><span class="linenos">4</span>
+<span class="linenos">5</span><span class="c">% Crear mapa</span>
+<span class="linenos">6</span><span class="nb">figure</span>
+<span class="linenos">7</span><span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="linenos">9</span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Con <code class="docutils literal notranslate"><span class="pre">shaperead</span></code> también podemos especificar la región (<code class="docutils literal notranslate"><span class="pre">BoundingBox</span></code>) que nos
@@ -308,39 +309,39 @@ interesa extraer del “shapefile”, como se muestra a continuación:</p>
 parcialmente el rectángulo. El parámetro <code class="docutils literal notranslate"><span class="pre">Àttributes</span></code> permite seleccionar los atributos (columnas) que se desean
 incluir en la estructura de salida.</p>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile (región específica)</span>
-<span class="n">bbox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">117</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="o">-</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">];</span><span class="w"> </span><span class="c">% [longitud, latitud]</span>
-<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BoundingBox&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bbox</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Attributes&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
-
-<span class="c">% Crear mapa</span>
-<span class="nb">figure</span>
-<span class="n">worldmap</span><span class="p">([</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)],[</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)])</span><span class="w"> </span><span class="c">% ([limlat], [limlon])</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados en la región especificada&quot;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">% Importar datos de un shapefile (región específica)</span>
+<span class="linenos">2</span><span class="n">bbox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">117</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="o">-</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">];</span><span class="w"> </span><span class="c">% [longitud, latitud]</span>
+<span class="hll"><span class="linenos">3</span><span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shaperead</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UseGeoCoords&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BoundingBox&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bbox</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Attributes&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;NAME_1&#39;</span><span class="p">});</span>
+</span><span class="linenos">4</span>
+<span class="linenos">5</span><span class="c">% Crear mapa</span>
+<span class="linenos">6</span><span class="nb">figure</span>
+<span class="linenos">7</span><span class="n">worldmap</span><span class="p">([</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)],[</span><span class="n">bbox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">bbox</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)])</span><span class="w"> </span><span class="c">% ([limlat], [limlon])</span>
+<span class="linenos">8</span><span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="linenos">9</span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados en la región especificada&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>También se puede usar la función <code class="docutils literal notranslate"><span class="pre">readgeotable</span></code> para leer “shapefiles”. Esta función
 es una alternativa más reciente para acceder a archivos vectoriales. Devuelve un tipo de
 estructura <code class="docutils literal notranslate"><span class="pre">table</span></code>:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de un shapefile</span>
-<span class="n">estados</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">);</span>
-
-<span class="c">% Filtrar los estados de interés</span>
-<span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">estados</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">estados</span><span class="p">.</span><span class="n">NAME_1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">}),</span><span class="w"> </span><span class="p">:);</span>
-
-<span class="c">% Crear mapa</span>
-<span class="nb">figure</span>
-<span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% Importar datos de un shapefile</span>
+<span class="hll"><span class="linenos"> 2</span><span class="n">estados</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">readgeotable</span><span class="p">(</span><span class="s">&quot;gadm41_MEX_1.shp&quot;</span><span class="p">);</span>
+</span><span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c">% Filtrar los estados de interés</span>
+<span class="linenos"> 5</span><span class="n">estados_interes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">estados</span><span class="p">(</span><span class="nb">contains</span><span class="p">(</span><span class="n">estados</span><span class="p">.</span><span class="n">NAME_1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Baja California&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sonora&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Sinaloa&#39;</span><span class="p">}),</span><span class="w"> </span><span class="p">:);</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c">% Crear mapa</span>
+<span class="linenos"> 8</span><span class="nb">figure</span>
+<span class="linenos"> 9</span><span class="n">worldmap</span><span class="p">(</span><span class="s">&quot;Mexico&quot;</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">geoshow</span><span class="p">(</span><span class="n">estados_interes</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DisplayType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="linenos">11</span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estados de interés&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="con-datos-raster">
 <h2><span class="section-number">4.3. </span>Con datos ráster<a class="headerlink" href="#con-datos-raster" title="Link to this heading"></a></h2>
-<section id="temperatura-superficial-del-mar">
-<h3><span class="section-number">4.3.1. </span>Temperatura superficial del mar<a class="headerlink" href="#temperatura-superficial-del-mar" title="Link to this heading"></a></h3>
+<section id="archivos-mat">
+<h3><span class="section-number">4.3.1. </span>Archivos <code class="docutils literal notranslate"><span class="pre">mat</span></code><a class="headerlink" href="#archivos-mat" title="Link to this heading"></a></h3>
 <p><strong>TSM en la Baía de La Paz (2015) y en el sur del GC (2018)</strong></p>
 <p>En este ejemplo, creamos un mapa que muestra la temperatura superficial del mar (TSM)
 en la Bahía de La Paz (2015). Estos datos están disponibles en la <a class="reference internal" href="#datos-ejercicios"><span class="std std-ref">sección 4.1</span></a>
@@ -354,41 +355,87 @@ Para crear el mapa, primero es necesario obtener una referencia geográfica util
 <code class="docutils literal notranslate"><span class="pre">georefcells</span></code>, posteriormente, seleccionar una capa específica (por ejemplo, la primera capa) y
 utilizar la función <code class="docutils literal notranslate"><span class="pre">geoshow</span></code> para mostrar los datos en un mapa.</p>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Importar datos de TSM</span>
-<span class="nb">load</span><span class="w"> </span><span class="n">jplG1SST_blap_2015</span><span class="p">.</span><span class="n">mat</span><span class="p">;</span>
-
-<span class="c">% Obtener los datos de la variable (struct) jplG1SST</span>
-<span class="c">% (Verificar el tipo de datos)</span>
-<span class="n">SST</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">SST</span><span class="p">;</span>
-<span class="n">lat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">latitude</span><span class="p">;</span>
-<span class="n">lon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">longitude</span><span class="p">;</span>
-
-<span class="c">% Obtener los límites de latitud y longitud</span>
-<span class="n">latlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lat</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lat</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
-<span class="n">lonlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lon</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
-
-<span class="c">% Consular el tamaño del arreglo (3D)</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">SST</span><span class="p">);</span>
-
-<span class="c">% Crear la referencia geográfica</span>
-<span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">georefcells</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">,[</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]);</span>
-
-<span class="c">% Seleccionar la primera capa de datos</span>
-<span class="n">sst</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">squeeze</span><span class="p">(</span><span class="n">SST</span><span class="p">(</span><span class="mi">1</span><span class="p">,:,:));</span>
-
-<span class="c">% Crear el mapa</span>
-<span class="nb">figure</span>
-<span class="n">worldmap</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="w"> </span><span class="n">lonlim</span><span class="p">)</span><span class="w"> </span><span class="c">% Verificar el tipo de las variables</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">sst</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;surface&#39;</span><span class="p">)</span>
-<span class="nb">colorbar</span>
-<span class="nb">colormap</span><span class="p">(</span><span class="s">&#39;jet&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;TSM en la Bahía de La Paz&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% Importar datos de TSM</span>
+<span class="linenos"> 2</span><span class="nb">load</span><span class="w"> </span><span class="n">jplG1SST_blap_2015</span><span class="p">.</span><span class="n">mat</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c">% Obtener los datos de la variable (struct) jplG1SST</span>
+<span class="linenos"> 5</span><span class="c">% (Verificar el tipo de datos)</span>
+<span class="linenos"> 6</span><span class="n">SST</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">SST</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="n">lat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">latitude</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="n">lon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jplG1SST</span><span class="p">.</span><span class="n">longitude</span><span class="p">;</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c">% Obtener los límites de latitud y longitud</span>
+<span class="linenos">11</span><span class="n">latlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lat</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lat</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
+<span class="linenos">12</span><span class="n">lonlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">lon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lon</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c">% Consular el tamaño del arreglo (3D)</span>
+<span class="linenos">15</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">SST</span><span class="p">);</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="c">% Crear la referencia geográfica</span>
+<span class="hll"><span class="linenos">18</span><span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">georefcells</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="w"> </span><span class="n">lonlim</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">rens</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">]);</span>
+</span><span class="linenos">19</span>
+<span class="linenos">20</span><span class="c">% Seleccionar la primera capa de datos</span>
+<span class="linenos">21</span><span class="n">sst</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">squeeze</span><span class="p">(</span><span class="n">SST</span><span class="p">(</span><span class="mi">1</span><span class="p">,:,:));</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="c">% Crear el mapa</span>
+<span class="linenos">24</span><span class="nb">figure</span>
+<span class="linenos">25</span><span class="n">worldmap</span><span class="p">(</span><span class="n">latlim</span><span class="p">,</span><span class="w"> </span><span class="n">lonlim</span><span class="p">)</span><span class="w"> </span><span class="c">% Verificar el tipo de las variables</span>
+<span class="linenos">26</span><span class="n">geoshow</span><span class="p">(</span><span class="n">sst</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;surface&#39;</span><span class="p">)</span>
+<span class="linenos">27</span><span class="nb">colorbar</span>
+<span class="linenos">28</span><span class="nb">colormap</span><span class="p">(</span><span class="s">&#39;jet&#39;</span><span class="p">)</span>
+<span class="linenos">29</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;TSM en la Bahía de La Paz&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Agrega al mapa un polígono que represente el municipio de La Paz (utiliza el archivo
 <code class="docutils literal notranslate"><span class="pre">gadm41_MEX_2.shp</span></code> para obtener los límites del municipio).</p>
 <p>¿Cuál es la resolución temporal y espacial de los datos de TSM? ¿Cuál es la variación de la TSM
 promedio en el área (en la resolución y cobertura temporal de los datos)?</p>
+<figure class="image-no-text-wrap align-center">
+<a class="reference internal image-reference" href="_images/cubo_sst.png"><img alt="SST Bahía de La Paz (2015)" src="_images/cubo_sst.png" style="width: 332.8px; height: 457.6px;" />
+</a>
+</figure>
+</section>
+<section id="archivos-nc-netcdf">
+<h3><span class="section-number">4.3.2. </span>Archivos <code class="docutils literal notranslate"><span class="pre">.nc</span></code> (NetCDF)<a class="headerlink" href="#archivos-nc-netcdf" title="Link to this heading"></a></h3>
+<p>NetCDF es un formato de archivo ampliamente utilizado para almacenar datos científicos, especialmente
+en el ámbito de la oceanografía y la meteorología.</p>
+<p><strong>TSM en el sur del GC (2015)</strong></p>
+<p>Los archivos <code class="docutils literal notranslate"><span class="pre">.nc</span></code> se pueden leer utilizando la función <code class="docutils literal notranslate"><span class="pre">ncread</span></code> para acceder a las variables y
+<code class="docutils literal notranslate"><span class="pre">ncinfo</span></code> para obtener información sobre el contenido del archivo. La creación de la referencia geográfica
+se realiza con la función <code class="docutils literal notranslate"><span class="pre">georefcells</span></code>, como en el ejemplo anterior.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">% Importar datos de TSM</span>
+<span class="linenos">2</span><span class="n">SST</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ncread</span><span class="p">(</span><span class="s">&#39;sst_2022.nc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;analysed_sst&#39;</span><span class="p">);</span>
+<span class="linenos">3</span><span class="n">lat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ncread</span><span class="p">(</span><span class="s">&#39;sst_2022.nc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latitude&#39;</span><span class="p">);</span>
+<span class="linenos">4</span><span class="n">lon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ncread</span><span class="p">(</span><span class="s">&#39;sst_2022.nc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;longitude&#39;</span><span class="p">);</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c">% Crear referencia geográfica</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="c">% Crear mapa</span>
+</pre></div>
+</div>
+<p>Puesto que los comandos para visualizar los datos son similares en los ejemplos revisados, es conveniente
+implementar una función que permita crear este tipo de mapas. Por ejemplo:</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Puedes agregar argumentos adicionales a la función para personalizar el mapa, como un <code class="docutils literal notranslate"><span class="pre">shapefile</span></code>,
+color de los polígonos, leyenda de escala de color, condicionantes para el rango, etc.</p>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% Crea una mapa a partir de una capa raster</span>
+<span class="linenos"> 2</span><span class="c">% data   - capa ráster</span>
+<span class="linenos"> 3</span><span class="c">% r      - referencia geográfica</span>
+<span class="linenos"> 4</span><span class="c">% rango  - límites de los valores [a, b]</span>
+<span class="linenos"> 5</span><span class="c">% cmap   - escala de colores (&#39;jet&#39;, &#39;turbo&#39;,etc)</span>
+<span class="linenos"> 6</span><span class="c">% titulo - título del mapa</span>
+<span class="hll"><span class="linenos"> 7</span><span class="k">function</span><span class="w"> </span>[]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">surfaceMap</span><span class="p">(</span>data, r, rango, cmap, titulo<span class="p">)</span>
+</span><span class="linenos"> 8</span><span class="w">    </span><span class="nb">figure</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">worldmap</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">LatitudeLimits</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">LongitudeLimits</span><span class="p">)</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">geoshow</span><span class="p">(</span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">data</span><span class="p">)),</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CData&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;surface&#39;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="n">titulo</span><span class="p">)</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nb">colormap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nb">colorbar</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">clim</span><span class="p">(</span><span class="n">rango</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>⁂</p>
 </section>
 </section>

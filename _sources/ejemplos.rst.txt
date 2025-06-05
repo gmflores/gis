@@ -46,6 +46,8 @@ disponibles con la instalación de ``Mapping Toolbox``.
 4. Muestra la ubicación de los tsunamis utilizando la función ``geoshow``.
 
 .. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 7,10,11
 
     % Cargar los datos (tsunamis y continentes)
     tsunamis = readtable('tsunamis.xlsx');
@@ -127,7 +129,9 @@ por año (2010-2024). Además, crear un mapa con todos los sismos en México en 
 Ejemplo de script para leer todos los archivos en una carpeta, especificando la ruta a la carpeta, parte del nombre 
 de los archivos y su extensión (en este caso ``csv``):
 
-.. code:: matlab
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 2,8,10
 
     % Recuperar los nombres de archivos CSV de sismos en la carpeta datos/csv
     archivos = dir('../datos/csv/sismos-*.csv');
@@ -163,7 +167,9 @@ archivo ``shp`` utilizando la función ``shaperead``.
 La función ``shaperead`` permite incluir condiciones para filtrar los registros.
 Devuelve una estructura tipo ``struct`` con los atributos almacenados en el 'shapefile'.
 
-.. code:: matlab
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 2,3
 
     % Importar datos de un shapefile (solo los estados de interés)
     estados_interes = shaperead("gadm41_MEX_1.shp", "UseGeoCoords", true, "Selector", ...
@@ -184,7 +190,9 @@ interesa extraer del 'shapefile', como se muestra a continuación:
     parcialmente el rectángulo. El parámetro ``Àttributes`` permite seleccionar los atributos (columnas) que se desean
     incluir en la estructura de salida.
 
-.. code:: matlab
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 3
 
     % Importar datos de un shapefile (región específica)
     bbox = [-117, 20; -105, 32]; % [longitud, latitud]
@@ -200,7 +208,9 @@ También se puede usar la función ``readgeotable`` para leer 'shapefiles'. Esta
 es una alternativa más reciente para acceder a archivos vectoriales. Devuelve un tipo de
 estructura ``table``:
 
-.. code:: matlab
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 2
 
     % Importar datos de un shapefile
     estados = readgeotable("gadm41_MEX_1.shp");
@@ -217,9 +227,8 @@ estructura ``table``:
 Con datos ráster
 ----------------
 
-Temperatura superficial del mar
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Archivos ``mat`` 
+~~~~~~~~~~~~~~~~
 
 **TSM en la Baía de La Paz (2015) y en el sur del GC (2018)**
 
@@ -235,7 +244,9 @@ La variable de interés es ``jplG1SST.SST``.
     ``georefcells``, posteriormente, seleccionar una capa específica (por ejemplo, la primera capa) y
     utilizar la función ``geoshow`` para mostrar los datos en un mapa. 
 
-.. code:: matlab
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 18
 
     % Importar datos de TSM
     load jplG1SST_blap_2015.mat;
@@ -254,7 +265,7 @@ La variable de interés es ``jplG1SST.SST``.
     [t, rens, cols] = size(SST);
 
     % Crear la referencia geográfica
-    R = georefcells(latlim,lonlim,[rens, cols]);
+    R = georefcells(latlim, lonlim, [rens, cols]);
 
     % Seleccionar la primera capa de datos
     sst = squeeze(SST(1,:,:));
@@ -273,6 +284,64 @@ Agrega al mapa un polígono que represente el municipio de La Paz (utiliza el ar
 
 ¿Cuál es la resolución temporal y espacial de los datos de TSM? ¿Cuál es la variación de la TSM 
 promedio en el área (en la resolución y cobertura temporal de los datos)?
+
+.. rst-class:: image-no-text-wrap
+
+.. figure:: /images/cubo_sst.png
+    :alt: SST Bahía de La Paz (2015)
+    :scale: 80%
+    :align: center
+
+
+Archivos ``.nc`` (NetCDF)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+NetCDF es un formato de archivo ampliamente utilizado para almacenar datos científicos, especialmente 
+en el ámbito de la oceanografía y la meteorología.
+
+**TSM en el sur del GC (2015)**
+
+Los archivos ``.nc`` se pueden leer utilizando la función ``ncread`` para acceder a las variables y 
+``ncinfo`` para obtener información sobre el contenido del archivo. La creación de la referencia geográfica
+se realiza con la función ``georefcells``, como en el ejemplo anterior.
+
+.. code-block:: matlab
+    :linenos:
+
+    % Importar datos de TSM
+    SST = ncread('sst_2022.nc', 'analysed_sst');
+    lat = ncread('sst_2022.nc', 'latitude');
+    lon = ncread('sst_2022.nc', 'longitude');
+
+    % Crear referencia geográfica
+
+    % Crear mapa
+
+Puesto que los comandos para visualizar los datos son similares en los ejemplos revisados, es conveniente
+implementar una función que permita crear este tipo de mapas. Por ejemplo:
+
+.. note ::
+    Puedes agregar argumentos adicionales a la función para personalizar el mapa, como un ``shapefile``,
+    color de los polígonos, leyenda de escala de color, condicionantes para el rango, etc.
+
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 7
+
+    % Crea una mapa a partir de una capa raster
+    % data   - capa ráster
+    % r      - referencia geográfica
+    % rango  - límites de los valores [a, b]
+    % cmap   - escala de colores ('jet', 'turbo',etc)
+    % titulo - título del mapa
+    function [] = surfaceMap(data, r, rango, cmap, titulo)
+        figure
+        worldmap(r.LatitudeLimits, r.LongitudeLimits)
+        geoshow(zeros(size(data)), r, 'CData', data, 'DisplayType', 'surface')
+        title(titulo)
+        colormap(cmap)
+        colorbar;
+        clim(rango);
 
 ⁂
 
