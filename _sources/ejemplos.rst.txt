@@ -343,6 +343,38 @@ implementar una función que permita crear este tipo de mapas. Por ejemplo:
         colorbar;
         clim(rango);
 
+Cuando se utilizan datos en formato ``NetCDF``, es común que se requiera especificar regiones para
+observar cambios en las variables en un periodo determinado. Por ejemplo, se podría utilizar un polígono 
+irregular para delimitar una  región de interés, luego aplicar una máscara a los datos ráster para mostrar 
+solo la región seleccionada y proyectar esa selección en el cubo de datos para generar una serie de tiempo.
+
+El siguiente script muestra un ejemplo de cómo crear una o varias máscaras binarias a partir de un archivo ``kmz``
+o ``kml`` con polígono(s) dentro de la cobertura del ráster.
+
+.. code-block:: matlab
+    :linenos:
+    :emphasize-lines: 9
+
+    % Crea una o varias máscaras binaras (ráster) para la selección de ROIs
+    % Variables de entrada:
+    %   kmzName: nombre del archivo kml o kmz [polígono(s) dentro de la ROI (R)]
+    %   r: matriz de referencia geográfica del ráster al que se aplicará la máscara (tipo GeographicCellsReference)
+    % Regresa la matriz de la máscara:
+    %   mask: mascara binaria (1 | NaN)
+    % Si el archivo vectorial contiene n polígonos, regresa n mascaras [mask(:,:,n)]
+
+    function mask = creaMask(kmzName, r)
+        gt = readgeotable(kmzName);
+        tb = geotable2table(gt,["lat","lon"]);
+        n = height(tb);
+        mask = zeros(r.RasterSize(1), r.RasterSize(2), n);
+        for j=1:n
+            [x, y] = geographicToIntrinsic(r, cell2mat(tb.lat(j)), cell2mat(tb.lon(j)));
+            mask(:,:,j) = double(poly2mask(x, y, r.RasterSize(1), r.RasterSize(2)));
+        end
+        mask(mask == 0) = NaN;
+    end    
+
 ⁂
 
 .. coment
