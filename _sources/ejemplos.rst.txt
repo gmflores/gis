@@ -230,7 +230,7 @@ Con datos ráster
 Archivos ``mat`` 
 ~~~~~~~~~~~~~~~~
 
-**TSM en la Baía de La Paz (2015) y en el sur del GC (2018)**
+**TSM en la bahía de La Paz (2015) y en el sur del GC (2018)**
 
 En este ejemplo, creamos un mapa que muestra la temperatura superficial del mar (TSM)
 en la Bahía de La Paz (2015). Estos datos están disponibles en la :ref:`sección 4.1 <datos_ejercicios>` 
@@ -279,11 +279,38 @@ La variable de interés es ``jplG1SST.SST``.
     title('TSM en la Bahía de La Paz')
 
 
-Agrega al mapa un polígono que represente el municipio de La Paz (utiliza el archivo 
-``gadm41_MEX_2.shp`` para obtener los límites del municipio).
+Tomando como referencia el script revisado en clase, utiliza los archivos ``jplG1SST_blap_2015.mat``, ``sst_2018.mat`` 
+y ``gadm41_MEX_2.shp`` para generar los siguientes mapas y gráficas:
 
-¿Cuál es la resolución temporal y espacial de los datos de TSM? ¿Cuál es la variación de la TSM 
-promedio en el área (en la resolución y cobertura temporal de los datos)?
+1. Mapa de TSM en la bahía de La Paz para un día específico (2015).
+
+2. Mapa de la TSM promedio en todo el año (2015).
+
+3. Gráfico Hovmöller, (``pcolor``) mostrando en el eje ``x`` las longitudes y en el eje ``y`` las fechas (meses).
+
+4. Gráfica (``plot``) mostrando la variación de la temperatura  diaria promedio a lo largo del año (2015).
+
+5. Mapa de TSM en el sur del golfo de California para un día específico (2018).
+
+6. Mapa de TSM en la bahía de La Paz, recortada de los datos del 2018 (``geocrop``), para el mismo día elegido 
+   en el punto anterior.
+
+7. Gráfica para comparar la variación de la TSM diaria promedio a lo largo del 2015 y del 2018 en la bahía de La Paz. 
+   Para ello, primero se deben cortar (``geocrop``) las capas del 2018 según la cobertura de los datos del 2015.
+
+8. ¿Cuál es la cobertura, resolución temporal y espacial de los datos de TSM (2015 y 2018)? Incluye la respuesta en
+   el script mencionando cómo obtuviste esa información.
+
+9. Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.
+
+10. Como evidencia, adjuntar en Teams el script (``xyz_03_tsm_blap.pdf``). Debe incluir todos los mapas y las gráficas. 
+
+.. note::
+    Los mapas deben incluir una escala de color y de distancia, un título apropiado con la fecha de los datos 
+    y la región del ``shapefile`` correspondiente al municipio o a los estados en la cobertura. Las gráficas deben 
+    incluir título y etiquetas en los ejes, y cuando se requiera, escala de color.
+
+**Representación de la estructura de los datos de TSM**
 
 .. rst-class:: image-no-text-wrap
 
