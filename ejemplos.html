@@ -54,7 +54,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Scripts de ejemplo</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#datos-para-realizar-las-ejemplos">4.1. Datos para realizar las ejemplos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#con-datos-vectoriales">4.2. Con datos vectoriales</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tsunamis">4.2.1. Tsunamis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tsunamis-en-el-mundo-y-en-mexico">4.2.1. Tsunamis en el mundo y en México</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sismos">4.2.2. Sismos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#leer-archivos-shp">4.2.3. Leer archivos <code class="docutils literal notranslate"><span class="pre">shp</span></code></a></li>
 </ul>
@@ -159,9 +159,9 @@ Se recomienda revisar la documentación de cada función para obtener más infor
 </section>
 <section id="con-datos-vectoriales">
 <h2><span class="section-number">4.2. </span>Con datos vectoriales<a class="headerlink" href="#con-datos-vectoriales" title="Link to this heading"></a></h2>
-<section id="tsunamis">
-<h3><span class="section-number">4.2.1. </span>Tsunamis<a class="headerlink" href="#tsunamis" title="Link to this heading"></a></h3>
-<p><strong>Tsunamis en el mundo y en México</strong></p>
+<section id="tsunamis-en-el-mundo-y-en-mexico">
+<h3><span class="section-number">4.2.1. </span>Tsunamis en el mundo y en México<a class="headerlink" href="#tsunamis-en-el-mundo-y-en-mexico" title="Link to this heading"></a></h3>
+<p><strong>Práctica #1</strong></p>
 <p>Crear varios tipos de mapas para representar los tsunamis almacenados en el archivo <code class="docutils literal notranslate"><span class="pre">tsunamis.xlsx</span></code>.
 Para este ejemplo, no se requiere la descarga de datos adicionales. Los que se utilizan estan
 disponibles con la instalación de <code class="docutils literal notranslate"><span class="pre">Mapping</span> <span class="pre">Toolbox</span></code>.</p>
@@ -208,10 +208,11 @@ Para esto, utiliza la función <code class="docutils literal notranslate"><span 
 <section id="sismos">
 <h3><span class="section-number">4.2.2. </span>Sismos<a class="headerlink" href="#sismos" title="Link to this heading"></a></h3>
 <p><strong>Sismos en México (2010-2024)</strong></p>
-<figure class="align-left">
-<a class="reference internal image-reference" href="_images/sismos_mex.png"><img alt="Sismos en México (2010-2024)" src="_images/sismos_mex.png" style="width: 613.6px; height: 392.40000000000003px;" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/sismos_mex.png"><img alt="Sismos en México (2010-2024)" src="_images/sismos_mex.png" style="width: 690.3000000000001px; height: 441.45px;" />
 </a>
 </figure>
+<p><strong>Práctica #2</strong></p>
 <p>Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos en México
 por año (2010-2024). Además, crear un mapa con todos los sismos en México en ese periodo.</p>
 <ol class="arabic simple">
@@ -386,6 +387,7 @@ utilizar la función <code class="docutils literal notranslate"><span class="pre
 <span class="linenos">29</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;TSM en la Bahía de La Paz&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Práctica #3</strong></p>
 <p>Tomando como referencia el script revisado en clase, utiliza los archivos <code class="docutils literal notranslate"><span class="pre">jplG1SST_blap_2015.mat</span></code>, <code class="docutils literal notranslate"><span class="pre">sst_2018.mat</span></code>
 y <code class="docutils literal notranslate"><span class="pre">gadm41_MEX_2.shp</span></code> para generar los siguientes mapas y gráficas:</p>
 <ol class="arabic simple">
@@ -482,6 +484,35 @@ o <code class="docutils literal notranslate"><span class="pre">kml</span></code>
 <span class="linenos">18</span><span class="w">    </span><span class="n">mask</span><span class="p">(</span><span class="n">mask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">NaN</span><span class="p">;</span>
 <span class="linenos">19</span><span class="k">end</span>
 </pre></div>
+</div>
+<p><strong>Práctica #4</strong></p>
+<p>Descarga datos diarios de TSM para un año de tu área de estudio (<code class="docutils literal notranslate"><span class="pre">NetCDF</span></code>) con una cobertura aproximada de <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">x</span> <span class="pre">5º</span></code>.
+Si es necesario, también descarga un shapefile de esa región (similar al <code class="docutils literal notranslate"><span class="pre">gadm41_MEX_1.shp</span></code>). También digitaliza en
+<a class="reference external" href="https://maps.google.es/intl/es_es/earth/download/gep/agree.html">Google Earth Pro</a> al menos tres puntos y tres polígonos
+en la cobertura del archivo de TSM (guardarlos archivos <code class="docutils literal notranslate"><span class="pre">kml</span></code> o <code class="docutils literal notranslate"><span class="pre">kmz</span></code>, un archivo para los puntos y otro para los polígonos).</p>
+<p>Tomando como referencia el script revisado en clase y los archivos mencionados en el párrafo anterior, generar los
+siguientes mapas y gráficas:</p>
+<ol class="arabic simple">
+<li><p>Mapa de TSM en tu área de estudio para un día específico. Sobreponer al mapa los puntos y los polígonos digitalizados,
+mostrando las etiquetas para los puntos.</p></li>
+<li><p>Gráfica (<code class="docutils literal notranslate"><span class="pre">plot</span></code>) mostrando la variación de la temperatura diaria promedio a lo largo del año, en la ubicación de los
+polígonos digitalizados.</p></li>
+<li><p>Mapas que muestren la TSM (de un día específico) recortada con los polígonos digitalizados (generar un mapa por
+cada polígono).</p></li>
+<li><p>Gráfica (<code class="docutils literal notranslate"><span class="pre">plot</span></code>) que muestre la variación de la temperatura diaria promedio en la cobertura de los puntos
+digitalizados, a lo largo del año. Suavizar las series de tiempo (<code class="docutils literal notranslate"><span class="pre">movmean</span></code>).</p></li>
+<li><p>Mapas de los promedios mensuales de TSM en tu área de estudio (para todo el año). Los 12 mapas deben tener la misma escala
+de temperatura, en el título de cada mapa, incluir el mes y el año. Guardar estos mapas en formato png a 300 dpi.</p></li>
+<li><p>Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.</p></li>
+<li><p>Como evidencia, adjuntar en Teams el script (<code class="docutils literal notranslate"><span class="pre">xyz_04_tsm_aaaa_nomArea.pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">aaaa</span></code> = año al que corresponden los datos
+y <code class="docutils literal notranslate"><span class="pre">nomArea</span></code> = Nombre del área en una palabra). El archivo pdf debe incluir todos los mapas y las gráficas.
+Además, incluir los 12 mapas (<code class="docutils literal notranslate"><span class="pre">png</span></code>) de los promedios mensuales.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Los mapas deben incluir escala de color y de distancia, título apropiado con la fecha de los datos
+y el <code class="docutils literal notranslate"><span class="pre">shapefile</span></code> correspondiente al estado o región de la cobertura. Las gráficas deben incluir título y etiquetas en los ejes,
+y cuando se requiera, escala de color o leyenda.</p>
 </div>
 <p>⁂</p>
 </section>

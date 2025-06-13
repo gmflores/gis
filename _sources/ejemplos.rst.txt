@@ -31,10 +31,10 @@ Enlace a los datos                                                              
 Con datos vectoriales
 ----------------------
 
-Tsunamis 
-~~~~~~~~
+Tsunamis en el mundo y en México 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Tsunamis en el mundo y en México**
+**Práctica #1**
 
 Crear varios tipos de mapas para representar los tsunamis almacenados en el archivo ``tsunamis.xlsx``.
 Para este ejemplo, no se requiere la descarga de datos adicionales. Los que se utilizan estan 
@@ -85,9 +85,10 @@ Sismos
 
 .. figure:: /images/sismos_mex.png
     :alt: Sismos en México (2010-2024)
-    :scale: 40%
-    :align: left
+    :scale: 45%
+    :align: center
 
+**Práctica #2**
 
 Tomando como referencia el script anterior, crear 14 mapas con la ubicación de los sismos en México 
 por año (2010-2024). Además, crear un mapa con todos los sismos en México en ese periodo.
@@ -278,6 +279,7 @@ La variable de interés es ``jplG1SST.SST``.
     colormap('jet')
     title('TSM en la Bahía de La Paz')
 
+**Práctica #3**
 
 Tomando como referencia el script revisado en clase, utiliza los archivos ``jplG1SST_blap_2015.mat``, ``sst_2018.mat`` 
 y ``gadm41_MEX_2.shp`` para generar los siguientes mapas y gráficas:
@@ -401,6 +403,42 @@ o ``kml`` con polígono(s) dentro de la cobertura del ráster.
         end
         mask(mask == 0) = NaN;
     end    
+
+**Práctica #4**
+
+Descarga datos diarios de TSM para un año de tu área de estudio (``NetCDF``) con una cobertura aproximada de ``4 x 5º``. 
+Si es necesario, también descarga un shapefile de esa región (similar al ``gadm41_MEX_1.shp``). También digitaliza en 
+`Google Earth Pro <https://maps.google.es/intl/es_es/earth/download/gep/agree.html>`_ al menos tres puntos y tres polígonos 
+en la cobertura del archivo de TSM (guardarlos archivos ``kml`` o ``kmz``, un archivo para los puntos y otro para los polígonos).
+
+Tomando como referencia el script revisado en clase y los archivos mencionados en el párrafo anterior, generar los 
+siguientes mapas y gráficas:
+
+1. Mapa de TSM en tu área de estudio para un día específico. Sobreponer al mapa los puntos y los polígonos digitalizados, 
+   mostrando las etiquetas para los puntos.
+
+2. Gráfica (``plot``) mostrando la variación de la temperatura diaria promedio a lo largo del año, en la ubicación de los 
+   polígonos digitalizados.
+
+3. Mapas que muestren la TSM (de un día específico) recortada con los polígonos digitalizados (generar un mapa por 
+   cada polígono).
+
+4. Gráfica (``plot``) que muestre la variación de la temperatura diaria promedio en la cobertura de los puntos 
+   digitalizados, a lo largo del año. Suavizar las series de tiempo (``movmean``).
+
+5. Mapas de los promedios mensuales de TSM en tu área de estudio (para todo el año). Los 12 mapas deben tener la misma escala 
+   de temperatura, en el título de cada mapa, incluir el mes y el año. Guardar estos mapas en formato png a 300 dpi.
+
+6. Documentar el script con los comentarios pertinentes de acuerdo con los datos y procedimientos utilizados.
+
+7. Como evidencia, adjuntar en Teams el script (``xyz_04_tsm_aaaa_nomArea.pdf``, ``aaaa`` = año al que corresponden los datos 
+   y ``nomArea`` = Nombre del área en una palabra). El archivo pdf debe incluir todos los mapas y las gráficas. 
+   Además, incluir los 12 mapas (``png``) de los promedios mensuales.
+
+.. note::
+    Los mapas deben incluir escala de color y de distancia, título apropiado con la fecha de los datos 
+    y el ``shapefile`` correspondiente al estado o región de la cobertura. Las gráficas deben incluir título y etiquetas en los ejes, 
+    y cuando se requiera, escala de color o leyenda.
 
 ⁂
 
